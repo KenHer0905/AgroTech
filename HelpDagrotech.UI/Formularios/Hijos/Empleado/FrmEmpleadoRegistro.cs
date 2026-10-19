@@ -1,4 +1,4 @@
-﻿using HelpDAgroTech.Bll.Common;
+﻿/*using HelpDAgroTech.Bll.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,4 +63,4 @@ namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
             }
         }
     }
-}
+}*/

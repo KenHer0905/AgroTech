@@ -1,4 +1,4 @@
-﻿namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
+﻿/*namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
 {
     partial class FrmEmpleadoListado
     {
@@ -43,4 +43,4 @@
 
         #endregion
     }
-}
+}*/

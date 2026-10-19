@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             AgroT = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             bttSalir = new FontAwesome.Sharp.IconButton();
             iconSalidam = new FontAwesome.Sharp.IconButton();
@@ -43,7 +44,7 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             statusStrip1 = new StatusStrip();
             panelContenedo = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
             AgroT.SuspendLayout();
             panel1.SuspendLayout();
             Vistalogoli.SuspendLayout();
@@ -66,17 +67,43 @@
             AgroT.Controls.Add(Vistalogoli);
             AgroT.Dock = DockStyle.Left;
             AgroT.Location = new Point(0, 0);
+            AgroT.Margin = new Padding(3, 2, 3, 2);
             AgroT.Name = "AgroT";
-            AgroT.Size = new Size(202, 673);
+            AgroT.Size = new Size(177, 509);
             AgroT.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            iconButton1.Cursor = Cursors.Hand;
+            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(128, 255, 128);
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Segoe UI", 10F);
+            iconButton1.ForeColor = Color.White;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.File;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 30;
+            iconButton1.Location = new Point(4, 383);
+            iconButton1.Margin = new Padding(3, 2, 3, 2);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(9, 0, 0, 0);
+            iconButton1.Size = new Size(172, 38);
+            iconButton1.TabIndex = 8;
+            iconButton1.Text = "REPORTES";
+            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             panel1.Controls.Add(bttSalir);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 604);
+            panel1.Location = new Point(0, 457);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 67);
+            panel1.Size = new Size(175, 50);
             panel1.TabIndex = 7;
             // 
             // bttSalir
@@ -94,8 +121,9 @@
             bttSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bttSalir.IconSize = 30;
             bttSalir.Location = new Point(0, 0);
+            bttSalir.Margin = new Padding(3, 2, 3, 2);
             bttSalir.Name = "bttSalir";
-            bttSalir.Size = new Size(200, 50);
+            bttSalir.Size = new Size(175, 38);
             bttSalir.TabIndex = 6;
             bttSalir.Text = "Cerrar Secion";
             bttSalir.TextAlign = ContentAlignment.MiddleRight;
@@ -116,10 +144,11 @@
             iconSalidam.IconColor = Color.White;
             iconSalidam.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconSalidam.IconSize = 30;
-            iconSalidam.Location = new Point(2, 455);
+            iconSalidam.Location = new Point(2, 341);
+            iconSalidam.Margin = new Padding(3, 2, 3, 2);
             iconSalidam.Name = "iconSalidam";
-            iconSalidam.Padding = new Padding(10, 0, 0, 0);
-            iconSalidam.Size = new Size(197, 50);
+            iconSalidam.Padding = new Padding(9, 0, 0, 0);
+            iconSalidam.Size = new Size(172, 38);
             iconSalidam.TabIndex = 5;
             iconSalidam.Text = "Salida Material";
             iconSalidam.TextAlign = ContentAlignment.MiddleLeft;
@@ -139,10 +168,11 @@
             iconMaterial.IconColor = Color.White;
             iconMaterial.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMaterial.IconSize = 30;
-            iconMaterial.Location = new Point(3, 399);
+            iconMaterial.Location = new Point(3, 299);
+            iconMaterial.Margin = new Padding(3, 2, 3, 2);
             iconMaterial.Name = "iconMaterial";
-            iconMaterial.Padding = new Padding(10, 0, 0, 0);
-            iconMaterial.Size = new Size(197, 50);
+            iconMaterial.Padding = new Padding(9, 0, 0, 0);
+            iconMaterial.Size = new Size(172, 38);
             iconMaterial.TabIndex = 4;
             iconMaterial.Text = "MATERIALES";
             iconMaterial.TextAlign = ContentAlignment.MiddleLeft;
@@ -163,10 +193,11 @@
             iconCultivo.IconColor = Color.White;
             iconCultivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconCultivo.IconSize = 30;
-            iconCultivo.Location = new Point(3, 346);
+            iconCultivo.Location = new Point(3, 260);
+            iconCultivo.Margin = new Padding(3, 2, 3, 2);
             iconCultivo.Name = "iconCultivo";
-            iconCultivo.Padding = new Padding(10, 0, 0, 0);
-            iconCultivo.Size = new Size(197, 50);
+            iconCultivo.Padding = new Padding(9, 0, 0, 0);
+            iconCultivo.Size = new Size(172, 38);
             iconCultivo.TabIndex = 3;
             iconCultivo.Text = "CULTIVOS \r\n";
             iconCultivo.TextAlign = ContentAlignment.MiddleLeft;
@@ -187,10 +218,11 @@
             iconEmpleado.IconColor = Color.White;
             iconEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconEmpleado.IconSize = 30;
-            iconEmpleado.Location = new Point(3, 293);
+            iconEmpleado.Location = new Point(3, 220);
+            iconEmpleado.Margin = new Padding(3, 2, 3, 2);
             iconEmpleado.Name = "iconEmpleado";
-            iconEmpleado.Padding = new Padding(10, 0, 0, 0);
-            iconEmpleado.Size = new Size(197, 50);
+            iconEmpleado.Padding = new Padding(9, 0, 0, 0);
+            iconEmpleado.Size = new Size(172, 38);
             iconEmpleado.TabIndex = 4;
             iconEmpleado.Text = "EMPLEADOS";
             iconEmpleado.TextAlign = ContentAlignment.MiddleLeft;
@@ -211,10 +243,11 @@
             iconMiterreno.IconColor = Color.White;
             iconMiterreno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMiterreno.IconSize = 30;
-            iconMiterreno.Location = new Point(3, 240);
+            iconMiterreno.Location = new Point(3, 180);
+            iconMiterreno.Margin = new Padding(3, 2, 3, 2);
             iconMiterreno.Name = "iconMiterreno";
-            iconMiterreno.Padding = new Padding(10, 0, 0, 0);
-            iconMiterreno.Size = new Size(197, 50);
+            iconMiterreno.Padding = new Padding(9, 0, 0, 0);
+            iconMiterreno.Size = new Size(172, 38);
             iconMiterreno.TabIndex = 3;
             iconMiterreno.Text = "MIS TERRENOS";
             iconMiterreno.TextAlign = ContentAlignment.MiddleLeft;
@@ -235,10 +268,11 @@
             iconInicio.IconColor = Color.White;
             iconInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconInicio.IconSize = 30;
-            iconInicio.Location = new Point(3, 187);
+            iconInicio.Location = new Point(3, 140);
+            iconInicio.Margin = new Padding(3, 2, 3, 2);
             iconInicio.Name = "iconInicio";
-            iconInicio.Padding = new Padding(10, 0, 0, 0);
-            iconInicio.Size = new Size(197, 50);
+            iconInicio.Padding = new Padding(9, 0, 0, 0);
+            iconInicio.Size = new Size(172, 38);
             iconInicio.TabIndex = 1;
             iconInicio.Text = "INICIO";
             iconInicio.TextAlign = ContentAlignment.MiddleLeft;
@@ -252,16 +286,18 @@
             Vistalogoli.Controls.Add(pictureBox1);
             Vistalogoli.Dock = DockStyle.Top;
             Vistalogoli.Location = new Point(0, 0);
+            Vistalogoli.Margin = new Padding(3, 2, 3, 2);
             Vistalogoli.Name = "Vistalogoli";
-            Vistalogoli.Size = new Size(200, 172);
+            Vistalogoli.Size = new Size(175, 130);
             Vistalogoli.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2026_09_24_184735;
-            pictureBox1.Location = new Point(10, 10);
+            pictureBox1.Location = new Point(9, 8);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(175, 144);
+            pictureBox1.Size = new Size(153, 108);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -272,7 +308,7 @@
             toolEmpleado.ForeColor = Color.FromArgb(0, 64, 0);
             toolEmpleado.Margin = new Padding(8, 6, 8, 6);
             toolEmpleado.Name = "toolEmpleado";
-            toolEmpleado.Size = new Size(95, 23);
+            toolEmpleado.Size = new Size(80, 19);
             toolEmpleado.Text = "Empleado:";
             // 
             // toolStripStatusLabel1
@@ -281,7 +317,7 @@
             toolStripStatusLabel1.ForeColor = Color.FromArgb(0, 64, 0);
             toolStripStatusLabel1.Margin = new Padding(8, 6, 8, 6);
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(41, 23);
+            toolStripStatusLabel1.Size = new Size(35, 19);
             toolStripStatusLabel1.Text = "Rol:";
             // 
             // statusStrip1
@@ -289,9 +325,10 @@
             statusStrip1.BackColor = Color.Honeydew;
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolEmpleado, toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(202, 638);
+            statusStrip1.Location = new Point(177, 478);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1060, 35);
+            statusStrip1.Padding = new Padding(1, 0, 12, 0);
+            statusStrip1.Size = new Size(929, 31);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -299,43 +336,32 @@
             // 
             panelContenedo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContenedo.BackColor = SystemColors.Window;
-            panelContenedo.Location = new Point(202, 0);
+            panelContenedo.Location = new Point(177, 97);
+            panelContenedo.Margin = new Padding(3, 2, 3, 2);
             panelContenedo.Name = "panelContenedo";
-            panelContenedo.Size = new Size(1055, 638);
+            panelContenedo.Size = new Size(923, 381);
             panelContenedo.TabIndex = 2;
             // 
-            // iconButton1
+            // panel2
             // 
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(128, 255, 128);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 10F);
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.File;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(4, 511);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(10, 0, 0, 0);
-            iconButton1.Size = new Size(197, 50);
-            iconButton1.TabIndex = 8;
-            iconButton1.Text = "REPORTES";
-            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
+            panel2.BackColor = Color.FromArgb(0, 64, 0);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(177, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(929, 100);
+            panel2.TabIndex = 1;
             // 
             // FrmAgroT
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1106, 509);
+            Controls.Add(panel2);
             Controls.Add(panelContenedo);
             Controls.Add(statusStrip1);
             Controls.Add(AgroT);
-            MinimumSize = new Size(1280, 720);
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(1122, 548);
             Name = "FrmAgroT";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgroTech";
@@ -369,5 +395,6 @@
         private Panel panelContenedo;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Panel panel2;
     }
 }

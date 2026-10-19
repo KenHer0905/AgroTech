@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +14,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
 {
     public partial class FrmEmpleadoListado : FrmBaseListado
     {
-        private readonly Empleado _empleadoBll = new();
+       private readonly Empleado _empleadoBll = new();
 
         public FrmEmpleadoListado()
         {
@@ -75,4 +75,4 @@ namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
             }
         }
     }
-}
+}*/

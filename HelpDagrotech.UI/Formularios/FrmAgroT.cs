@@ -59,7 +59,7 @@ namespace HelpDagrotech.UI.Formularios
 
         private void iconMiterreno_Click(object sender, EventArgs e)
         {
-
+            NavegacionHelper.AbrirFormulario(new FrmTerreno(), panelContenedo, ref formularioActivo, iconMiterreno);
         }
 
         private void iconCultivo_Click(object sender, EventArgs e)

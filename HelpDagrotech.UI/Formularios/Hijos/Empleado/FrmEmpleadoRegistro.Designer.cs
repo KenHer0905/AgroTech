@@ -1,4 +1,4 @@
-﻿namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
+﻿/*namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
 {
     partial class FrmEmpleadoRegistro
     {
@@ -133,4 +133,4 @@
         private Label label3;
         private Label label2;
     }
-}
+}*/
