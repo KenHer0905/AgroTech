@@ -449,6 +449,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Empleado";
             WindowState = FormWindowState.Maximized;
+            Load += FrmEmpelado_Load;
             paneEmpleado.ResumeLayout(false);
             paneEmpleado.PerformLayout();
             panel7.ResumeLayout(false);

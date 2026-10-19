@@ -44,7 +44,10 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             statusStrip1 = new StatusStrip();
             panelContenedo = new Panel();
+<<<<<<< Updated upstream
             panel2 = new Panel();
+=======
+>>>>>>> Stashed changes
             AgroT.SuspendLayout();
             panel1.SuspendLayout();
             Vistalogoli.SuspendLayout();
@@ -85,11 +88,18 @@
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
+<<<<<<< Updated upstream
             iconButton1.Location = new Point(4, 383);
             iconButton1.Margin = new Padding(3, 2, 3, 2);
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(9, 0, 0, 0);
             iconButton1.Size = new Size(172, 38);
+=======
+            iconButton1.Location = new Point(4, 511);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(10, 0, 0, 0);
+            iconButton1.Size = new Size(197, 50);
+>>>>>>> Stashed changes
             iconButton1.TabIndex = 8;
             iconButton1.Text = "REPORTES";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -342,6 +352,7 @@
             panelContenedo.Size = new Size(923, 381);
             panelContenedo.TabIndex = 2;
             // 
+<<<<<<< Updated upstream
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 64, 0);
@@ -351,6 +362,8 @@
             panel2.Size = new Size(929, 100);
             panel2.TabIndex = 1;
             // 
+=======
+>>>>>>> Stashed changes
             // FrmAgroT
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -367,6 +380,7 @@
             Text = "AgroTech";
             WindowState = FormWindowState.Maximized;
             FormClosing += FrmAgroT_FormClosing;
+            Load += FrmAgroT_Load;
             AgroT.ResumeLayout(false);
             panel1.ResumeLayout(false);
             Vistalogoli.ResumeLayout(false);

@@ -40,6 +40,7 @@
             lblmapaop = new Label();
             gMapAgroT = new GMap.NET.WindowsForms.GMapControl();
             panel1 = new Panel();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             lbltitulo = new Label();
@@ -61,7 +62,6 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lblRegistroSbra = new Label();
             label1 = new Label();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             paneldeCultivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel4.SuspendLayout();
@@ -194,6 +194,7 @@
             gMapAgroT.Size = new Size(10, 10);
             gMapAgroT.TabIndex = 11;
             gMapAgroT.Zoom = 0D;
+            gMapAgroT.Load += gMapAgroT_Load;
             // 
             // panel1
             // 
@@ -220,6 +221,23 @@
             panel1.Size = new Size(341, 617);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // iconButton2
+            // 
+            iconButton2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            iconButton2.BackColor = Color.SpringGreen;
+            iconButton2.ForeColor = Color.FromArgb(0, 64, 0);
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Save;
+            iconButton2.IconColor = Color.Black;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton2.Location = new Point(227, 478);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(109, 61);
+            iconButton2.TabIndex = 12;
+            iconButton2.Text = "Añadir Cultivo";
+            iconButton2.TextAlign = ContentAlignment.MiddleRight;
+            iconButton2.UseVisualStyleBackColor = false;
             // 
             // iconButton1
             // 
@@ -456,23 +474,6 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 20);
             label1.TabIndex = 0;
-            // 
-            // iconButton2
-            // 
-            iconButton2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            iconButton2.BackColor = Color.SpringGreen;
-            iconButton2.ForeColor = Color.FromArgb(0, 64, 0);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Save;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(227, 478);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(109, 61);
-            iconButton2.TabIndex = 12;
-            iconButton2.Text = "Añadir Cultivo";
-            iconButton2.TextAlign = ContentAlignment.MiddleRight;
-            iconButton2.UseVisualStyleBackColor = false;
             // 
             // FrmCultivo
             // 

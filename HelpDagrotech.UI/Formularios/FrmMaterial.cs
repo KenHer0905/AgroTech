@@ -21,5 +21,10 @@ namespace HelpDagrotech.UI.Formularios
         {
 
         }
+
+        private void IconGuardarm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

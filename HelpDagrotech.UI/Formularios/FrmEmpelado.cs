@@ -21,5 +21,10 @@ namespace HelpDagrotech.UI.Formularios
         {
 
         }
+
+        private void FrmEmpelado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

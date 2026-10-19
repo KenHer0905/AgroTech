@@ -106,5 +106,10 @@ namespace HelpDagrotech.UI.Formularios
         {
 
         }
+
+        private void gMapAgroT_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

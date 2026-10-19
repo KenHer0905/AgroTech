@@ -247,6 +247,7 @@
             IconGuardarm.Text = "Guardar";
             IconGuardarm.TextAlign = ContentAlignment.MiddleRight;
             IconGuardarm.UseVisualStyleBackColor = false;
+            IconGuardarm.Click += IconGuardarm_Click;
             // 
             // label10
             // 
