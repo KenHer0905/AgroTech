@@ -20,9 +20,9 @@ namespace HelpDagrotech.UI.Formularios
 
         }
 
-        private double latOriginal = 11.539626;
-        private double lngOriginal = -85.608108;
-        private GMapOverlay capaLotes;
+      //  private double latOriginal = 11.539626;
+       // private double lngOriginal = -85.608108;
+     //   private GMapOverlay capaLotes;
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -35,7 +35,7 @@ namespace HelpDagrotech.UI.Formularios
         }
         private void FrmMapa_Load(object sender, EventArgs e)
         {
-          
+
         }
         private void FrmCultivoIni_Load(object sender, EventArgs e)
         {
@@ -127,10 +127,11 @@ namespace HelpDagrotech.UI.Formularios
                 // 3. Añadir la capa y refrescar el mapa
                 gMapControl1.Overlays.Add(capaLotes);
                 gMapControl1.Refresh();
+                CargarDatosDashboard();
             }));
         }
 
-            // Evento que se ejecuta al hacer clic en cualquier parcela para hacer zoom en ella
+        // Evento que se ejecuta al hacer clic en cualquier parcela para hacer zoom en ella
         private void GMapControl1_OnPolygonClick(GMapPolygon polygon, MouseEventArgs e)
         {
             if (polygon.Points.Count > 0)
@@ -154,13 +155,48 @@ namespace HelpDagrotech.UI.Formularios
             gMapControl1.MinZoom = 16;
             gMapControl1.MaxZoom = 20;
             gMapControl1.Zoom = 16;
-        //    gMapControl1.Position = new PointLatLng(GetLatOriginal(), lngOriginal);
+            //    gMapControl1.Position = new PointLatLng(GetLatOriginal(), lngOriginal);
             gMapControl1.Refresh();
 
-           
+        }
+
+
+       private void CargarDatosDashboard()
+        {
+            // --- 1. CONFIGURAR Y CARGAR: MOVIMIENTO RECIENTE ---
+            if (dvgmovimientore.Columns.Count == 0)
+            {
+                dvgmovimientore.Columns.Add("FechaHora", "Fecha / Hora");
+                dvgmovimientore.Columns.Add("Accion", "Descripción del Movimiento");
+            }
+            dvgmovimientore.Rows.Clear();
+            dvgmovimientore.Rows.Add("10:15 AM", "Cosecha registrada en Parcela #3");
+            dvgmovimientore.Rows.Add("08:30 AM", "Riego automático iniciado en Parcela #1");
+            dvgmovimientore.Rows.Add("Ayer", "Mantenimiento preventivo en bodegas");
+
+            // --- 2. CONFIGURAR Y CARGAR: ALERTA RECIENTE ---
+            if (dvglaet.Columns.Count == 0)
+            {
+                dvglaet.Columns.Add("Nivel", "Estado");
+                dvglaet.Columns.Add("Mensaje", "Descripción de Alerta");
+            }
+            dvglaet.Rows.Clear();
+            dvglaet.Rows.Add("🔔 Media", "Revisar niveles de abono en Lote #2");
+
+            // --- 3. CONFIGURAR Y CARGAR: INSUMO CRÍTICO ---
+            if (dvginsumoc.Columns.Count == 0)
+            {
+                dvginsumoc.Columns.Add("Insumo", "Material / Insumo");
+                dvginsumoc.Columns.Add("Stock", "Cantidad Restante");
+            }
+            dvginsumoc.Rows.Clear();
+            dvginsumoc.Rows.Add("Urea", "2 sacos (Crítico)");
+            dvginsumoc.Rows.Add("Fertilizante NPK", "5 kg (Bajo)");
         }
     }
-}
+ }
+
+ 
     
  
     

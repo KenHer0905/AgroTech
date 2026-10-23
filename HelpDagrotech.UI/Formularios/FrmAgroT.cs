@@ -74,7 +74,7 @@ namespace HelpDagrotech.UI.Formularios
 
         private void iconEmpleado_Click(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconEmpleado);
+            NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconEmpleado );
         }
 
         private void FrmAgroT_Load(object sender, EventArgs e)
