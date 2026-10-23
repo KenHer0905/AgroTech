@@ -66,6 +66,7 @@
             txtmaterial = new TextBox();
             label1 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            panel8 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -77,6 +78,7 @@
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -109,6 +111,7 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Honeydew;
+            panel2.Controls.Add(panel8);
             panel2.Controls.Add(dgvmaterial);
             panel2.Controls.Add(iconPictureBox1);
             panel2.Controls.Add(iconcancelma);
@@ -116,7 +119,6 @@
             panel2.Controls.Add(label10);
             panel2.Controls.Add(panel7);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(comboBox2);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(inpixmas);
             panel2.Controls.Add(label7);
@@ -284,7 +286,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(0, 64, 0);
-            label9.Location = new Point(429, 395);
+            label9.Location = new Point(416, 378);
             label9.Name = "label9";
             label9.Size = new Size(128, 23);
             label9.TabIndex = 12;
@@ -294,7 +296,7 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Kg", "Lt" });
-            comboBox2.Location = new Point(429, 431);
+            comboBox2.Location = new Point(3, 3);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(212, 28);
             comboBox2.TabIndex = 11;
@@ -493,6 +495,15 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
+            // panel8
+            // 
+            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel8.Controls.Add(comboBox2);
+            panel8.Location = new Point(416, 404);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(217, 36);
+            panel8.TabIndex = 20;
+            // 
             // FrmMaterial
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -519,6 +530,7 @@
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -562,5 +574,6 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private Panel panel8;
     }
 }

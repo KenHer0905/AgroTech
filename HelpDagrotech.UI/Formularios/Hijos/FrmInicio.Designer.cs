@@ -87,13 +87,14 @@
             paneldeCultivo.Name = "paneldeCultivo";
             paneldeCultivo.Size = new Size(1037, 662);
             paneldeCultivo.TabIndex = 0;
+            paneldeCultivo.Paint += paneldeCultivo_Paint;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(21, 9);
+            label3.Location = new Point(23, 27);
             label3.Name = "label3";
             label3.Size = new Size(153, 23);
             label3.TabIndex = 12;
@@ -104,10 +105,10 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(670, 45);
+            dataGridView1.Location = new Point(670, 80);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(367, 617);
+            dataGridView1.Size = new Size(367, 582);
             dataGridView1.TabIndex = 12;
             // 
             // Column1
@@ -152,9 +153,9 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(lblmapaop);
             panel4.Controls.Add(gMapAgroT);
-            panel4.Location = new Point(339, 45);
+            panel4.Location = new Point(339, 80);
             panel4.Name = "panel4";
-            panel4.Size = new Size(334, 617);
+            panel4.Size = new Size(334, 582);
             panel4.TabIndex = 11;
             panel4.Paint += panel4_Paint;
             // 
@@ -216,9 +217,9 @@
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(lblRegistroSbra);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 45);
+            panel1.Location = new Point(0, 80);
             panel1.Name = "panel1";
-            panel1.Size = new Size(341, 617);
+            panel1.Size = new Size(341, 582);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -231,7 +232,7 @@
             iconButton2.IconColor = Color.Black;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(227, 478);
+            iconButton2.Location = new Point(227, 443);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(109, 61);
             iconButton2.TabIndex = 12;
@@ -248,7 +249,7 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(227, 545);
+            iconButton1.Location = new Point(227, 510);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(109, 61);
             iconButton1.TabIndex = 11;
@@ -263,7 +264,7 @@
             panel2.Controls.Add(lbltitulo);
             panel2.Controls.Add(lblsemillas);
             panel2.Controls.Add(lblCal);
-            panel2.Location = new Point(11, 502);
+            panel2.Location = new Point(11, 467);
             panel2.Name = "panel2";
             panel2.Size = new Size(207, 111);
             panel2.TabIndex = 9;
@@ -321,7 +322,7 @@
             panel3.Controls.Add(textBox1);
             panel3.Location = new Point(34, 367);
             panel3.Name = "panel3";
-            panel3.Size = new Size(114, 35);
+            panel3.Size = new Size(114, 0);
             panel3.TabIndex = 6;
             // 
             // textBox1
@@ -340,7 +341,7 @@
             panelcosechaes.Controls.Add(txtcosechaestim);
             panelcosechaes.Location = new Point(32, 277);
             panelcosechaes.Name = "panelcosechaes";
-            panelcosechaes.Size = new Size(250, 35);
+            panelcosechaes.Size = new Size(250, 0);
             panelcosechaes.TabIndex = 7;
             // 
             // txtcosechaestim
@@ -383,7 +384,7 @@
             panelvaridadse.Controls.Add(txtsemilava);
             panelvaridadse.Location = new Point(32, 193);
             panelvaridadse.Name = "panelvaridadse";
-            panelvaridadse.Size = new Size(250, 35);
+            panelvaridadse.Size = new Size(250, 0);
             panelvaridadse.TabIndex = 6;
             // 
             // txtsemilava
@@ -402,7 +403,7 @@
             panelterreno1.Controls.Add(txtterreno);
             panelterreno1.Location = new Point(32, 94);
             panelterreno1.Name = "panelterreno1";
-            panelterreno1.Size = new Size(250, 35);
+            panelterreno1.Size = new Size(250, 0);
             panelterreno1.TabIndex = 5;
             // 
             // txtterreno

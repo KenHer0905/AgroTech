@@ -54,7 +54,7 @@ namespace HelpDagrotech.UI.Formularios
 
         private void IconInicio_Click(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmBaseListado(), panelContenedo, ref formularioActivo, iconInicio);
+            NavegacionHelper.AbrirFormulario(new FrmCultivoIni(), panelContenedo, ref formularioActivo, iconInicio);
         }
 
         private void iconMiterreno_Click(object sender, EventArgs e)
@@ -64,23 +64,24 @@ namespace HelpDagrotech.UI.Formularios
 
         private void iconCultivo_Click(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmCultivo(), panelContenedo, ref formularioActivo, iconInicio);
+            NavegacionHelper.AbrirFormulario(new FrmCultivo(), panelContenedo, ref formularioActivo, iconCultivo);
         }
 
         private void iconMaterial_Click(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmMaterial(), panelContenedo, ref formularioActivo, iconInicio);
+            NavegacionHelper.AbrirFormulario(new FrmMaterial(), panelContenedo, ref formularioActivo, iconMaterial);
         }
 
         private void iconEmpleado_Click(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconInicio);
+            NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconEmpleado);
         }
 
         private void FrmAgroT_Load(object sender, EventArgs e)
         {
-
+          
         }
+    
     }
 }
  
