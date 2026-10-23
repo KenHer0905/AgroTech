@@ -54,14 +54,6 @@
             dataGridView2 = new DataGridView();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
-            panel9 = new Panel();
-            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            label10 = new Label();
-          
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            panel7 = new Panel();
-            label9 = new Label();
-            label5 = new Label();
             panel5 = new Panel();
             gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             label4 = new Label();
@@ -73,6 +65,21 @@
             label2 = new Label();
             panel10 = new Panel();
             label1 = new Label();
+            panel9 = new Panel();
+            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            label10 = new Label();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            panel7 = new Panel();
+            label9 = new Label();
+            label5 = new Label();
+            panel6 = new Panel();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            label11 = new Label();
+            panel13 = new Panel();
+            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            panel14 = new Panel();
+            label12 = new Label();
+            label13 = new Label();
             AgroT.SuspendLayout();
             panel1.SuspendLayout();
             Vistalogoli.SuspendLayout();
@@ -86,17 +93,21 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
-           
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
-            panel7.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel10.SuspendLayout();
+            panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            panel7.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
+            panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
+            panel14.SuspendLayout();
             SuspendLayout();
             // 
             // AgroT
@@ -115,7 +126,7 @@
             AgroT.Dock = DockStyle.Left;
             AgroT.Location = new Point(0, 0);
             AgroT.Name = "AgroT";
-            AgroT.Size = new Size(202, 679);
+            AgroT.Size = new Size(202, 668);
             AgroT.TabIndex = 0;
             // 
             // iconButton1
@@ -145,7 +156,7 @@
             // 
             panel1.Controls.Add(bttSalir);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 610);
+            panel1.Location = new Point(0, 599);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 67);
             panel1.TabIndex = 7;
@@ -360,9 +371,9 @@
             statusStrip1.BackColor = Color.Honeydew;
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolEmpleado, toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(202, 644);
+            statusStrip1.Location = new Point(202, 633);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1297, 35);
+            statusStrip1.Size = new Size(1060, 35);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -373,21 +384,21 @@
             panelContenedo.Controls.Add(panel3);
             panelContenedo.Location = new Point(202, 1);
             panelContenedo.Name = "panelContenedo";
-            panelContenedo.Size = new Size(1290, 636);
+            panelContenedo.Size = new Size(1053, 625);
             panelContenedo.TabIndex = 2;
             // 
             // panel3
             // 
             panel3.AutoSize = true;
             panel3.BackColor = Color.FromArgb(224, 224, 224);
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panel13);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(panel12);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(panel11);
             panel3.Controls.Add(panel2);
-      
-//panel3.Controls.Add(panel6);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(panel8);
@@ -395,7 +406,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1290, 636);
+            panel3.Size = new Size(1053, 625);
             panel3.TabIndex = 1;
             // 
             // label8
@@ -487,94 +498,6 @@
             dataGridView1.Size = new Size(462, 196);
             dataGridView1.TabIndex = 2;
             // 
-            // panel9
-            // 
-            panel9.BackColor = Color.FromArgb(255, 255, 128);
-            panel9.BorderStyle = BorderStyle.Fixed3D;
-            panel9.Controls.Add(iconPictureBox4);
-            panel9.Controls.Add(label10);
-            panel9.Font = new Font("Algerian", 10.2F);
-            panel9.Location = new Point(1017, 77);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(270, 86);
-            panel9.TabIndex = 5;
-            // 
-            // iconPictureBox4
-            // 
-            iconPictureBox4.BackColor = Color.FromArgb(255, 255, 128);
-            iconPictureBox4.ForeColor = Color.Green;
-            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
-            iconPictureBox4.IconColor = Color.Green;
-            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 40;
-            iconPictureBox4.Location = new Point(20, 3);
-            iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(40, 40);
-            iconPictureBox4.TabIndex = 5;
-            iconPictureBox4.TabStop = false;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Algerian", 10.2F);
-            label10.ForeColor = Color.Green;
-            label10.Location = new Point(57, 13);
-            label10.Name = "label10";
-            label10.Size = new Size(104, 19);
-            label10.TabIndex = 4;
-            label10.Text = "Ganancias";
-            
-            // 
-        ;
-
-           
-           
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.DarkSeaGreen;
-            iconPictureBox3.ForeColor = Color.Green;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            iconPictureBox3.IconColor = Color.Green;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 40;
-            iconPictureBox3.Location = new Point(21, 3);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(40, 40);
-            iconPictureBox3.TabIndex = 4;
-            iconPictureBox3.TabStop = false;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.DarkSeaGreen;
-            panel7.BorderStyle = BorderStyle.Fixed3D;
-            panel7.Controls.Add(label9);
-            panel7.Font = new Font("Algerian", 10.2F);
-            panel7.Location = new Point(-2, -2);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(0, 0);
-            panel7.TabIndex = 5;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Algerian", 10.2F);
-            label9.Location = new Point(39, 13);
-            label9.Name = "label9";
-            label9.Size = new Size(134, 19);
-            label9.TabIndex = 4;
-            label9.Text = "Cosecha Lista";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Algerian", 10.2F);
-            label5.ForeColor = Color.Green;
-            label5.Location = new Point(67, 11);
-            label5.Name = "label5";
-            label5.Size = new Size(134, 19);
-            label5.TabIndex = 4;
-            label5.Text = "Cosecha Lista";
-            // 
             // panel5
             // 
             panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -583,7 +506,7 @@
             panel5.Font = new Font("Algerian", 10.2F);
             panel5.Location = new Point(12, 224);
             panel5.Name = "panel5";
-            panel5.Size = new Size(2055, 276);
+            panel5.Size = new Size(1818, 265);
             panel5.TabIndex = 3;
             // 
             // gMapControl1
@@ -609,7 +532,7 @@
             gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
             gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Size = new Size(2773, 246);
+            gMapControl1.Size = new Size(2536, 246);
             gMapControl1.TabIndex = 4;
             gMapControl1.Zoom = 0D;
             // 
@@ -702,7 +625,7 @@
             panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1290, 61);
+            panel10.Size = new Size(1053, 61);
             panel10.TabIndex = 0;
             // 
             // label1
@@ -716,11 +639,190 @@
             label1.TabIndex = 0;
             label1.Text = "INICIO";
             // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(255, 255, 128);
+            panel9.BorderStyle = BorderStyle.Fixed3D;
+            panel9.Controls.Add(iconPictureBox4);
+            panel9.Controls.Add(label10);
+            panel9.Font = new Font("Algerian", 10.2F);
+            panel9.Location = new Point(1017, 77);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(270, 86);
+            panel9.TabIndex = 5;
+            // 
+            // iconPictureBox4
+            // 
+            iconPictureBox4.BackColor = Color.FromArgb(255, 255, 128);
+            iconPictureBox4.ForeColor = Color.Green;
+            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            iconPictureBox4.IconColor = Color.Green;
+            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox4.IconSize = 40;
+            iconPictureBox4.Location = new Point(20, 3);
+            iconPictureBox4.Name = "iconPictureBox4";
+            iconPictureBox4.Size = new Size(40, 40);
+            iconPictureBox4.TabIndex = 5;
+            iconPictureBox4.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Algerian", 10.2F);
+            label10.ForeColor = Color.Green;
+            label10.Location = new Point(57, 13);
+            label10.Name = "label10";
+            label10.Size = new Size(104, 19);
+            label10.TabIndex = 4;
+            label10.Text = "Ganancias";
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.DarkSeaGreen;
+            iconPictureBox3.ForeColor = Color.Green;
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            iconPictureBox3.IconColor = Color.Green;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 40;
+            iconPictureBox3.Location = new Point(21, 3);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(40, 40);
+            iconPictureBox3.TabIndex = 4;
+            iconPictureBox3.TabStop = false;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.DarkSeaGreen;
+            panel7.BorderStyle = BorderStyle.Fixed3D;
+            panel7.Controls.Add(label9);
+            panel7.Font = new Font("Algerian", 10.2F);
+            panel7.Location = new Point(-2, -2);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(0, 0);
+            panel7.TabIndex = 5;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Algerian", 10.2F);
+            label9.Location = new Point(39, 13);
+            label9.Name = "label9";
+            label9.Size = new Size(134, 19);
+            label9.TabIndex = 4;
+            label9.Text = "Cosecha Lista";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Algerian", 10.2F);
+            label5.ForeColor = Color.Green;
+            label5.Location = new Point(67, 11);
+            label5.Name = "label5";
+            label5.Size = new Size(134, 19);
+            label5.TabIndex = 4;
+            label5.Text = "Cosecha Lista";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(255, 255, 128);
+            panel6.BorderStyle = BorderStyle.Fixed3D;
+            panel6.Controls.Add(iconPictureBox5);
+            panel6.Controls.Add(label11);
+            panel6.Font = new Font("Algerian", 10.2F);
+            panel6.Location = new Point(1135, 77);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(270, 86);
+            panel6.TabIndex = 10;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.FromArgb(255, 255, 128);
+            iconPictureBox5.ForeColor = Color.Green;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            iconPictureBox5.IconColor = Color.Green;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 40;
+            iconPictureBox5.Location = new Point(11, -2);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(40, 40);
+            iconPictureBox5.TabIndex = 5;
+            iconPictureBox5.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Algerian", 10.2F);
+            label11.ForeColor = Color.Green;
+            label11.Location = new Point(57, 13);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 19);
+            label11.TabIndex = 4;
+            label11.Text = "Ganancias";
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.DarkSeaGreen;
+            panel13.BorderStyle = BorderStyle.Fixed3D;
+            panel13.Controls.Add(iconPictureBox6);
+            panel13.Controls.Add(panel14);
+            panel13.Controls.Add(label13);
+            panel13.Font = new Font("Algerian", 10.2F);
+            panel13.Location = new Point(745, 77);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(270, 86);
+            panel13.TabIndex = 9;
+            // 
+            // iconPictureBox6
+            // 
+            iconPictureBox6.BackColor = Color.DarkSeaGreen;
+            iconPictureBox6.ForeColor = Color.Green;
+            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            iconPictureBox6.IconColor = Color.Green;
+            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox6.IconSize = 40;
+            iconPictureBox6.Location = new Point(16, 3);
+            iconPictureBox6.Name = "iconPictureBox6";
+            iconPictureBox6.Size = new Size(40, 40);
+            iconPictureBox6.TabIndex = 6;
+            iconPictureBox6.TabStop = false;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.DarkSeaGreen;
+            panel14.BorderStyle = BorderStyle.Fixed3D;
+            panel14.Controls.Add(label12);
+            panel14.Font = new Font("Algerian", 10.2F);
+            panel14.Location = new Point(-2, -2);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(0, 0);
+            panel14.TabIndex = 5;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Algerian", 10.2F);
+            label12.Location = new Point(39, 13);
+            label12.Name = "label12";
+            label12.Size = new Size(134, 19);
+            label12.TabIndex = 4;
+            label12.Text = "Cosecha Lista";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Algerian", 10.2F);
+            label13.ForeColor = Color.Green;
+            label13.Location = new Point(76, 13);
+            label13.Name = "label13";
+            label13.Size = new Size(134, 19);
+            label13.TabIndex = 4;
+            label13.Text = "Cosecha Lista";
+            // 
             // FrmAgroT
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1499, 679);
+            ClientSize = new Size(1262, 668);
             Controls.Add(panelContenedo);
             Controls.Add(statusStrip1);
             Controls.Add(AgroT);
@@ -747,13 +849,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
-          
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel4.ResumeLayout(false);
@@ -764,6 +859,20 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -815,5 +924,13 @@
         private DataGridView dataGridView3;
         private DataGridView dataGridView2;
         private DataGridView dataGridView1;
+        private Panel panel6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private Label label11;
+        private Panel panel13;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private Panel panel14;
+        private Label label12;
+        private Label label13;
     }
 }

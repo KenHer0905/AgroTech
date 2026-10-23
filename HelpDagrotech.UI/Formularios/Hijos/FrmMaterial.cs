@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDAgroTech.Bll.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,8 +25,9 @@ namespace HelpDagrotech.UI.Formularios
 
         }
 
-        private void IconGuardarm_Click(object sender, EventArgs e)
+        private async void IconGuardarm_Click(object sender, EventArgs e)
         {
+            // Validaciones básicas
             if (string.IsNullOrWhiteSpace(txtmaterial.Text) ||
                 string.IsNullOrWhiteSpace(txtminimost.Text) ||
                 string.IsNullOrWhiteSpace(txtxprecio.Text))
@@ -36,31 +38,20 @@ namespace HelpDagrotech.UI.Formularios
 
             try
             {
-                
-                string conexionString = "Server=.; Database=Agrotechdb; Integrated Security=true;";
-                
+                MaterialBll materialBll = new MaterialBll();
 
-                using (System.Data.SqlClient.SqlConnection conexion = new System.Data.SqlClient.SqlConnection(conexionString))
-                {
-                    conexion.Open();
+                int idCategoriaSeleccionada = txtCategoriamate.SelectedValue != null ? Convert.ToInt32(txtCategoriamate.SelectedValue) : 1;
 
-                    string query = "INSERT INTO Material (Nombre_material, Id_Categoria, Unidad_material, Stock, Stock_minimo, Precio) " +
-                                   "VALUES (@nombre, @categoria, @unidad, @stock, @stockMin, @precio)";
+                await materialBll.InsertarMaterialAsync(
+                    txtmaterial.Text,
+                    idCategoriaSeleccionada, 
+                    txtunidadmedida.Text,
+                    Convert.ToDecimal(txtstock.Text),
+                    Convert.ToDecimal(txtminimost.Text),
+                    Convert.ToDecimal(txtxprecio.Text)
+                );
 
-                    using (System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@nombre", txtmaterial.Text);
-                        cmd.Parameters.AddWithValue("@categoria", 1);
-                        cmd.Parameters.AddWithValue("@unidad", txtunidadmedida.Text);
-                        cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(txtstock.Text));
-                        cmd.Parameters.AddWithValue("@stockMin", Convert.ToInt32(txtminimost.Text));
-                        cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(txtxprecio.Text));
-
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-
-               
+                // para mirarlo en el data griew
                 dgvmaterial.Rows.Add(txtmaterial.Text, txtCategoriamate.Text, txtdescrip.Text, txtstock.Text, txtminimost.Text, txtxprecio.Text, txtunidadmedida.Text);
 
                 MessageBox.Show("Material registrado correctamente en la base de datos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,7 +59,7 @@ namespace HelpDagrotech.UI.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error original de SQL: " + ex.InnerException?.Message ?? ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -93,18 +84,27 @@ namespace HelpDagrotech.UI.Formularios
 
         private void CargarCategoriasYUnidades()
         {
-           
-            txtCategoriamate.Items.Clear();
-            txtCategoriamate.Items.Add("Fertilizantes");
-            txtCategoriamate.Items.Add("Semillas");
-            txtCategoriamate.Items.Add("Agroquímicos");
-            txtCategoriamate.Items.Add("Herramientas");
+
+        {
+            Dictionary<int, string> categorias = new Dictionary<int, string>()
+            {
+                { 1, "Fertilizantes" },
+                { 2, "Semillas" },
+                { 3, "Agroquímicos" },
+                { 4, "Herramientas" }
+            };
+
+            txtCategoriamate.DataSource = new BindingSource(categorias, null);
+            txtCategoriamate.DisplayMember = "Value";
+            txtCategoriamate.ValueMember = "Key";
+            txtCategoriamate.SelectedIndex = -1;
 
             txtunidadmedida.Items.Clear();
             txtunidadmedida.Items.Add("Kilogramos (kg)");
             txtunidadmedida.Items.Add("Litros (L)");
             txtunidadmedida.Items.Add("Sacos");
             txtunidadmedida.Items.Add("Unidades");
+        }
         }
 
         private void iconcancelma_Click(object sender, EventArgs e)
