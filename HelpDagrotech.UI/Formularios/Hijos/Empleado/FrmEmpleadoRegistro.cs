@@ -62,5 +62,15 @@ namespace HelpDagrotech.UI.Formularios.Hijos.Empleado
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void PanelFER_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }*/

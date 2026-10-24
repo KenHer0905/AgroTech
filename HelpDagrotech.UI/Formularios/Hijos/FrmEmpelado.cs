@@ -216,6 +216,7 @@ namespace HelpDagrotech.UI.Formularios
 
         }
 
+
             private async void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
             try
@@ -283,8 +284,6 @@ namespace HelpDagrotech.UI.Formularios
             BtnGuardarEmpleado.Enabled = false;
 
         }
-
-
     }
 
 }

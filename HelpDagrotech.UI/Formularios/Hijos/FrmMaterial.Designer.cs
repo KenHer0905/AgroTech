@@ -31,6 +31,8 @@
             panel1 = new Panel();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
+            panel8 = new Panel();
+            txtunidadmedida = new ComboBox();
             dgvmaterial = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -46,7 +48,6 @@
             panel7 = new Panel();
             txtxprecio = new TextBox();
             label9 = new Label();
-            comboBox2 = new ComboBox();
             label8 = new Label();
             inpixmas = new FontAwesome.Sharp.IconPictureBox();
             label7 = new Label();
@@ -55,7 +56,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            txtCategoriamate = new ComboBox();
             panel6 = new Panel();
             txtminimost = new TextBox();
             panel5 = new Panel();
@@ -69,6 +70,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             panel2.SuspendLayout();
+            panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvmaterial).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel7.SuspendLayout();
@@ -109,6 +111,7 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Honeydew;
+            panel2.Controls.Add(panel8);
             panel2.Controls.Add(dgvmaterial);
             panel2.Controls.Add(iconPictureBox1);
             panel2.Controls.Add(iconcancelma);
@@ -116,7 +119,6 @@
             panel2.Controls.Add(label10);
             panel2.Controls.Add(panel7);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(comboBox2);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(inpixmas);
             panel2.Controls.Add(label7);
@@ -125,7 +127,7 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(txtCategoriamate);
             panel2.Controls.Add(panel6);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
@@ -134,6 +136,24 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1013, 515);
             panel2.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel8.Controls.Add(txtunidadmedida);
+            panel8.Location = new Point(416, 404);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(217, 36);
+            panel8.TabIndex = 20;
+            // 
+            // txtunidadmedida
+            // 
+            txtunidadmedida.FormattingEnabled = true;
+            txtunidadmedida.Items.AddRange(new object[] { "Kg", "Lt" });
+            txtunidadmedida.Location = new Point(3, 3);
+            txtunidadmedida.Name = "txtunidadmedida";
+            txtunidadmedida.Size = new Size(212, 28);
+            txtunidadmedida.TabIndex = 11;
             // 
             // dgvmaterial
             // 
@@ -231,6 +251,7 @@
             iconcancelma.TabIndex = 17;
             iconcancelma.Text = "Cancelar";
             iconcancelma.UseVisualStyleBackColor = false;
+            iconcancelma.Click += iconcancelma_Click;
             // 
             // IconGuardarm
             // 
@@ -247,6 +268,7 @@
             IconGuardarm.Text = "Guardar";
             IconGuardarm.TextAlign = ContentAlignment.MiddleRight;
             IconGuardarm.UseVisualStyleBackColor = false;
+            IconGuardarm.Click += IconGuardarm_Click;
             // 
             // label10
             // 
@@ -283,20 +305,11 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(0, 64, 0);
-            label9.Location = new Point(429, 395);
+            label9.Location = new Point(416, 378);
             label9.Name = "label9";
             label9.Size = new Size(128, 23);
             label9.TabIndex = 12;
             label9.Text = "Unidad Medida";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Kg", "Lt" });
-            comboBox2.Location = new Point(429, 431);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(212, 28);
-            comboBox2.TabIndex = 11;
             // 
             // label8
             // 
@@ -325,6 +338,7 @@
             inpixmas.SizeMode = PictureBoxSizeMode.CenterImage;
             inpixmas.TabIndex = 9;
             inpixmas.TabStop = false;
+            inpixmas.Click += inpixmas_Click;
             // 
             // label7
             // 
@@ -397,16 +411,16 @@
             label2.TabIndex = 4;
             label2.Text = "Registrar Material";
             // 
-            // comboBox1
+            // txtCategoriamate
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Fertilizante", "Urea", "Pesticidas" });
-            comboBox1.Location = new Point(373, 121);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(212, 28);
-            comboBox1.TabIndex = 3;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            txtCategoriamate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCategoriamate.FormattingEnabled = true;
+            txtCategoriamate.Items.AddRange(new object[] { "Fertilizante", "Urea", "Pesticidas" });
+            txtCategoriamate.Location = new Point(373, 121);
+            txtCategoriamate.Name = "txtCategoriamate";
+            txtCategoriamate.Size = new Size(212, 28);
+            txtCategoriamate.TabIndex = 3;
+            txtCategoriamate.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // panel6
             // 
@@ -500,11 +514,13 @@
             Controls.Add(panel1);
             Name = "FrmMaterial";
             Text = "FrmMaterial";
+            Load += FrmMaterial_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvmaterial).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel7.ResumeLayout(false);
@@ -525,7 +541,7 @@
 
         private Panel panel1;
         private Panel panel2;
-        private ComboBox comboBox1;
+        private ComboBox txtCategoriamate;
         private Panel panel6;
         private Panel panel5;
         private Panel panel4;
@@ -544,7 +560,7 @@
         private Label label10;
         private Panel panel7;
         private Label label9;
-        private ComboBox comboBox2;
+        private ComboBox txtunidadmedida;
         private TextBox txtmaterial;
         private TextBox txtxprecio;
         private TextBox txtminimost;
@@ -561,5 +577,6 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private Panel panel8;
     }
 }
