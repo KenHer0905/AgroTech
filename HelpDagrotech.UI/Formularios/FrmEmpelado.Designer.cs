@@ -1,4 +1,5 @@
-﻿namespace HelpDagrotech.UI.Formularios
+﻿
+namespace HelpDagrotech.UI.Formularios
 {
     partial class FrmEmpelado
     {
@@ -28,34 +29,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            paneEmpleado = new Panel();
+            components = new System.ComponentModel.Container();
+            dgvlistadoEmpleado = new DataGridView();
+            label1 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel7 = new Panel();
             txtbuscaremplea = new TextBox();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
+            paneEmpleado = new Panel();
             panel1 = new Panel();
+            btnEditarEmpleado = new FontAwesome.Sharp.IconButton();
+            BtnGuardarEmpleado = new FontAwesome.Sharp.IconButton();
+            label9 = new Label();
+            panel8 = new Panel();
+            conRol = new ComboBox();
+            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
+            conEstado = new ComboBox();
             panel6 = new Panel();
-            textBox4 = new TextBox();
+            txtcontrasena = new TextBox();
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             panel5 = new Panel();
-            textBox3 = new TextBox();
+            txtcedula = new TextBox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             panel4 = new Panel();
-            textBox2 = new TextBox();
+            txttelefono = new TextBox();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             panel3 = new Panel();
-            textBox5 = new TextBox();
+            txtFechanacimiento = new DateTimePicker();
             iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
-            textBox1 = new TextBox();
+            txtNombreEmple = new TextBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label8 = new Label();
             label7 = new Label();
@@ -64,12 +67,16 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            paneEmpleado.SuspendLayout();
+            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            IconError = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)dgvlistadoEmpleado).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            paneEmpleado.SuspendLayout();
             panel1.SuspendLayout();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             panel5.SuspendLayout();
@@ -80,39 +87,70 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)IconError).BeginInit();
             SuspendLayout();
             // 
-            // paneEmpleado
+            // dgvlistadoEmpleado
             // 
-            paneEmpleado.BackColor = Color.FromArgb(0, 64, 0);
-            paneEmpleado.Controls.Add(panel7);
-            paneEmpleado.Controls.Add(iconPictureBox1);
-            paneEmpleado.Controls.Add(label1);
-            paneEmpleado.Controls.Add(dataGridView1);
-            paneEmpleado.Controls.Add(panel1);
-            paneEmpleado.Dock = DockStyle.Fill;
-            paneEmpleado.Location = new Point(0, 0);
-            paneEmpleado.Name = "paneEmpleado";
-            paneEmpleado.Size = new Size(1037, 591);
-            paneEmpleado.TabIndex = 0;
+            dgvlistadoEmpleado.AllowUserToAddRows = false;
+            dgvlistadoEmpleado.AllowUserToDeleteRows = false;
+            dgvlistadoEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvlistadoEmpleado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvlistadoEmpleado.Location = new Point(438, 75);
+            dgvlistadoEmpleado.Margin = new Padding(3, 2, 3, 2);
+            dgvlistadoEmpleado.Name = "dgvlistadoEmpleado";
+            dgvlistadoEmpleado.ReadOnly = true;
+            dgvlistadoEmpleado.RowHeadersWidth = 51;
+            dgvlistadoEmpleado.Size = new Size(470, 452);
+            dgvlistadoEmpleado.TabIndex = 1;
+            dgvlistadoEmpleado.CellContentClick += dgvlistadoEmpleado_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(53, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(124, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Registro De Empelado";
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.FromArgb(0, 64, 0);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
+            iconPictureBox1.IconColor = Color.White;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 30;
+            iconPictureBox1.Location = new Point(18, 20);
+            iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(35, 30);
+            iconPictureBox1.TabIndex = 3;
+            iconPictureBox1.TabStop = false;
             // 
             // panel7
             // 
             panel7.Controls.Add(txtbuscaremplea);
             panel7.Controls.Add(iconPictureBox7);
-            panel7.Location = new Point(664, 26);
+            panel7.Location = new Point(581, 20);
+            panel7.Margin = new Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(325, 48);
+            panel7.Size = new Size(284, 36);
             panel7.TabIndex = 8;
             // 
             // txtbuscaremplea
             // 
             txtbuscaremplea.BackColor = Color.FromArgb(0, 64, 0);
-            txtbuscaremplea.Location = new Point(49, 8);
+            txtbuscaremplea.Location = new Point(43, 6);
+            txtbuscaremplea.Margin = new Padding(3, 2, 3, 2);
             txtbuscaremplea.Name = "txtbuscaremplea";
             txtbuscaremplea.PlaceholderText = "Buscar empleado";
-            txtbuscaremplea.Size = new Size(259, 27);
+            txtbuscaremplea.Size = new Size(227, 23);
             txtbuscaremplea.TabIndex = 1;
+            txtbuscaremplea.TextChanged += txtbuscaremplea_TextChanged;
             // 
             // iconPictureBox7
             // 
@@ -121,92 +159,40 @@
             iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Search;
             iconPictureBox7.IconColor = SystemColors.ControlDarkDark;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox7.IconSize = 43;
+            iconPictureBox7.IconSize = 36;
             iconPictureBox7.Location = new Point(0, 0);
+            iconPictureBox7.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox7.Name = "iconPictureBox7";
-            iconPictureBox7.Size = new Size(43, 48);
+            iconPictureBox7.Size = new Size(38, 36);
             iconPictureBox7.TabIndex = 0;
             iconPictureBox7.TabStop = false;
             // 
-            // iconPictureBox1
+            // paneEmpleado
             // 
-            iconPictureBox1.BackColor = Color.FromArgb(0, 64, 0);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
-            iconPictureBox1.IconColor = Color.White;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 40;
-            iconPictureBox1.Location = new Point(20, 26);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(40, 40);
-            iconPictureBox1.TabIndex = 3;
-            iconPictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(61, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 20);
-            label1.TabIndex = 2;
-            label1.Text = "Registro De Empelado";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dataGridView1.Location = new Point(500, 100);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(537, 491);
-            dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "NombreEmpelado";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Telefono";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Estado";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Cedula";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Contraseña";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Fecha Nacimiento";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.Width = 125;
+            paneEmpleado.BackColor = Color.FromArgb(0, 64, 0);
+            paneEmpleado.Controls.Add(panel7);
+            paneEmpleado.Controls.Add(iconPictureBox1);
+            paneEmpleado.Controls.Add(label1);
+            paneEmpleado.Controls.Add(dgvlistadoEmpleado);
+            paneEmpleado.Controls.Add(panel1);
+            paneEmpleado.Dock = DockStyle.Fill;
+            paneEmpleado.Location = new Point(0, 0);
+            paneEmpleado.Margin = new Padding(3, 2, 3, 2);
+            paneEmpleado.Name = "paneEmpleado";
+            paneEmpleado.Size = new Size(907, 527);
+            paneEmpleado.TabIndex = 0;
+            paneEmpleado.Paint += paneEmpleado_Paint;
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel1.AutoSize = true;
             panel1.BackColor = Color.Honeydew;
+            panel1.Controls.Add(btnEditarEmpleado);
+            panel1.Controls.Add(BtnGuardarEmpleado);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(panel8);
+            panel1.Controls.Add(conEstado);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel4);
@@ -219,26 +205,112 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(0, 100);
+            panel1.Controls.Add(iconPictureBox8);
+            panel1.Location = new Point(0, 75);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(505, 491);
+            panel1.Size = new Size(442, 452);
             panel1.TabIndex = 0;
+            // 
+            // btnEditarEmpleado
+            // 
+            btnEditarEmpleado.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEditarEmpleado.FlatStyle = FlatStyle.Popup;
+            btnEditarEmpleado.Font = new Font("Segoe UI Black", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditarEmpleado.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEditarEmpleado.IconColor = Color.Black;
+            btnEditarEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditarEmpleado.Location = new Point(234, 379);
+            btnEditarEmpleado.Name = "btnEditarEmpleado";
+            btnEditarEmpleado.Size = new Size(148, 61);
+            btnEditarEmpleado.TabIndex = 14;
+            btnEditarEmpleado.Text = "Editar Información";
+            btnEditarEmpleado.UseVisualStyleBackColor = true;
+            btnEditarEmpleado.Click += btnEditarEmpleado_Click;
+            // 
+            // BtnGuardarEmpleado
+            // 
+            BtnGuardarEmpleado.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BtnGuardarEmpleado.FlatStyle = FlatStyle.Popup;
+            BtnGuardarEmpleado.Font = new Font("Segoe UI Black", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnGuardarEmpleado.IconChar = FontAwesome.Sharp.IconChar.None;
+            BtnGuardarEmpleado.IconColor = Color.Black;
+            BtnGuardarEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnGuardarEmpleado.Location = new Point(42, 379);
+            BtnGuardarEmpleado.Name = "BtnGuardarEmpleado";
+            BtnGuardarEmpleado.Size = new Size(148, 61);
+            BtnGuardarEmpleado.TabIndex = 13;
+            BtnGuardarEmpleado.Text = "Guardar información";
+            BtnGuardarEmpleado.UseVisualStyleBackColor = true;
+            BtnGuardarEmpleado.Click += BtnGuardarEmpleado_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(35, 332);
+            label9.Name = "label9";
+            label9.Size = new Size(89, 15);
+            label9.TabIndex = 12;
+            label9.Text = "Rol del Usuario:";
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(conRol);
+            panel8.Controls.Add(iconPictureBox9);
+            panel8.Location = new Point(138, 325);
+            panel8.Margin = new Padding(3, 2, 3, 2);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(262, 28);
+            panel8.TabIndex = 11;
+            // 
+            // conRol
+            // 
+            conRol.AutoCompleteCustomSource.AddRange(new string[] { "Admin" });
+            conRol.FormattingEnabled = true;
+            conRol.Location = new Point(40, 3);
+            conRol.Name = "conRol";
+            conRol.Size = new Size(189, 23);
+            conRol.TabIndex = 14;
+            // 
+            // iconPictureBox9
+            // 
+            iconPictureBox9.BackColor = Color.Honeydew;
+            iconPictureBox9.ForeColor = SystemColors.ControlText;
+            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
+            iconPictureBox9.IconColor = SystemColors.ControlText;
+            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox9.Location = new Point(0, 0);
+            iconPictureBox9.Margin = new Padding(3, 2, 3, 2);
+            iconPictureBox9.Name = "iconPictureBox9";
+            iconPictureBox9.Size = new Size(35, 32);
+            iconPictureBox9.TabIndex = 12;
+            iconPictureBox9.TabStop = false;
+            // 
+            // conEstado
+            // 
+            conEstado.FormattingEnabled = true;
+            conEstado.Location = new Point(178, 149);
+            conEstado.Name = "conEstado";
+            conEstado.Size = new Size(184, 23);
+            conEstado.TabIndex = 10;
             // 
             // panel6
             // 
-            panel6.Controls.Add(textBox4);
+            panel6.Controls.Add(txtcontrasena);
             panel6.Controls.Add(iconPictureBox5);
-            panel6.Location = new Point(158, 309);
+            panel6.Location = new Point(138, 232);
+            panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(262, 38);
+            panel6.Size = new Size(262, 28);
             panel6.TabIndex = 8;
             // 
-            // textBox4
+            // txtcontrasena
             // 
-            textBox4.Location = new Point(49, 8);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(210, 27);
-            textBox4.TabIndex = 12;
+            txtcontrasena.Location = new Point(43, 6);
+            txtcontrasena.Margin = new Padding(3, 2, 3, 2);
+            txtcontrasena.Name = "txtcontrasena";
+            txtcontrasena.Size = new Size(184, 23);
+            txtcontrasena.TabIndex = 12;
             // 
             // iconPictureBox5
             // 
@@ -247,28 +319,30 @@
             iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             iconPictureBox5.IconColor = SystemColors.ControlText;
             iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 40;
             iconPictureBox5.Location = new Point(0, 0);
+            iconPictureBox5.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(40, 43);
+            iconPictureBox5.Size = new Size(35, 32);
             iconPictureBox5.TabIndex = 11;
             iconPictureBox5.TabStop = false;
             // 
             // panel5
             // 
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(txtcedula);
             panel5.Controls.Add(iconPictureBox4);
-            panel5.Location = new Point(158, 247);
+            panel5.Location = new Point(138, 185);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(262, 38);
+            panel5.Size = new Size(262, 28);
             panel5.TabIndex = 9;
             // 
-            // textBox3
+            // txtcedula
             // 
-            textBox3.Location = new Point(46, 8);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(210, 27);
-            textBox3.TabIndex = 11;
+            txtcedula.Location = new Point(40, 6);
+            txtcedula.Margin = new Padding(3, 2, 3, 2);
+            txtcedula.Name = "txtcedula";
+            txtcedula.Size = new Size(184, 23);
+            txtcedula.TabIndex = 11;
             // 
             // iconPictureBox4
             // 
@@ -277,28 +351,31 @@
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Vcard;
             iconPictureBox4.IconColor = SystemColors.ControlText;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 40;
+            iconPictureBox4.IconSize = 30;
             iconPictureBox4.Location = new Point(0, -2);
+            iconPictureBox4.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(40, 40);
+            iconPictureBox4.Size = new Size(35, 30);
             iconPictureBox4.TabIndex = 10;
             iconPictureBox4.TabStop = false;
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox2);
+            panel4.Controls.Add(txttelefono);
             panel4.Controls.Add(iconPictureBox3);
-            panel4.Location = new Point(158, 136);
+            panel4.Location = new Point(138, 102);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(262, 38);
+            panel4.Size = new Size(262, 28);
             panel4.TabIndex = 8;
             // 
-            // textBox2
+            // txttelefono
             // 
-            textBox2.Location = new Point(46, 8);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(210, 27);
-            textBox2.TabIndex = 2;
+            txttelefono.Location = new Point(40, 6);
+            txttelefono.Margin = new Padding(3, 2, 3, 2);
+            txttelefono.Name = "txttelefono";
+            txttelefono.Size = new Size(184, 23);
+            txttelefono.TabIndex = 2;
             // 
             // iconPictureBox3
             // 
@@ -307,28 +384,30 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.PhoneVolume;
             iconPictureBox3.IconColor = SystemColors.ControlText;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 40;
+            iconPictureBox3.IconSize = 30;
             iconPictureBox3.Location = new Point(0, 0);
+            iconPictureBox3.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(40, 40);
+            iconPictureBox3.Size = new Size(35, 30);
             iconPictureBox3.TabIndex = 1;
             iconPictureBox3.TabStop = false;
             // 
             // panel3
             // 
-            panel3.Controls.Add(textBox5);
+            panel3.Controls.Add(txtFechanacimiento);
             panel3.Controls.Add(iconPictureBox6);
-            panel3.Location = new Point(158, 366);
+            panel3.Location = new Point(138, 274);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(262, 38);
+            panel3.Size = new Size(262, 28);
             panel3.TabIndex = 8;
             // 
-            // textBox5
+            // txtFechanacimiento
             // 
-            textBox5.Location = new Point(46, 6);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(210, 27);
-            textBox5.TabIndex = 13;
+            txtFechanacimiento.Location = new Point(29, 3);
+            txtFechanacimiento.Name = "txtFechanacimiento";
+            txtFechanacimiento.Size = new Size(200, 23);
+            txtFechanacimiento.TabIndex = 15;
             // 
             // iconPictureBox6
             // 
@@ -337,29 +416,31 @@
             iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
             iconPictureBox6.IconColor = SystemColors.ControlText;
             iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox6.IconSize = 40;
             iconPictureBox6.Location = new Point(0, 0);
+            iconPictureBox6.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox6.Name = "iconPictureBox6";
-            iconPictureBox6.Size = new Size(40, 43);
+            iconPictureBox6.Size = new Size(35, 32);
             iconPictureBox6.TabIndex = 12;
             iconPictureBox6.TabStop = false;
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtNombreEmple);
             panel2.Controls.Add(iconPictureBox2);
-            panel2.Location = new Point(158, 74);
+            panel2.Location = new Point(138, 56);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(262, 38);
+            panel2.Size = new Size(262, 28);
             panel2.TabIndex = 7;
             panel2.Paint += panel2_Paint;
             // 
-            // textBox1
+            // txtNombreEmple
             // 
-            textBox1.Location = new Point(49, 8);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(210, 27);
-            textBox1.TabIndex = 1;
+            txtNombreEmple.Location = new Point(43, 6);
+            txtNombreEmple.Margin = new Padding(3, 2, 3, 2);
+            txtNombreEmple.Name = "txtNombreEmple";
+            txtNombreEmple.Size = new Size(184, 23);
+            txtNombreEmple.TabIndex = 1;
             // 
             // iconPictureBox2
             // 
@@ -368,64 +449,65 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.User;
             iconPictureBox2.IconColor = SystemColors.ControlText;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 40;
+            iconPictureBox2.IconSize = 30;
             iconPictureBox2.Location = new Point(0, 0);
+            iconPictureBox2.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(43, 40);
+            iconPictureBox2.Size = new Size(38, 30);
             iconPictureBox2.TabIndex = 0;
             iconPictureBox2.TabStop = false;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(48, 327);
+            label8.Location = new Point(42, 245);
             label8.Name = "label8";
-            label8.Size = new Size(86, 20);
+            label8.Size = new Size(70, 15);
             label8.TabIndex = 6;
             label8.Text = "Contraseña:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(21, 375);
+            label7.Location = new Point(18, 281);
             label7.Name = "label7";
-            label7.Size = new Size(131, 20);
+            label7.Size = new Size(106, 15);
             label7.TabIndex = 5;
             label7.Text = "Fecha Nacimiento:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(48, 265);
+            label6.Location = new Point(42, 199);
             label6.Name = "label6";
-            label6.Size = new Size(55, 20);
+            label6.Size = new Size(44, 15);
             label6.TabIndex = 4;
             label6.Text = "Cédula";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(48, 201);
+            label5.Location = new Point(42, 151);
             label5.Name = "label5";
-            label5.Size = new Size(57, 20);
+            label5.Size = new Size(45, 15);
             label5.TabIndex = 3;
             label5.Text = "Estado:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(48, 136);
+            label4.Location = new Point(42, 102);
             label4.Name = "label4";
-            label4.Size = new Size(70, 20);
+            label4.Size = new Size(56, 15);
             label4.TabIndex = 2;
             label4.Text = "Telefóno:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(48, 74);
+            label3.Location = new Point(42, 56);
             label3.Name = "label3";
-            label3.Size = new Size(67, 20);
+            label3.Size = new Size(54, 15);
             label3.TabIndex = 1;
             label3.Text = "Nombre:";
             // 
@@ -433,31 +515,54 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(0, 64, 0);
-            label2.Location = new Point(104, 9);
+            label2.Location = new Point(91, 7);
             label2.Name = "label2";
-            label2.Size = new Size(165, 20);
+            label2.Size = new Size(130, 15);
             label2.TabIndex = 0;
             label2.Text = "DATOS DEL EMPLEADO";
             // 
+            // iconPictureBox8
+            // 
+            iconPictureBox8.BackColor = Color.Honeydew;
+            iconPictureBox8.ForeColor = SystemColors.ControlText;
+            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.PhoneVolume;
+            iconPictureBox8.IconColor = SystemColors.ControlText;
+            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox8.IconSize = 30;
+            iconPictureBox8.Location = new Point(138, 142);
+            iconPictureBox8.Margin = new Padding(3, 2, 3, 2);
+            iconPictureBox8.Name = "iconPictureBox8";
+            iconPictureBox8.Size = new Size(262, 30);
+            iconPictureBox8.TabIndex = 3;
+            iconPictureBox8.TabStop = false;
+            // 
+            // IconError
+            // 
+            IconError.ContainerControl = this;
+            // 
             // FrmEmpelado
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1037, 591);
+            ClientSize = new Size(907, 527);
             Controls.Add(paneEmpleado);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmEmpelado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Empleado";
             WindowState = FormWindowState.Maximized;
-            paneEmpleado.ResumeLayout(false);
-            paneEmpleado.PerformLayout();
+            Load += FrmEmpelado_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvlistadoEmpleado).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            paneEmpleado.ResumeLayout(false);
+            paneEmpleado.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
@@ -468,23 +573,39 @@
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)IconError).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel paneEmpleado;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private DataGridView dgvlistadoEmpleado;
         private Label label1;
-        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Panel panel7;
+        private TextBox txtbuscaremplea;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private Panel paneEmpleado;
         private Panel panel1;
-        private Panel panel2;
+        private ComboBox conEstado;
+        private Panel panel6;
+        private TextBox txtcontrasena;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private Panel panel5;
+        private TextBox txtcedula;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private Panel panel4;
+        private TextBox txttelefono;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private Panel panel3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private Panel panel2;
+        private TextBox txtNombreEmple;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -492,27 +613,14 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Panel panel6;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private Panel panel5;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private Panel panel4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private Panel panel7;
-        private TextBox txtbuscaremplea;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox5;
-        private TextBox textBox1;
+        private Panel panel8;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
+        private Label label9;
+        private FontAwesome.Sharp.IconButton BtnGuardarEmpleado;
+        private FontAwesome.Sharp.IconButton btnEditarEmpleado;
+        private ErrorProvider IconError;
+        private ComboBox conRol;
+        private DateTimePicker txtFechanacimiento;
     }
 }

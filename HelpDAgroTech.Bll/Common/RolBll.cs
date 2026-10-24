@@ -1,27 +1,22 @@
-﻿using HelpDAgroTech.Dal.Common;
+﻿using HelpDAgroTech.Dal;
 using HelpDAgroTech.Entities.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace HelpDAgroTech.Bll.Common
+namespace HelpDAgroTech.Bll
 {
     public class RolBll
     {
-        private readonly RolDal _rolDal = new();
+        private readonly RolDal _rolDal;
 
-        // 1. Obtener la lista paginada de roles para la tabla/UI
-        public async Task<PaginacionEntity<RolEntity>> MostrarAsync(int pagina, int tampagina, string? buscar = null)
+        public RolBll(RolDal rolDal)
         {
-            return await _rolDal.MostarAsync(pagina, tampagina, buscar);
+            _rolDal = rolDal;
         }
 
-        // 2. Obtener solo roles activos para cargar en el ComboBox de Empleados
         public async Task<List<RolEntity>> MostrarRolesActivosAsync()
         {
-            return await _rolDal.MostarRolesActivos();
+            return await _rolDal.MostrarRolesActivosAsync();
         }
     }
 }

@@ -44,7 +44,6 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             statusStrip1 = new StatusStrip();
             panelContenedo = new Panel();
-            panel2 = new Panel();
             AgroT.SuspendLayout();
             panel1.SuspendLayout();
             Vistalogoli.SuspendLayout();
@@ -336,27 +335,17 @@
             // 
             panelContenedo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContenedo.BackColor = SystemColors.Window;
-            panelContenedo.Location = new Point(177, 97);
+            panelContenedo.Location = new Point(177, 0);
             panelContenedo.Margin = new Padding(3, 2, 3, 2);
             panelContenedo.Name = "panelContenedo";
-            panelContenedo.Size = new Size(923, 381);
+            panelContenedo.Size = new Size(923, 478);
             panelContenedo.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(0, 64, 0);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(177, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(929, 100);
-            panel2.TabIndex = 1;
             // 
             // FrmAgroT
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1106, 509);
-            Controls.Add(panel2);
             Controls.Add(panelContenedo);
             Controls.Add(statusStrip1);
             Controls.Add(AgroT);
@@ -367,6 +356,7 @@
             Text = "AgroTech";
             WindowState = FormWindowState.Maximized;
             FormClosing += FrmAgroT_FormClosing;
+            Load += FrmAgroT_Load;
             AgroT.ResumeLayout(false);
             panel1.ResumeLayout(false);
             Vistalogoli.ResumeLayout(false);

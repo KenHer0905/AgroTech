@@ -53,7 +53,7 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             Cancelar();
         }
 
-      
+
         private void IcGuardar_Click(object sender, EventArgs e)
         {
             ConexioneEntity config = new()
@@ -102,7 +102,7 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
         {
 
             if (!ValidarCampos())
-              
+
                 return;
             ConexionBll conexionBll = new();
             bool ok = await conexionBll.ProbarConexion(
@@ -125,6 +125,11 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
                 MessageBox.Show("No fue posible hacer la conexión de la Base de Dato", "Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 IcGuardar.Enabled = false;
             }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
