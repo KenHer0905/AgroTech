@@ -1,6 +1,6 @@
 ﻿namespace HelpDagrotech.UI.Formularios
 {
-    partial class FrmAgroT
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -11,15 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
+     
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -108,7 +100,7 @@
             panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             panel14.SuspendLayout();
-            SuspendLayout();
+          
             // 
             // AgroT
             // 
@@ -183,7 +175,7 @@
             bttSalir.TextAlign = ContentAlignment.MiddleRight;
             bttSalir.TextImageRelation = TextImageRelation.ImageBeforeText;
             bttSalir.UseVisualStyleBackColor = true;
-            bttSalir.Click += IconButton1_Click;
+           
             // 
             // iconSalidam
             // 
@@ -230,7 +222,7 @@
             iconMaterial.TextAlign = ContentAlignment.MiddleLeft;
             iconMaterial.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconMaterial.UseVisualStyleBackColor = true;
-            iconMaterial.Click += iconMaterial_Click;
+           
             // 
             // iconCultivo
             // 
@@ -254,7 +246,7 @@
             iconCultivo.TextAlign = ContentAlignment.MiddleLeft;
             iconCultivo.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconCultivo.UseVisualStyleBackColor = true;
-            iconCultivo.Click += iconCultivo_Click;
+          
             // 
             // iconEmpleado
             // 
@@ -278,7 +270,7 @@
             iconEmpleado.TextAlign = ContentAlignment.MiddleLeft;
             iconEmpleado.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconEmpleado.UseVisualStyleBackColor = true;
-            iconEmpleado.Click += iconEmpleado_Click;
+           
             // 
             // iconMiterreno
             // 
@@ -302,7 +294,7 @@
             iconMiterreno.TextAlign = ContentAlignment.MiddleLeft;
             iconMiterreno.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconMiterreno.UseVisualStyleBackColor = true;
-            iconMiterreno.Click += iconMiterreno_Click;
+           
             // 
             // iconInicio
             // 
@@ -326,7 +318,7 @@
             iconInicio.TextAlign = ContentAlignment.MiddleLeft;
             iconInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconInicio.UseVisualStyleBackColor = true;
-            iconInicio.Click += IconInicio_Click;
+            
             // 
             // Vistalogoli
             // 
@@ -820,19 +812,7 @@
             // 
             // FrmAgroT
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 668);
-            Controls.Add(panelContenedo);
-            Controls.Add(statusStrip1);
-            Controls.Add(AgroT);
-            MinimumSize = new Size(1280, 715);
-            Name = "FrmAgroT";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgroTech";
-            WindowState = FormWindowState.Maximized;
-            FormClosing += FrmAgroT_FormClosing;
-            Load += FrmAgroT_Load;
+          
             AgroT.ResumeLayout(false);
             panel1.ResumeLayout(false);
             Vistalogoli.ResumeLayout(false);
@@ -873,8 +853,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+          
         }
 
         #endregion

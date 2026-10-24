@@ -79,5 +79,15 @@ namespace HelpDagrotech.UI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_ybffseybffseybff {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_ybffseybffseybff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
