@@ -97,12 +97,12 @@ namespace HelpDagrotech.UI.Formularios
             dgvlistadoEmpleado.AllowUserToDeleteRows = false;
             dgvlistadoEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvlistadoEmpleado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvlistadoEmpleado.Location = new Point(438, 75);
+            dgvlistadoEmpleado.Location = new Point(436, 75);
             dgvlistadoEmpleado.Margin = new Padding(3, 2, 3, 2);
             dgvlistadoEmpleado.Name = "dgvlistadoEmpleado";
             dgvlistadoEmpleado.ReadOnly = true;
             dgvlistadoEmpleado.RowHeadersWidth = 51;
-            dgvlistadoEmpleado.Size = new Size(470, 452);
+            dgvlistadoEmpleado.Size = new Size(459, 491);
             dgvlistadoEmpleado.TabIndex = 1;
             dgvlistadoEmpleado.CellContentClick += dgvlistadoEmpleado_CellContentClick;
             // 
@@ -111,7 +111,7 @@ namespace HelpDagrotech.UI.Formularios
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(53, 27);
+            label1.Location = new Point(61, 36);
             label1.Name = "label1";
             label1.Size = new Size(124, 15);
             label1.TabIndex = 2;
@@ -123,11 +123,11 @@ namespace HelpDagrotech.UI.Formularios
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 30;
-            iconPictureBox1.Location = new Point(18, 20);
+            iconPictureBox1.IconSize = 40;
+            iconPictureBox1.Location = new Point(20, 26);
             iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(35, 30);
+            iconPictureBox1.Size = new Size(40, 40);
             iconPictureBox1.TabIndex = 3;
             iconPictureBox1.TabStop = false;
             // 
@@ -169,7 +169,6 @@ namespace HelpDagrotech.UI.Formularios
             // 
             // paneEmpleado
             // 
-
             paneEmpleado.BackColor = Color.FromArgb(0, 64, 0);
             paneEmpleado.Controls.Add(panel7);
             paneEmpleado.Controls.Add(iconPictureBox1);
@@ -188,46 +187,6 @@ namespace HelpDagrotech.UI.Formularios
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.AutoSize = true;
-
-            iconPictureBox1.BackColor = Color.FromArgb(0, 64, 0);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
-            iconPictureBox1.IconColor = Color.White;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 40;
-            iconPictureBox1.Location = new Point(20, 26);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(40, 40);
-            iconPictureBox1.TabIndex = 3;
-            iconPictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(61, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 20);
-            label1.TabIndex = 2;
-            label1.Text = "Registro De Empelado";
-            // 
-            // dataGridView1
-            // 
-            dgvlistadoEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvlistadoEmpleado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-          
-            dgvlistadoEmpleado.Location = new Point(500, 100);
-            dgvlistadoEmpleado.Name = "dataGridView1";
-            dgvlistadoEmpleado.RowHeadersWidth = 51;
-            dgvlistadoEmpleado.Size = new Size(537, 491);
-            dgvlistadoEmpleado.TabIndex = 1;
-            // 
-            //
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-
             panel1.BackColor = Color.Honeydew;
             panel1.Controls.Add(btnEditarEmpleado);
             panel1.Controls.Add(BtnGuardarEmpleado);
@@ -593,13 +552,8 @@ namespace HelpDagrotech.UI.Formularios
             Text = "Empleado";
             WindowState = FormWindowState.Maximized;
             Load += FrmEmpelado_Load;
-
             ((System.ComponentModel.ISupportInitialize)dgvlistadoEmpleado).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-
-            paneEmpleado.ResumeLayout(false);
-            paneEmpleado.PerformLayout();
-
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();

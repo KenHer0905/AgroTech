@@ -20,9 +20,9 @@ namespace HelpDagrotech.UI.Formularios
 
         }
 
-      //  private double latOriginal = 11.539626;
-       // private double lngOriginal = -85.608108;
-     //   private GMapOverlay capaLotes;
+        //  private double latOriginal = 11.539626;
+        // private double lngOriginal = -85.608108;
+        //   private GMapOverlay capaLotes;
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -161,7 +161,7 @@ namespace HelpDagrotech.UI.Formularios
         }
 
 
-       private void CargarDatosDashboard()
+        private void CargarDatosDashboard()
         {
             // --- 1. CONFIGURAR Y CARGAR: MOVIMIENTO RECIENTE ---
             if (dvgmovimientore.Columns.Count == 0)
@@ -193,8 +193,13 @@ namespace HelpDagrotech.UI.Formularios
             dvginsumoc.Rows.Add("Urea", "2 sacos (Crítico)");
             dvginsumoc.Rows.Add("Fertilizante NPK", "5 kg (Bajo)");
         }
+
+        private void dvgmovimientore_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
- }
+}
 
  
     

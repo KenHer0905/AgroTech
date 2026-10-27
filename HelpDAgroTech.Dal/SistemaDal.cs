@@ -11,7 +11,7 @@ namespace HelpDAgroTech.Dal
 {
     public class SistemaDal
     {
-        public async Task CrearAdministradorInicialAsync()
+      /*  public async Task CrearAdministradorInicialAsync()
         {
             try
             {
@@ -28,6 +28,6 @@ namespace HelpDAgroTech.Dal
             {
                 throw new Exception(ex.Message);
             }
-        }
+        }*/
     }
 }

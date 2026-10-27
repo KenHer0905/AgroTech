@@ -178,6 +178,7 @@ namespace HelpDagrotech.UI.Formularios
                         txtcontrasena.Text
 
                     );
+                    btnEditarEmpleado.Enabled = false;
 
                     await _empleadoBLL.Agregar(nuevo, txtcontrasena.Text);
 
@@ -218,7 +219,7 @@ namespace HelpDagrotech.UI.Formularios
 
 
             private async void btnEditarEmpleado_Click(object sender, EventArgs e)
-        {
+            {
             try
             {
                 if (_idEmpleadoSeleccionado == null || _idEmpleadoSeleccionado <= 0)

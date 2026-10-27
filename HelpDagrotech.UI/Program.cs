@@ -45,9 +45,9 @@ namespace HelpDagrotech.UI
             try
             {
                 SistemaBll sistemaBll = new SistemaBll(new SistemaDal());
-                sistemaBll.CrearAdministradorInicialAsync()
-                    .GetAwaiter()
-                    .GetResult();
+               // sistemaBll.CrearAdministradorInicialAsync()
+                  //  .GetAwaiter()
+                  //  .GetResult();
             }
             catch (Exception ex)
             {

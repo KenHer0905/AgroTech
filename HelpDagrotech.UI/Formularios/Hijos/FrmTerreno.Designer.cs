@@ -73,19 +73,20 @@
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1191, 661);
+            panel1.Size = new Size(1042, 496);
             panel1.TabIndex = 0;
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dataGridView1.Location = new Point(12, 470);
+            dataGridView1.Location = new Point(10, 352);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1167, 188);
+            dataGridView1.Size = new Size(1021, 141);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -107,30 +108,27 @@
             panel3.Controls.Add(label3);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(BtnGuardarTerreno);
-            panel3.Location = new Point(510, 116);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(446, 87);
             panel3.Name = "panel3";
-            panel3.Size = new Size(669, 313);
+            panel3.Size = new Size(585, 235);
             panel3.TabIndex = 2;
             // 
             // textBox5
             // 
             textBox5.Cursor = Cursors.IBeam;
             textBox5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(603, 169);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Location = new Point(528, 127);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(148, 29);
+            textBox5.Size = new Size(130, 25);
             textBox5.TabIndex = 17;
             // 
             // textBox3
             // 
             textBox3.Cursor = Cursors.Hand;
             textBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(360, 169);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Location = new Point(315, 127);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(148, 29);
+            textBox3.Size = new Size(130, 25);
             textBox3.TabIndex = 13;
             // 
             // label5
@@ -138,9 +136,9 @@
             label5.AutoSize = true;
             label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(360, 142);
+            label5.Location = new Point(315, 106);
             label5.Name = "label5";
-            label5.Size = new Size(68, 23);
+            label5.Size = new Size(52, 17);
             label5.TabIndex = 12;
             label5.Text = "Latitud";
             // 
@@ -149,9 +147,9 @@
             label7.AutoSize = true;
             label7.Cursor = Cursors.IBeam;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(603, 142);
+            label7.Location = new Point(528, 106);
             label7.Name = "label7";
-            label7.Size = new Size(83, 23);
+            label7.Size = new Size(64, 17);
             label7.TabIndex = 16;
             label7.Text = "Longitud";
             // 
@@ -159,10 +157,9 @@
             // 
             textBox4.Cursor = Cursors.IBeam;
             textBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(18, 169);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
+            textBox4.Location = new Point(16, 127);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(148, 29);
+            textBox4.Size = new Size(130, 25);
             textBox4.TabIndex = 11;
             // 
             // label6
@@ -170,9 +167,9 @@
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(18, 142);
+            label6.Location = new Point(16, 106);
             label6.Name = "label6";
-            label6.Size = new Size(88, 23);
+            label6.Size = new Size(68, 17);
             label6.TabIndex = 10;
             label6.Text = "Ubicación";
             // 
@@ -180,29 +177,27 @@
             // 
             textBox6.Cursor = Cursors.IBeam;
             textBox6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(603, 83);
-            textBox6.Margin = new Padding(3, 4, 3, 4);
+            textBox6.Location = new Point(528, 62);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(148, 29);
+            textBox6.Size = new Size(130, 25);
             textBox6.TabIndex = 15;
             // 
             // textBox2
             // 
             textBox2.Cursor = Cursors.Hand;
             textBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(360, 83);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Location = new Point(315, 62);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(148, 29);
+            textBox2.Size = new Size(130, 25);
             textBox2.TabIndex = 9;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(360, 56);
+            label4.Location = new Point(315, 42);
             label4.Name = "label4";
-            label4.Size = new Size(141, 23);
+            label4.Size = new Size(108, 17);
             label4.TabIndex = 8;
             label4.Text = "Area del terreno";
             // 
@@ -211,9 +206,9 @@
             label8.AutoSize = true;
             label8.Cursor = Cursors.IBeam;
             label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(603, 56);
+            label8.Location = new Point(528, 42);
             label8.Name = "label8";
-            label8.Size = new Size(63, 23);
+            label8.Size = new Size(49, 17);
             label8.TabIndex = 14;
             label8.Text = "Estado";
             // 
@@ -221,10 +216,9 @@
             // 
             textBox1.Cursor = Cursors.IBeam;
             textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(18, 83);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Location = new Point(16, 62);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(148, 29);
+            textBox1.Size = new Size(130, 25);
             textBox1.TabIndex = 7;
             // 
             // label3
@@ -232,9 +226,9 @@
             label3.AutoSize = true;
             label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(18, 56);
+            label3.Location = new Point(16, 42);
             label3.Name = "label3";
-            label3.Size = new Size(170, 23);
+            label3.Size = new Size(130, 17);
             label3.TabIndex = 6;
             label3.Text = "Nombre del terreno";
             // 
@@ -244,9 +238,8 @@
             panel4.BackColor = Color.FromArgb(0, 64, 0);
             panel4.Controls.Add(label2);
             panel4.Location = new Point(0, 0);
-            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(669, 52);
+            panel4.Size = new Size(585, 39);
             panel4.TabIndex = 5;
             // 
             // label2
@@ -255,9 +248,9 @@
             label2.BackColor = Color.FromArgb(0, 64, 0);
             label2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(318, 12);
+            label2.Location = new Point(278, 9);
             label2.Name = "label2";
-            label2.Size = new Size(211, 28);
+            label2.Size = new Size(168, 21);
             label2.TabIndex = 2;
             label2.Text = "Detalles del Terreno";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -273,10 +266,9 @@
             BtnGuardarTerreno.IconChar = FontAwesome.Sharp.IconChar.None;
             BtnGuardarTerreno.IconColor = Color.Black;
             BtnGuardarTerreno.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BtnGuardarTerreno.Location = new Point(0, 274);
-            BtnGuardarTerreno.Margin = new Padding(3, 4, 3, 4);
+            BtnGuardarTerreno.Location = new Point(0, 206);
             BtnGuardarTerreno.Name = "BtnGuardarTerreno";
-            BtnGuardarTerreno.Size = new Size(669, 39);
+            BtnGuardarTerreno.Size = new Size(585, 29);
             BtnGuardarTerreno.TabIndex = 4;
             BtnGuardarTerreno.Text = "Guardar terreno";
             BtnGuardarTerreno.UseVisualStyleBackColor = false;
@@ -285,11 +277,9 @@
             // 
             groupBox1.Controls.Add(gMapControl1);
             groupBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(14, 85);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(12, 64);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(454, 348);
+            groupBox1.Size = new Size(397, 261);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Mapa del terreno";
@@ -304,8 +294,7 @@
             gMapControl1.GrayScaleMode = false;
             gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             gMapControl1.LevelsKeepInMemory = 5;
-            gMapControl1.Location = new Point(3, 29);
-            gMapControl1.Margin = new Padding(3, 4, 3, 4);
+            gMapControl1.Location = new Point(3, 23);
             gMapControl1.MarkersEnabled = true;
             gMapControl1.MaxZoom = 2;
             gMapControl1.MinZoom = 2;
@@ -319,7 +308,7 @@
             gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
             gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Size = new Size(448, 315);
+            gMapControl1.Size = new Size(391, 235);
             gMapControl1.TabIndex = 0;
             gMapControl1.Zoom = 0D;
             gMapControl1.Load += gMapControl1_Load;
@@ -331,18 +320,17 @@
             panel2.Dock = DockStyle.Top;
             panel2.ForeColor = Color.White;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1191, 61);
+            panel2.Size = new Size(1042, 46);
             panel2.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 12);
+            label1.Location = new Point(3, 9);
             label1.Name = "label1";
-            label1.Size = new Size(249, 28);
+            label1.Size = new Size(198, 21);
             label1.TabIndex = 1;
             label1.Text = "GESTION DE TERRENOS ";
             // 
@@ -351,35 +339,35 @@
             Column1.HeaderText = "Nombre Terreno";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.Width = 130;
+            Column1.Width = 150;
             // 
             // Column2
             // 
             Column2.HeaderText = "Area";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
-            Column2.Width = 130;
+            Column2.Width = 150;
             // 
             // Column3
             // 
             Column3.HeaderText = "Estado";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
-            Column3.Width = 130;
+            Column3.Width = 150;
             // 
             // Column4
             // 
             Column4.HeaderText = "Ubicación ";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
-            Column4.Width = 130;
+            Column4.Width = 150;
             // 
             // Column5
             // 
             Column5.HeaderText = "Latitud";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
-            Column5.Width = 130;
+            Column5.Width = 150;
             // 
             // Column6
             // 
@@ -390,11 +378,10 @@
             // 
             // FrmTerreno
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1191, 661);
+            ClientSize = new Size(1042, 496);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmTerreno";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmTerreno";
