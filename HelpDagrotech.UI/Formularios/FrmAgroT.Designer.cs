@@ -1,6 +1,6 @@
 ﻿namespace HelpDagrotech.UI.Formularios
 {
-    partial class FrmLogin
+    partial class FrmAgroT
     {
         /// <summary>
         /// Required designer variable.
@@ -11,7 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-     
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -37,6 +37,14 @@
             statusStrip1 = new StatusStrip();
             panelContenedo = new Panel();
             panel3 = new Panel();
+            panel6 = new Panel();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            label11 = new Label();
+            panel13 = new Panel();
+            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            panel14 = new Panel();
+            label12 = new Label();
+            label13 = new Label();
             label8 = new Label();
             label7 = new Label();
             panel12 = new Panel();
@@ -64,14 +72,6 @@
             panel7 = new Panel();
             label9 = new Label();
             label5 = new Label();
-            panel6 = new Panel();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            label11 = new Label();
-            panel13 = new Panel();
-            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            panel14 = new Panel();
-            label12 = new Label();
-            label13 = new Label();
             AgroT.SuspendLayout();
             panel1.SuspendLayout();
             Vistalogoli.SuspendLayout();
@@ -79,6 +79,11 @@
             statusStrip1.SuspendLayout();
             panelContenedo.SuspendLayout();
             panel3.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
+            panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
+            panel14.SuspendLayout();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             panel11.SuspendLayout();
@@ -95,12 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             panel7.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
-            panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
-            panel14.SuspendLayout();
-          
+            SuspendLayout();
             // 
             // AgroT
             // 
@@ -118,7 +118,7 @@
             AgroT.Dock = DockStyle.Left;
             AgroT.Location = new Point(0, 0);
             AgroT.Name = "AgroT";
-            AgroT.Size = new Size(202, 668);
+            AgroT.Size = new Size(202, 787);
             AgroT.TabIndex = 0;
             // 
             // iconButton1
@@ -137,7 +137,7 @@
             iconButton1.Location = new Point(0, 606);
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(11, 0, 0, 0);
-            iconButton1.Size = new Size(225, 67);
+            iconButton1.Size = new Size(207, 67);
             iconButton1.TabIndex = 8;
             iconButton1.Text = "REPORTES";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -148,7 +148,7 @@
             // 
             panel1.Controls.Add(bttSalir);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 599);
+            panel1.Location = new Point(0, 718);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 67);
             panel1.TabIndex = 7;
@@ -175,7 +175,7 @@
             bttSalir.TextAlign = ContentAlignment.MiddleRight;
             bttSalir.TextImageRelation = TextImageRelation.ImageBeforeText;
             bttSalir.UseVisualStyleBackColor = true;
-           
+            bttSalir.Click += bttSalir_Click;
             // 
             // iconSalidam
             // 
@@ -222,7 +222,7 @@
             iconMaterial.TextAlign = ContentAlignment.MiddleLeft;
             iconMaterial.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconMaterial.UseVisualStyleBackColor = true;
-           
+            iconMaterial.Click += iconMaterial_Click_1;
             // 
             // iconCultivo
             // 
@@ -237,16 +237,16 @@
             iconCultivo.IconColor = Color.White;
             iconCultivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconCultivo.IconSize = 30;
-            iconCultivo.Location = new Point(4, 421);
+            iconCultivo.Location = new Point(4, 408);
             iconCultivo.Name = "iconCultivo";
             iconCultivo.Padding = new Padding(10, 0, 0, 0);
-            iconCultivo.Size = new Size(197, 51);
+            iconCultivo.Size = new Size(197, 74);
             iconCultivo.TabIndex = 3;
-            iconCultivo.Text = "CULTIVOS \r\n";
+            iconCultivo.Text = "SIEMBRA Y \r\nCOSECHA\r\n";
             iconCultivo.TextAlign = ContentAlignment.MiddleLeft;
             iconCultivo.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconCultivo.UseVisualStyleBackColor = true;
-          
+            iconCultivo.Click += iconCultivo_Click_1;
             // 
             // iconEmpleado
             // 
@@ -270,7 +270,7 @@
             iconEmpleado.TextAlign = ContentAlignment.MiddleLeft;
             iconEmpleado.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconEmpleado.UseVisualStyleBackColor = true;
-           
+            iconEmpleado.Click += iconEmpleado_Click_1;
             // 
             // iconMiterreno
             // 
@@ -294,7 +294,7 @@
             iconMiterreno.TextAlign = ContentAlignment.MiddleLeft;
             iconMiterreno.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconMiterreno.UseVisualStyleBackColor = true;
-           
+            iconMiterreno.Click += iconMiterreno_Click_1;
             // 
             // iconInicio
             // 
@@ -318,7 +318,7 @@
             iconInicio.TextAlign = ContentAlignment.MiddleLeft;
             iconInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconInicio.UseVisualStyleBackColor = true;
-            
+            iconInicio.Click += iconInicio_Click_1;
             // 
             // Vistalogoli
             // 
@@ -363,7 +363,7 @@
             statusStrip1.BackColor = Color.Honeydew;
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolEmpleado, toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(202, 633);
+            statusStrip1.Location = new Point(202, 752);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(1060, 35);
             statusStrip1.TabIndex = 1;
@@ -375,8 +375,9 @@
             panelContenedo.BackColor = SystemColors.Window;
             panelContenedo.Controls.Add(panel3);
             panelContenedo.Location = new Point(202, 1);
+            panelContenedo.Margin = new Padding(3, 2, 3, 2);
             panelContenedo.Name = "panelContenedo";
-            panelContenedo.Size = new Size(1053, 625);
+            panelContenedo.Size = new Size(1053, 744);
             panelContenedo.TabIndex = 2;
             // 
             // panel3
@@ -398,8 +399,105 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1053, 625);
+            panel3.Size = new Size(1053, 744);
             panel3.TabIndex = 1;
+            panel3.Paint += panel3_Paint;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(255, 255, 128);
+            panel6.BorderStyle = BorderStyle.Fixed3D;
+            panel6.Controls.Add(iconPictureBox5);
+            panel6.Controls.Add(label11);
+            panel6.Font = new Font("Algerian", 10.2F);
+            panel6.Location = new Point(1135, 77);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(270, 86);
+            panel6.TabIndex = 10;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.FromArgb(255, 255, 128);
+            iconPictureBox5.ForeColor = Color.Green;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            iconPictureBox5.IconColor = Color.Green;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 40;
+            iconPictureBox5.Location = new Point(11, -2);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(40, 40);
+            iconPictureBox5.TabIndex = 5;
+            iconPictureBox5.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Algerian", 10.2F);
+            label11.ForeColor = Color.Green;
+            label11.Location = new Point(57, 13);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 19);
+            label11.TabIndex = 4;
+            label11.Text = "Ganancias";
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.DarkSeaGreen;
+            panel13.BorderStyle = BorderStyle.Fixed3D;
+            panel13.Controls.Add(iconPictureBox6);
+            panel13.Controls.Add(panel14);
+            panel13.Controls.Add(label13);
+            panel13.Font = new Font("Algerian", 10.2F);
+            panel13.Location = new Point(745, 77);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(270, 86);
+            panel13.TabIndex = 9;
+            // 
+            // iconPictureBox6
+            // 
+            iconPictureBox6.BackColor = Color.DarkSeaGreen;
+            iconPictureBox6.ForeColor = Color.Green;
+            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            iconPictureBox6.IconColor = Color.Green;
+            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox6.IconSize = 40;
+            iconPictureBox6.Location = new Point(16, 3);
+            iconPictureBox6.Name = "iconPictureBox6";
+            iconPictureBox6.Size = new Size(40, 40);
+            iconPictureBox6.TabIndex = 6;
+            iconPictureBox6.TabStop = false;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.DarkSeaGreen;
+            panel14.BorderStyle = BorderStyle.Fixed3D;
+            panel14.Controls.Add(label12);
+            panel14.Font = new Font("Algerian", 10.2F);
+            panel14.Location = new Point(-2, -2);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(0, 0);
+            panel14.TabIndex = 5;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Algerian", 10.2F);
+            label12.Location = new Point(39, 13);
+            label12.Name = "label12";
+            label12.Size = new Size(134, 19);
+            label12.TabIndex = 4;
+            label12.Text = "Cosecha Lista";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Algerian", 10.2F);
+            label13.ForeColor = Color.Green;
+            label13.Location = new Point(76, 13);
+            label13.Name = "label13";
+            label13.Size = new Size(134, 19);
+            label13.TabIndex = 4;
+            label13.Text = "Cosecha Lista";
             // 
             // label8
             // 
@@ -493,17 +591,19 @@
             // panel5
             // 
             panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel5.AutoSize = true;
             panel5.Controls.Add(gMapControl1);
             panel5.Controls.Add(label4);
             panel5.Font = new Font("Algerian", 10.2F);
             panel5.Location = new Point(12, 224);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1818, 265);
+            panel5.Size = new Size(1818, 384);
             panel5.TabIndex = 3;
             // 
             // gMapControl1
             // 
             gMapControl1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            gMapControl1.AutoSize = true;
             gMapControl1.Bearing = 0F;
             gMapControl1.CanDragMap = true;
             gMapControl1.EmptyTileColor = Color.Navy;
@@ -714,105 +814,22 @@
             label5.TabIndex = 4;
             label5.Text = "Cosecha Lista";
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(255, 255, 128);
-            panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Controls.Add(iconPictureBox5);
-            panel6.Controls.Add(label11);
-            panel6.Font = new Font("Algerian", 10.2F);
-            panel6.Location = new Point(1135, 77);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(270, 86);
-            panel6.TabIndex = 10;
-            // 
-            // iconPictureBox5
-            // 
-            iconPictureBox5.BackColor = Color.FromArgb(255, 255, 128);
-            iconPictureBox5.ForeColor = Color.Green;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
-            iconPictureBox5.IconColor = Color.Green;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 40;
-            iconPictureBox5.Location = new Point(11, -2);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(40, 40);
-            iconPictureBox5.TabIndex = 5;
-            iconPictureBox5.TabStop = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Algerian", 10.2F);
-            label11.ForeColor = Color.Green;
-            label11.Location = new Point(57, 13);
-            label11.Name = "label11";
-            label11.Size = new Size(104, 19);
-            label11.TabIndex = 4;
-            label11.Text = "Ganancias";
-            // 
-            // panel13
-            // 
-            panel13.BackColor = Color.DarkSeaGreen;
-            panel13.BorderStyle = BorderStyle.Fixed3D;
-            panel13.Controls.Add(iconPictureBox6);
-            panel13.Controls.Add(panel14);
-            panel13.Controls.Add(label13);
-            panel13.Font = new Font("Algerian", 10.2F);
-            panel13.Location = new Point(745, 77);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(270, 86);
-            panel13.TabIndex = 9;
-            // 
-            // iconPictureBox6
-            // 
-            iconPictureBox6.BackColor = Color.DarkSeaGreen;
-            iconPictureBox6.ForeColor = Color.Green;
-            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            iconPictureBox6.IconColor = Color.Green;
-            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox6.IconSize = 40;
-            iconPictureBox6.Location = new Point(16, 3);
-            iconPictureBox6.Name = "iconPictureBox6";
-            iconPictureBox6.Size = new Size(40, 40);
-            iconPictureBox6.TabIndex = 6;
-            iconPictureBox6.TabStop = false;
-            // 
-            // panel14
-            // 
-            panel14.BackColor = Color.DarkSeaGreen;
-            panel14.BorderStyle = BorderStyle.Fixed3D;
-            panel14.Controls.Add(label12);
-            panel14.Font = new Font("Algerian", 10.2F);
-            panel14.Location = new Point(-2, -2);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(0, 0);
-            panel14.TabIndex = 5;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Algerian", 10.2F);
-            label12.Location = new Point(39, 13);
-            label12.Name = "label12";
-            label12.Size = new Size(134, 19);
-            label12.TabIndex = 4;
-            label12.Text = "Cosecha Lista";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Algerian", 10.2F);
-            label13.ForeColor = Color.Green;
-            label13.Location = new Point(76, 13);
-            label13.Name = "label13";
-            label13.Size = new Size(134, 19);
-            label13.TabIndex = 4;
-            label13.Text = "Cosecha Lista";
-            // 
             // FrmAgroT
             // 
-          
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1262, 787);
+            Controls.Add(panelContenedo);
+            Controls.Add(statusStrip1);
+            Controls.Add(AgroT);
+            MinimumSize = new Size(1280, 715);
+            Name = "FrmAgroT";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AgroTech";
+            WindowState = FormWindowState.Maximized;
+            FormClosing += FrmAgroT_FormClosing;
+            Load += FrmAgroT_Load;
+            Paint += FrmAgroT_Paint;
             AgroT.ResumeLayout(false);
             panel1.ResumeLayout(false);
             Vistalogoli.ResumeLayout(false);
@@ -823,6 +840,14 @@
             panelContenedo.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
             panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             panel11.ResumeLayout(false);
@@ -845,15 +870,9 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-          
+            ResumeLayout(false);
+            PerformLayout();
+
         }
 
         #endregion

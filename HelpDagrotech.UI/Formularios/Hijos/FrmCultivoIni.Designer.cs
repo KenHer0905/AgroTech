@@ -38,10 +38,10 @@
             panel8 = new Panel();
             dvgmovimientore = new DataGridView();
             label6 = new Label();
-            panel9 = new Panel();
+            panelganancia9 = new Panel();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             label10 = new Label();
-            panel6 = new Panel();
+            panelcosecha6 = new Panel();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             panel7 = new Panel();
             label9 = new Label();
@@ -49,10 +49,10 @@
             panel5 = new Panel();
             gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             label4 = new Label();
-            panel4 = new Panel();
+            panelEmpelado12 = new Panel();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label3 = new Label();
-            panel3 = new Panel();
+            panelTerreno = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label2 = new Label();
             panel2 = new Panel();
@@ -64,15 +64,15 @@
             ((System.ComponentModel.ISupportInitialize)dvglaet).BeginInit();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvgmovimientore).BeginInit();
-            panel9.SuspendLayout();
+            panelganancia9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
-            panel6.SuspendLayout();
+            panelcosecha6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
-            panel4.SuspendLayout();
+            panelEmpelado12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            panel3.SuspendLayout();
+            panelTerreno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -87,11 +87,11 @@
             panel1.Controls.Add(label7);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(panel9);
-            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panelganancia9);
+            panel1.Controls.Add(panelcosecha6);
             panel1.Controls.Add(panel5);
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panelEmpelado12);
+            panel1.Controls.Add(panelTerreno);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -186,17 +186,17 @@
             label6.TabIndex = 3;
             label6.Text = "MOVIMIENTO RECIENTE";
             // 
-            // panel9
+            // panelganancia9
             // 
-            panel9.BackColor = Color.FromArgb(255, 255, 128);
-            panel9.BorderStyle = BorderStyle.Fixed3D;
-            panel9.Controls.Add(iconPictureBox4);
-            panel9.Controls.Add(label10);
-            panel9.Font = new Font("Algerian", 10.2F);
-            panel9.Location = new Point(1168, 77);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(270, 86);
-            panel9.TabIndex = 5;
+            panelganancia9.BackColor = Color.FromArgb(255, 255, 128);
+            panelganancia9.Controls.Add(iconPictureBox4);
+            panelganancia9.Controls.Add(label10);
+            panelganancia9.Font = new Font("Algerian", 10.2F);
+            panelganancia9.Location = new Point(1168, 77);
+            panelganancia9.Name = "panelganancia9";
+            panelganancia9.Size = new Size(270, 86);
+            panelganancia9.TabIndex = 5;
+            panelganancia9.Paint += panel9_Paint;
             // 
             // iconPictureBox4
             // 
@@ -223,18 +223,18 @@
             label10.TabIndex = 4;
             label10.Text = "Ganancias";
             // 
-            // panel6
+            // panelcosecha6
             // 
-            panel6.BackColor = Color.DarkSeaGreen;
-            panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Controls.Add(iconPictureBox3);
-            panel6.Controls.Add(panel7);
-            panel6.Controls.Add(label5);
-            panel6.Font = new Font("Algerian", 10.2F);
-            panel6.Location = new Point(778, 77);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(270, 86);
-            panel6.TabIndex = 2;
+            panelcosecha6.BackColor = Color.DarkSeaGreen;
+            panelcosecha6.Controls.Add(iconPictureBox3);
+            panelcosecha6.Controls.Add(panel7);
+            panelcosecha6.Controls.Add(label5);
+            panelcosecha6.Font = new Font("Algerian", 10.2F);
+            panelcosecha6.Location = new Point(778, 77);
+            panelcosecha6.Name = "panelcosecha6";
+            panelcosecha6.Size = new Size(270, 86);
+            panelcosecha6.TabIndex = 2;
+            panelcosecha6.Paint += panel9_Paint;
             // 
             // iconPictureBox3
             // 
@@ -332,17 +332,17 @@
             label4.TabIndex = 3;
             label4.Click += label4_Click;
             // 
-            // panel4
+            // panelEmpelado12
             // 
-            panel4.BackColor = Color.SeaGreen;
-            panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Controls.Add(iconPictureBox2);
-            panel4.Controls.Add(label3);
-            panel4.Font = new Font("Algerian", 10.2F);
-            panel4.Location = new Point(365, 77);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(270, 86);
-            panel4.TabIndex = 2;
+            panelEmpelado12.BackColor = Color.SeaGreen;
+            panelEmpelado12.Controls.Add(iconPictureBox2);
+            panelEmpelado12.Controls.Add(label3);
+            panelEmpelado12.Font = new Font("Algerian", 10.2F);
+            panelEmpelado12.Location = new Point(365, 77);
+            panelEmpelado12.Name = "panelEmpelado12";
+            panelEmpelado12.Size = new Size(270, 86);
+            panelEmpelado12.TabIndex = 2;
+            panelEmpelado12.Paint += panel9_Paint;
             // 
             // iconPictureBox2
             // 
@@ -369,16 +369,16 @@
             label3.TabIndex = 2;
             label3.Text = "Empleado Activos";
             // 
-            // panel3
+            // panelTerreno
             // 
-            panel3.BackColor = Color.DarkSeaGreen;
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(iconPictureBox1);
-            panel3.Controls.Add(label2);
-            panel3.Location = new Point(12, 77);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 86);
-            panel3.TabIndex = 1;
+            panelTerreno.BackColor = Color.DarkSeaGreen;
+            panelTerreno.Controls.Add(iconPictureBox1);
+            panelTerreno.Controls.Add(label2);
+            panelTerreno.Location = new Point(12, 77);
+            panelTerreno.Name = "panelTerreno";
+            panelTerreno.Size = new Size(270, 86);
+            panelTerreno.TabIndex = 1;
+            panelTerreno.Paint += panel9_Paint;
             // 
             // iconPictureBox1
             // 
@@ -435,6 +435,7 @@
             Name = "FrmCultivoIni";
             Text = "FrmCultivoIni";
             Load += FrmCultivoIni_Load;
+            Shown += FrmCultivoIni_Shown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel11.ResumeLayout(false);
@@ -443,21 +444,21 @@
             ((System.ComponentModel.ISupportInitialize)dvglaet).EndInit();
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dvgmovimientore).EndInit();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
+            panelganancia9.ResumeLayout(false);
+            panelganancia9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelcosecha6.ResumeLayout(false);
+            panelcosecha6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelEmpelado12.ResumeLayout(false);
+            panelEmpelado12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelTerreno.ResumeLayout(false);
+            panelTerreno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -473,18 +474,18 @@
         private Panel panel5;
         private Label label4;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
-        private Panel panel9;
+        private Panel panelganancia9;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private Label label10;
-        private Panel panel6;
+        private Panel panelcosecha6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private Panel panel7;
         private Label label9;
         private Label label5;
-        private Panel panel4;
+        private Panel panelEmpelado12;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Label label3;
-        private Panel panel3;
+        private Panel panelTerreno;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label label2;
         private Panel panel10;

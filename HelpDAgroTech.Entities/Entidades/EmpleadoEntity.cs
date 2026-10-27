@@ -7,28 +7,35 @@ using System.Xml;
 
 namespace HelpDAgroTech.Entities.Entidades
 {
-    public class UsuarioEntityA
+    public class EmpleadoEntity
     {
         public int Id_empleado { get; private set; }
         public string Nombre_empleado { get; set; } = string.Empty;
         public string Telefono { get; set; } = string.Empty;
-        public bool Estado { get; set; } = true;
         public string Cedula { get; set; } = string.Empty;
         public DateTime Fecha_nacimiento { get; set; }
         public string Contrasena { get; set; } = string.Empty;
         public int Id_Rol { get; set; }
         public string Rol { get; set; } = string.Empty;
+        public bool Estado { get; private set; } = true;
+        public string EstadoTexto => Estado ? "Activo": "Inactivo";
 
         #region Contructores
-        public UsuarioEntityA() { }//Permite recontruir la inf de la class cuando se obtiene la inf de la DB.  estos dsp parametros se les conoce sobrecarga
 
-        public UsuarioEntityA(string nombre_empleado, int id_rol, string cedula, string telefono) // permitira trabajar cuando se desee agregar un nuevo registro, esto se da por lo que se trabaja con encapsulamiento
+        
+        public EmpleadoEntity() { }//Permite recontruir la inf de la class cuando se obtiene la inf de la DB.  estos dsp parametros se les conoce sobrecarga
+
+        public EmpleadoEntity(string nombre_empleado, string telefono, string cedula, DateTime fecha_nacimiento, int id_rol, string contrasena)
         {
             CambiarNombreEmpleado(nombre_empleado);
-            CambiarIdrol(id_rol);
-            CambiarCedula(cedula);
             CambiarTelefono(telefono);
+            CambiarCedula(cedula);
+            CambiarFechaNacimiento (fecha_nacimiento);
+            CambiarIdrol(id_rol);
             Estado = true;
+            CambiarContrasena(contrasena);
+          
+
         }
 
         #endregion
@@ -69,9 +76,32 @@ namespace HelpDAgroTech.Entities.Entidades
             if (idRol<=0)
                 throw new Exception("Deber seleccionar un IdRol");
 
-
             Id_Rol = idRol;
         }
+
+
+        public void CambiarRol(string nombreRol) => Rol = nombreRol;
+
+        public void CambiarEstado(bool estado)
+        {
+            Estado = estado;
+        }
+
+      
+        public void CambiarContrasena(string contrasenaHash)
+        {
+
+            Contrasena = contrasenaHash.Trim();
+        }
+        public void CambiarFechaNacimiento(DateTime fecha_nacimiento)
+        {
+            if (fecha_nacimiento > DateTime.Now)
+                throw new Exception("La fecha de nacimiento no puede ser mayor a la actual.");
+
+            Fecha_nacimiento = fecha_nacimiento;
+        }
+
+
 
         #endregion
     }

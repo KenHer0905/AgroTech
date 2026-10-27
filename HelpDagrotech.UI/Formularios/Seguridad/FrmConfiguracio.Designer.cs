@@ -82,8 +82,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             panelConfi.Controls.Add(lblServidor);
             panelConfi.Dock = DockStyle.Fill;
             panelConfi.Location = new Point(0, 0);
+            panelConfi.Margin = new Padding(3, 2, 3, 2);
             panelConfi.Name = "panelConfi";
-            panelConfi.Size = new Size(482, 394);
+            panelConfi.Size = new Size(422, 296);
             panelConfi.TabIndex = 0;
             // 
             // panel2
@@ -91,9 +92,10 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             panel2.BackColor = Color.White;
             panel2.Controls.Add(tableLayoutPanel1);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 322);
+            panel2.Location = new Point(0, 242);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(482, 72);
+            panel2.Size = new Size(422, 54);
             panel2.TabIndex = 5;
             // 
             // tableLayoutPanel1
@@ -101,15 +103,16 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.51634F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.48366F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 124F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 109F));
             tableLayoutPanel1.Controls.Add(Iccancelr, 2, 0);
             tableLayoutPanel1.Controls.Add(IcGuardar, 1, 0);
             tableLayoutPanel1.Controls.Add(icprobarcon, 0, 0);
-            tableLayoutPanel1.Location = new Point(0, 3);
+            tableLayoutPanel1.Location = new Point(0, 2);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(479, 69);
+            tableLayoutPanel1.Size = new Size(419, 52);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // Iccancelr
@@ -119,9 +122,10 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             Iccancelr.IconColor = Color.Red;
             Iccancelr.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Iccancelr.ImageAlign = ContentAlignment.MiddleLeft;
-            Iccancelr.Location = new Point(357, 3);
+            Iccancelr.Location = new Point(312, 2);
+            Iccancelr.Margin = new Padding(3, 2, 3, 2);
             Iccancelr.Name = "Iccancelr";
-            Iccancelr.Size = new Size(119, 54);
+            Iccancelr.Size = new Size(104, 40);
             Iccancelr.TabIndex = 2;
             Iccancelr.Text = "Cancelar";
             Iccancelr.TextAlign = ContentAlignment.MiddleRight;
@@ -136,9 +140,10 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             IcGuardar.IconColor = Color.FromArgb(0, 64, 0);
             IcGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             IcGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            IcGuardar.Location = new Point(207, 3);
+            IcGuardar.Location = new Point(181, 2);
+            IcGuardar.Margin = new Padding(3, 2, 3, 2);
             IcGuardar.Name = "IcGuardar";
-            IcGuardar.Size = new Size(124, 54);
+            IcGuardar.Size = new Size(108, 40);
             IcGuardar.TabIndex = 1;
             IcGuardar.Text = "Guardar";
             IcGuardar.TextAlign = ContentAlignment.MiddleRight;
@@ -154,9 +159,10 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             icprobarcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             icprobarcon.IconSize = 40;
             icprobarcon.ImageAlign = ContentAlignment.MiddleLeft;
-            icprobarcon.Location = new Point(3, 3);
+            icprobarcon.Location = new Point(3, 2);
+            icprobarcon.Margin = new Padding(3, 2, 3, 2);
             icprobarcon.Name = "icprobarcon";
-            icprobarcon.Size = new Size(170, 54);
+            icprobarcon.Size = new Size(149, 40);
             icprobarcon.TabIndex = 0;
             icprobarcon.Text = "Probar Conexion";
             icprobarcon.TextAlign = ContentAlignment.MiddleRight;
@@ -172,9 +178,11 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             panel1.Controls.Add(iconPictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(482, 90);
+            panel1.Size = new Size(422, 68);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // PinturexCerrar
             // 
@@ -182,10 +190,11 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             PinturexCerrar.IconChar = FontAwesome.Sharp.IconChar.X;
             PinturexCerrar.IconColor = Color.White;
             PinturexCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            PinturexCerrar.IconSize = 28;
-            PinturexCerrar.Location = new Point(438, 14);
+            PinturexCerrar.IconSize = 21;
+            PinturexCerrar.Location = new Point(383, 10);
+            PinturexCerrar.Margin = new Padding(3, 2, 3, 2);
             PinturexCerrar.Name = "PinturexCerrar";
-            PinturexCerrar.Size = new Size(32, 28);
+            PinturexCerrar.Size = new Size(28, 21);
             PinturexCerrar.SizeMode = PictureBoxSizeMode.CenterImage;
             PinturexCerrar.TabIndex = 3;
             PinturexCerrar.TabStop = false;
@@ -195,9 +204,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.Silver;
-            label6.Location = new Point(108, 37);
+            label6.Location = new Point(94, 28);
             label6.Name = "label6";
-            label6.Size = new Size(174, 20);
+            label6.Size = new Size(139, 15);
             label6.TabIndex = 2;
             label6.Text = "Complete la información";
             // 
@@ -206,9 +215,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
             label5.ForeColor = Color.FromArgb(0, 64, 0);
-            label5.Location = new Point(89, 9);
+            label5.Location = new Point(78, 7);
             label5.Name = "label5";
-            label5.Size = new Size(193, 28);
+            label5.Size = new Size(154, 21);
             label5.TabIndex = 1;
             label5.Text = "Conexion al Servidor";
             // 
@@ -219,10 +228,11 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Server;
             iconPictureBox1.IconColor = Color.FromArgb(0, 64, 0);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 55;
-            iconPictureBox1.Location = new Point(19, 14);
+            iconPictureBox1.IconSize = 41;
+            iconPictureBox1.Location = new Point(17, 10);
+            iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(64, 55);
+            iconPictureBox1.Size = new Size(56, 41);
             iconPictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
@@ -231,19 +241,21 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             // 
             panelcontra.BackColor = Color.White;
             panelcontra.Controls.Add(txtContr);
-            panelcontra.Location = new Point(134, 279);
+            panelcontra.Location = new Point(117, 209);
+            panelcontra.Margin = new Padding(3, 2, 3, 2);
             panelcontra.Name = "panelcontra";
-            panelcontra.Size = new Size(285, 37);
+            panelcontra.Size = new Size(249, 28);
             panelcontra.TabIndex = 3;
             // 
             // txtContr
             // 
             txtContr.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtContr.BorderStyle = BorderStyle.None;
-            txtContr.Location = new Point(7, 10);
+            txtContr.Location = new Point(6, 8);
+            txtContr.Margin = new Padding(3, 2, 3, 2);
             txtContr.Multiline = true;
             txtContr.Name = "txtContr";
-            txtContr.Size = new Size(275, 24);
+            txtContr.Size = new Size(241, 18);
             txtContr.TabIndex = 0;
             // 
             // lblcont
@@ -251,9 +263,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             lblcont.AutoSize = true;
             lblcont.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblcont.ForeColor = Color.FromArgb(0, 64, 0);
-            lblcont.Location = new Point(19, 287);
+            lblcont.Location = new Point(17, 215);
             lblcont.Name = "lblcont";
-            lblcont.Size = new Size(99, 23);
+            lblcont.Size = new Size(84, 19);
             lblcont.TabIndex = 2;
             lblcont.Text = "Contraseña";
             // 
@@ -261,19 +273,21 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             // 
             panelUsuario.BackColor = Color.White;
             panelUsuario.Controls.Add(txtUsuSQL);
-            panelUsuario.Location = new Point(134, 226);
+            panelUsuario.Location = new Point(117, 170);
+            panelUsuario.Margin = new Padding(3, 2, 3, 2);
             panelUsuario.Name = "panelUsuario";
-            panelUsuario.Size = new Size(285, 37);
+            panelUsuario.Size = new Size(249, 28);
             panelUsuario.TabIndex = 3;
             // 
             // txtUsuSQL
             // 
             txtUsuSQL.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtUsuSQL.BorderStyle = BorderStyle.None;
-            txtUsuSQL.Location = new Point(7, 10);
+            txtUsuSQL.Location = new Point(6, 8);
+            txtUsuSQL.Margin = new Padding(3, 2, 3, 2);
             txtUsuSQL.Multiline = true;
             txtUsuSQL.Name = "txtUsuSQL";
-            txtUsuSQL.Size = new Size(275, 24);
+            txtUsuSQL.Size = new Size(241, 18);
             txtUsuSQL.TabIndex = 0;
             // 
             // lblSqlUs
@@ -281,9 +295,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             lblSqlUs.AutoSize = true;
             lblSqlUs.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSqlUs.ForeColor = Color.FromArgb(0, 64, 0);
-            lblSqlUs.Location = new Point(19, 234);
+            lblSqlUs.Location = new Point(17, 176);
             lblSqlUs.Name = "lblSqlUs";
-            lblSqlUs.Size = new Size(96, 23);
+            lblSqlUs.Size = new Size(81, 19);
             lblSqlUs.TabIndex = 2;
             lblSqlUs.Text = "UsuarioSql";
             // 
@@ -291,19 +305,21 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             // 
             panelBDD.BackColor = Color.White;
             panelBDD.Controls.Add(txtBD);
-            panelBDD.Location = new Point(134, 168);
+            panelBDD.Location = new Point(117, 126);
+            panelBDD.Margin = new Padding(3, 2, 3, 2);
             panelBDD.Name = "panelBDD";
-            panelBDD.Size = new Size(285, 37);
+            panelBDD.Size = new Size(249, 28);
             panelBDD.TabIndex = 3;
             // 
             // txtBD
             // 
             txtBD.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBD.BorderStyle = BorderStyle.None;
-            txtBD.Location = new Point(7, 10);
+            txtBD.Location = new Point(6, 8);
+            txtBD.Margin = new Padding(3, 2, 3, 2);
             txtBD.Multiline = true;
             txtBD.Name = "txtBD";
-            txtBD.Size = new Size(275, 24);
+            txtBD.Size = new Size(241, 18);
             txtBD.TabIndex = 0;
             // 
             // lblDB
@@ -311,9 +327,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             lblDB.AutoSize = true;
             lblDB.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDB.ForeColor = Color.FromArgb(0, 64, 0);
-            lblDB.Location = new Point(6, 179);
+            lblDB.Location = new Point(5, 134);
             lblDB.Name = "lblDB";
-            lblDB.Size = new Size(122, 23);
+            lblDB.Size = new Size(103, 19);
             lblDB.TabIndex = 2;
             lblDB.Text = "Base de Datos";
             // 
@@ -321,19 +337,21 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             // 
             panelServid.BackColor = Color.White;
             panelServid.Controls.Add(txtSer);
-            panelServid.Location = new Point(134, 121);
+            panelServid.Location = new Point(117, 91);
+            panelServid.Margin = new Padding(3, 2, 3, 2);
             panelServid.Name = "panelServid";
-            panelServid.Size = new Size(285, 37);
+            panelServid.Size = new Size(249, 28);
             panelServid.TabIndex = 1;
             // 
             // txtSer
             // 
             txtSer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtSer.BorderStyle = BorderStyle.None;
-            txtSer.Location = new Point(7, 10);
+            txtSer.Location = new Point(6, 8);
+            txtSer.Margin = new Padding(3, 2, 3, 2);
             txtSer.Multiline = true;
             txtSer.Name = "txtSer";
-            txtSer.Size = new Size(272, 24);
+            txtSer.Size = new Size(238, 18);
             txtSer.TabIndex = 0;
             txtSer.TextChanged += txtSer_TextChanged;
             // 
@@ -342,9 +360,9 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             lblServidor.AutoSize = true;
             lblServidor.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblServidor.ForeColor = Color.FromArgb(0, 64, 0);
-            lblServidor.Location = new Point(34, 121);
+            lblServidor.Location = new Point(30, 91);
             lblServidor.Name = "lblServidor";
-            lblServidor.Size = new Size(84, 23);
+            lblServidor.Size = new Size(72, 19);
             lblServidor.TabIndex = 0;
             lblServidor.Text = "Servidor ";
             // 
@@ -354,11 +372,12 @@ namespace HelpDagrotech.UI.Formularios.Seguridad
             // 
             // FrmConfiguracio
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 394);
+            ClientSize = new Size(422, 296);
             Controls.Add(panelConfi);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmConfiguracio";
             StartPosition = FormStartPosition.CenterScreen;
             Load += FrmConfiguracio_Load;

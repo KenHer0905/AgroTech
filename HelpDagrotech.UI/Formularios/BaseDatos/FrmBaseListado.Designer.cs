@@ -83,6 +83,7 @@
             panelContenido.RightToLeft = RightToLeft.Yes;
             panelContenido.Size = new Size(865, 372);
             panelContenido.TabIndex = 0;
+            panelContenido.Paint += panelContenido_Paint;
             // 
             // Panelpaginas
             // 
@@ -197,6 +198,7 @@
             icnpinbuscarregistro.SizeMode = PictureBoxSizeMode.CenterImage;
             icnpinbuscarregistro.TabIndex = 8;
             icnpinbuscarregistro.TabStop = false;
+            icnpinbuscarregistro.Click += icnpinbuscarregistro_Click;
             // 
             // dgvListado
             // 

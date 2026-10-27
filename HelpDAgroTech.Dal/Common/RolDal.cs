@@ -2,85 +2,45 @@
 using HelpDAgroTech.Dal.Cpmmon;
 using HelpDAgroTech.Entities.Entidades;
 using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 
-namespace HelpDAgroTech.Dal.Common
+namespace HelpDAgroTech.Dal
 {
     public class RolDal
     {
-        // 1. Mostrar roles paginados (para la tabla principal)
-        public async Task<PaginacionEntity<RolEntity>> MostarAsync(int pagina, int tampagina, string? buscar = null)
+        public async Task<List<RolEntity>> MostrarRolesActivosAsync()
         {
-            try
+            var lista = new List<RolEntity>();
+
+            using (SqlConnection cn = Conexion.ObtenerConexion())
             {
-                PaginacionEntity<RolEntity> resultado = new();
-                using SqlConnection cn = Conexion.ObtenerConexion();
-
-                using SqlCommand cmdTotal = new("sp_ContarRole", cn);
-                cmdTotal.CommandType = CommandType.StoredProcedure;
-                cmdTotal.Parameters.AddWithValue("@buscar", string.IsNullOrWhiteSpace(buscar) ? DBNull.Value : buscar.Trim());
-
-                await cn.OpenAsync();
-                resultado.TotalRegistros = Convert.ToInt32(await cmdTotal.ExecuteScalarAsync());
-
-                using SqlCommand cmd = new("sp_MostrarRoles", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@buscar", string.IsNullOrWhiteSpace(buscar) ? DBNull.Value : buscar.Trim());
-                cmd.Parameters.AddWithValue("@pagina", pagina);
-                cmd.Parameters.AddWithValue("@tampagina", tampagina);
-
-                using SqlDataReader dr = await cmd.ExecuteReaderAsync();
-
-                while (await dr.ReadAsync())
+                using (SqlCommand cmd = new SqlCommand("sp_mostrar_roles_activos", cn))
                 {
-                    RolEntity rol = new();
-                    rol.AsiganarId(Convert.ToInt32(dr["Id"]));
-                    rol.CambiarRol(dr["rol"].ToString()!);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    await cn.OpenAsync();
 
-                    resultado.Registros.Add(rol);
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            RolEntity rol = new RolEntity();
+                            rol.AsiganarId(reader.GetInt32(reader.GetOrdinal("Id_Rol")));
+                            rol.CambiarRol(reader.GetString(reader.GetOrdinal("Rol")));
+
+                            // Como tu entidad usa el método CambiarEstado y la propiedad Activo:
+                            bool estadoBd = reader.GetBoolean(reader.GetOrdinal("Estado"));
+                            rol.CambiarEstado(estadoBd);
+
+                            lista.Add(rol);
+                        }
+                    }
                 }
-
-                resultado.PaginaActual = pagina;
-                resultado.TamPagina = tampagina;
-
-                return resultado;
             }
-            catch (SqlException ex)
-            {
-                throw SqlError.TraducirError(ex);
-            }
+
+            return lista;
         }
-
-        // 2. Mostrar roles activos (para el ComboBox del formulario Empleados)
-        public async Task<List<RolEntity>> MostarRolesActivos()
-        {
-            try
-            {
-                List<RolEntity> lista = [];
-                using SqlConnection cn = Conexion.ObtenerConexion();
-                using SqlCommand cmd = new("sp_MostrarRolesActivos", cn);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                await cn.OpenAsync();
-
-                using SqlDataReader dr = await cmd.ExecuteReaderAsync();
-
-                while (await dr.ReadAsync())
-                {
-                    RolEntity rol = new();
-                    rol.AsiganarId(Convert.ToInt32(dr["Id"]));
-                    rol.CambiarRol(dr["rol"].ToString()!);
-
-                    lista.Add(rol);
-                }
-
-                return lista;
-            }
-            catch (SqlException ex)
-            {
-                throw SqlError.TraducirError(ex);
-            }
-        }
-
     }
 }

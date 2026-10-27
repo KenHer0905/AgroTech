@@ -21,7 +21,7 @@ namespace HelpDagrotech.UI.Seguridad
         /// <summary>
         /// Registrar sesión
         /// </summary>
-        public static void IniciarSesion(UsuarioEntityA Empleado)
+        public static void IniciarSesion(EmpleadoEntity Empleado)
         {
             Id_empleado = Empleado.Id_empleado;
             Nombre_empleado = Empleado.Nombre_empleado;

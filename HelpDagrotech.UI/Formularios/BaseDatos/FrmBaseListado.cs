@@ -249,5 +249,15 @@ namespace HelpDagrotech.UI.Formularios.BaseDatos
         {
             await DesactivarAsync();
         }
+
+        private void panelContenido_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void icnpinbuscarregistro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

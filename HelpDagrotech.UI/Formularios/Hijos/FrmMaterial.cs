@@ -44,7 +44,7 @@ namespace HelpDagrotech.UI.Formularios
 
                 await materialBll.InsertarMaterialAsync(
                     txtmaterial.Text,
-                    idCategoriaSeleccionada, 
+                    idCategoriaSeleccionada,
                     txtunidadmedida.Text,
                     Convert.ToDecimal(txtstock.Text),
                     Convert.ToDecimal(txtminimost.Text),
@@ -85,8 +85,8 @@ namespace HelpDagrotech.UI.Formularios
         private void CargarCategoriasYUnidades()
         {
 
-        {
-            Dictionary<int, string> categorias = new Dictionary<int, string>()
+            {
+                Dictionary<int, string> categorias = new Dictionary<int, string>()
             {
                 { 1, "Fertilizantes" },
                 { 2, "Semillas" },
@@ -94,17 +94,17 @@ namespace HelpDagrotech.UI.Formularios
                 { 4, "Herramientas" }
             };
 
-            txtCategoriamate.DataSource = new BindingSource(categorias, null);
-            txtCategoriamate.DisplayMember = "Value";
-            txtCategoriamate.ValueMember = "Key";
-            txtCategoriamate.SelectedIndex = -1;
+                txtCategoriamate.DataSource = new BindingSource(categorias, null);
+                txtCategoriamate.DisplayMember = "Value";
+                txtCategoriamate.ValueMember = "Key";
+                txtCategoriamate.SelectedIndex = -1;
 
-            txtunidadmedida.Items.Clear();
-            txtunidadmedida.Items.Add("Kilogramos (kg)");
-            txtunidadmedida.Items.Add("Litros (L)");
-            txtunidadmedida.Items.Add("Sacos");
-            txtunidadmedida.Items.Add("Unidades");
-        }
+                txtunidadmedida.Items.Clear();
+                txtunidadmedida.Items.Add("Kilogramos (kg)");
+                txtunidadmedida.Items.Add("Litros (L)");
+                txtunidadmedida.Items.Add("Sacos");
+                txtunidadmedida.Items.Add("Unidades");
+            }
         }
 
         private void iconcancelma_Click(object sender, EventArgs e)
@@ -124,6 +124,56 @@ namespace HelpDagrotech.UI.Formularios
                     inpixmas.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panel1.Width - 1, panel1.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panel1.Region = new Region(path);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvmaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void iconeditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
