@@ -229,6 +229,10 @@ namespace HelpDagrotech.UI.Formularios
         {
             RedondearTarjetasModulos();
         }
+        private void dvgmovimientore_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }
 

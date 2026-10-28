@@ -32,9 +32,6 @@ namespace HelpDagrotech.UI.Formularios
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             dgvlistadoEmpleado = new DataGridView();
             label1 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -42,8 +39,6 @@ namespace HelpDagrotech.UI.Formularios
             txtbuscaremplea = new TextBox();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             paneEmpleado = new Panel();
-            panel10 = new Panel();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel1 = new Panel();
             BtnGuardarEmpleado = new FontAwesome.Sharp.IconButton();
             bttnborraremple = new FontAwesome.Sharp.IconButton();
@@ -85,8 +80,6 @@ namespace HelpDagrotech.UI.Formularios
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             paneEmpleado.SuspendLayout();
-            panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             panel1.SuspendLayout();
             panel9.SuspendLayout();
             groupoempeladoi.SuspendLayout();
@@ -111,13 +104,14 @@ namespace HelpDagrotech.UI.Formularios
             // 
             dgvlistadoEmpleado.AllowUserToAddRows = false;
             dgvlistadoEmpleado.AllowUserToDeleteRows = false;
-            dgvlistadoEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            dgvlistadoEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvlistadoEmpleado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvlistadoEmpleado.Location = new Point(665, 356);
+            dgvlistadoEmpleado.Location = new Point(665, 71);
+            dgvlistadoEmpleado.Margin = new Padding(3, 2, 3, 2);
             dgvlistadoEmpleado.Name = "dgvlistadoEmpleado";
             dgvlistadoEmpleado.ReadOnly = true;
             dgvlistadoEmpleado.RowHeadersWidth = 51;
-            dgvlistadoEmpleado.Size = new Size(753, 390);
+            dgvlistadoEmpleado.Size = new Size(678, 628);
             dgvlistadoEmpleado.TabIndex = 1;
             dgvlistadoEmpleado.CellContentClick += dgvlistadoEmpleado_CellContentClick;
             // 
@@ -126,7 +120,7 @@ namespace HelpDagrotech.UI.Formularios
             label1.AutoSize = true;
             label1.Font = new Font("Algerian", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(75, 13);
+            label1.Location = new Point(61, 36);
             label1.Name = "label1";
             label1.Size = new Size(276, 25);
             label1.TabIndex = 2;
@@ -138,10 +132,11 @@ namespace HelpDagrotech.UI.Formularios
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 42;
-            iconPictureBox1.Location = new Point(23, 9);
+            iconPictureBox1.IconSize = 40;
+            iconPictureBox1.Location = new Point(20, 26);
+            iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(46, 42);
+            iconPictureBox1.Size = new Size(40, 40);
             iconPictureBox1.TabIndex = 3;
             iconPictureBox1.TabStop = false;
             // 
@@ -151,7 +146,7 @@ namespace HelpDagrotech.UI.Formularios
             panel7.BackColor = Color.FromArgb(192, 255, 192);
             panel7.Controls.Add(txtbuscaremplea);
             panel7.Controls.Add(iconPictureBox7);
-            panel7.Location = new Point(668, 57);
+            panel7.Location = new Point(772, 12);
             panel7.Name = "panel7";
             panel7.Size = new Size(435, 40);
             panel7.TabIndex = 8;
@@ -183,7 +178,6 @@ namespace HelpDagrotech.UI.Formularios
             // paneEmpleado
             // 
             paneEmpleado.BackColor = Color.FromArgb(0, 64, 0);
-            paneEmpleado.Controls.Add(panel10);
             paneEmpleado.Controls.Add(panel7);
             paneEmpleado.Controls.Add(iconPictureBox1);
             paneEmpleado.Controls.Add(label1);
@@ -196,47 +190,21 @@ namespace HelpDagrotech.UI.Formularios
             paneEmpleado.TabIndex = 0;
             paneEmpleado.Paint += paneEmpleado_Paint;
             // 
-            // panel10
-            // 
-            panel10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel10.BackColor = Color.Honeydew;
-            panel10.Controls.Add(chart1);
-            panel10.Location = new Point(665, 103);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(678, 252);
-            panel10.TabIndex = 9;
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
-            chart1.Location = new Point(25, 3);
-            chart1.Name = "chart1";
-            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
-            chart1.Size = new Size(650, 244);
-            chart1.TabIndex = 0;
-            chart1.Text = "chart1";
-            // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.AutoSize = true;
             panel1.BackColor = Color.Honeydew;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(BtnGuardarEmpleado);
             panel1.Controls.Add(bttnborraremple);
             panel1.Controls.Add(panel9);
             panel1.Controls.Add(groupoempeladoi);
             panel1.Controls.Add(groupEmpleado);
             panel1.Controls.Add(btnEditarEmpleado);
-            panel1.Location = new Point(0, 57);
+            panel1.Location = new Point(20, 71);
             panel1.Name = "panel1";
-            panel1.Size = new Size(662, 674);
+            panel1.Size = new Size(662, 797);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -252,7 +220,7 @@ namespace HelpDagrotech.UI.Formularios
             BtnGuardarEmpleado.IconColor = Color.White;
             BtnGuardarEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnGuardarEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardarEmpleado.Location = new Point(3, 552);
+            BtnGuardarEmpleado.Location = new Point(5, 710);
             BtnGuardarEmpleado.Margin = new Padding(3, 4, 3, 4);
             BtnGuardarEmpleado.Name = "BtnGuardarEmpleado";
             BtnGuardarEmpleado.Size = new Size(198, 81);
@@ -275,7 +243,7 @@ namespace HelpDagrotech.UI.Formularios
             bttnborraremple.IconColor = Color.White;
             bttnborraremple.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bttnborraremple.ImageAlign = ContentAlignment.MiddleLeft;
-            bttnborraremple.Location = new Point(401, 552);
+            bttnborraremple.Location = new Point(403, 710);
             bttnborraremple.Margin = new Padding(3, 4, 3, 4);
             bttnborraremple.Name = "bttnborraremple";
             bttnborraremple.Size = new Size(184, 81);
@@ -292,7 +260,7 @@ namespace HelpDagrotech.UI.Formularios
             panel9.Controls.Add(label2);
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(662, 58);
+            panel9.Size = new Size(660, 58);
             panel9.TabIndex = 16;
             // 
             // label2
@@ -318,9 +286,9 @@ namespace HelpDagrotech.UI.Formularios
             groupoempeladoi.Controls.Add(panel6);
             groupoempeladoi.Controls.Add(panel8);
             groupoempeladoi.ForeColor = Color.Green;
-            groupoempeladoi.Location = new Point(23, 346);
+            groupoempeladoi.Location = new Point(16, 387);
             groupoempeladoi.Name = "groupoempeladoi";
-            groupoempeladoi.Size = new Size(562, 195);
+            groupoempeladoi.Size = new Size(562, 316);
             groupoempeladoi.TabIndex = 15;
             groupoempeladoi.TabStop = false;
             groupoempeladoi.Text = "INFORMACION DE TRABAJADOR ";
@@ -451,7 +419,7 @@ namespace HelpDagrotech.UI.Formularios
             groupEmpleado.Controls.Add(panel3);
             groupEmpleado.Controls.Add(label7);
             groupEmpleado.ForeColor = Color.Green;
-            groupEmpleado.Location = new Point(23, 60);
+            groupEmpleado.Location = new Point(16, 81);
             groupEmpleado.Name = "groupEmpleado";
             groupEmpleado.Size = new Size(562, 280);
             groupEmpleado.TabIndex = 2;
@@ -629,7 +597,7 @@ namespace HelpDagrotech.UI.Formularios
             btnEditarEmpleado.IconColor = Color.White;
             btnEditarEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditarEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarEmpleado.Location = new Point(207, 552);
+            btnEditarEmpleado.Location = new Point(209, 710);
             btnEditarEmpleado.Margin = new Padding(3, 4, 3, 4);
             btnEditarEmpleado.Name = "btnEditarEmpleado";
             btnEditarEmpleado.Size = new Size(177, 81);
@@ -664,8 +632,6 @@ namespace HelpDagrotech.UI.Formularios
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             paneEmpleado.ResumeLayout(false);
             paneEmpleado.PerformLayout();
-            panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             panel1.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -738,7 +704,5 @@ namespace HelpDagrotech.UI.Formularios
         private GroupBox groupoempeladoi;
         private Panel panel9;
         private FontAwesome.Sharp.IconButton bttnborraremple;
-        private Panel panel10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
