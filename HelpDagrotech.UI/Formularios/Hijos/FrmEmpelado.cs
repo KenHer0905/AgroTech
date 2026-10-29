@@ -21,7 +21,6 @@ namespace HelpDagrotech.UI.Formularios
         private readonly EmpleadoBll _empleadoBLL;
         private readonly RolBll _rolBLL;
         private int? _idEmpleadoSeleccionado = null;
-        // Eliminamos el 'private object cboRoles;' porque causaba conflictos con el control visual
 
         public bool EsEdicion => _idEmpleadoSeleccionado.HasValue;
 
