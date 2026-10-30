@@ -38,8 +38,6 @@
             lbltotalpaginas = new Label();
             icnpinbuscarregistro = new FontAwesome.Sharp.IconPictureBox();
             dgvListado = new DataGridView();
-            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            label4 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             buttoneditar = new FontAwesome.Sharp.IconButton();
             buttonestados = new FontAwesome.Sharp.IconButton();
@@ -51,16 +49,18 @@
             label2 = new Label();
             label1 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            label4 = new Label();
+            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             panelContenido.SuspendLayout();
             Panelpaginas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)icnpinbuscarregistro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListado).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panelbuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             SuspendLayout();
             // 
             // panelContenido
@@ -78,10 +78,10 @@
             panelContenido.Controls.Add(label2);
             panelContenido.Controls.Add(label1);
             panelContenido.Controls.Add(iconPictureBox1);
-            panelContenido.Location = new Point(55, 49);
+            panelContenido.Location = new Point(12, 49);
             panelContenido.Name = "panelContenido";
             panelContenido.RightToLeft = RightToLeft.Yes;
-            panelContenido.Size = new Size(865, 372);
+            panelContenido.Size = new Size(1161, 671);
             panelContenido.TabIndex = 0;
             panelContenido.Paint += panelContenido_Paint;
             // 
@@ -103,11 +103,11 @@
             Panelpaginas.Controls.Add(lblpaginas, 2, 0);
             Panelpaginas.Controls.Add(buttonprimero, 4, 0);
             Panelpaginas.Controls.Add(lbltotalpaginas, 5, 0);
-            Panelpaginas.Location = new Point(29, 308);
+            Panelpaginas.Location = new Point(29, 607);
             Panelpaginas.Name = "Panelpaginas";
             Panelpaginas.RowCount = 1;
             Panelpaginas.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Panelpaginas.Size = new Size(769, 47);
+            Panelpaginas.Size = new Size(1065, 47);
             Panelpaginas.TabIndex = 9;
             // 
             // buttondespues
@@ -116,7 +116,7 @@
             buttondespues.IconChar = FontAwesome.Sharp.IconChar.CaretLeft;
             buttondespues.IconColor = Color.Black;
             buttondespues.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttondespues.Location = new Point(251, 4);
+            buttondespues.Location = new Point(547, 4);
             buttondespues.Name = "buttondespues";
             buttondespues.Size = new Size(158, 39);
             buttondespues.TabIndex = 12;
@@ -129,7 +129,7 @@
             buttosiguiente.IconChar = FontAwesome.Sharp.IconChar.CaretRight;
             buttosiguiente.IconColor = Color.Black;
             buttosiguiente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttosiguiente.Location = new Point(583, 4);
+            buttosiguiente.Location = new Point(879, 4);
             buttosiguiente.Name = "buttosiguiente";
             buttosiguiente.Size = new Size(114, 39);
             buttosiguiente.TabIndex = 11;
@@ -141,7 +141,7 @@
             buttosegundo.IconChar = FontAwesome.Sharp.IconChar.FastForward;
             buttosegundo.IconColor = Color.Black;
             buttosegundo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttosegundo.Location = new Point(704, 4);
+            buttosegundo.Location = new Point(1000, 4);
             buttosegundo.Name = "buttosegundo";
             buttosegundo.Size = new Size(61, 39);
             buttosegundo.TabIndex = 10;
@@ -152,7 +152,7 @@
             // 
             lblpaginas.AutoSize = true;
             lblpaginas.ForeColor = Color.FromArgb(0, 64, 0);
-            lblpaginas.Location = new Point(472, 1);
+            lblpaginas.Location = new Point(768, 1);
             lblpaginas.Name = "lblpaginas";
             lblpaginas.Size = new Size(104, 20);
             lblpaginas.TabIndex = 7;
@@ -164,7 +164,7 @@
             buttonprimero.IconChar = FontAwesome.Sharp.IconChar.FastBackward;
             buttonprimero.IconColor = Color.Black;
             buttonprimero.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttonprimero.Location = new Point(168, 4);
+            buttonprimero.Location = new Point(464, 4);
             buttonprimero.Name = "buttonprimero";
             buttonprimero.Size = new Size(76, 39);
             buttonprimero.TabIndex = 9;
@@ -175,7 +175,7 @@
             // 
             lbltotalpaginas.AutoSize = true;
             lbltotalpaginas.ForeColor = Color.FromArgb(0, 64, 0);
-            lbltotalpaginas.Location = new Point(27, 1);
+            lbltotalpaginas.Location = new Point(323, 1);
             lbltotalpaginas.Name = "lbltotalpaginas";
             lbltotalpaginas.Size = new Size(134, 20);
             lbltotalpaginas.TabIndex = 8;
@@ -191,10 +191,10 @@
             icnpinbuscarregistro.IconChar = FontAwesome.Sharp.IconChar.Seedling;
             icnpinbuscarregistro.IconColor = Color.FromArgb(0, 64, 0);
             icnpinbuscarregistro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            icnpinbuscarregistro.IconSize = 131;
+            icnpinbuscarregistro.IconSize = 430;
             icnpinbuscarregistro.Location = new Point(29, 151);
             icnpinbuscarregistro.Name = "icnpinbuscarregistro";
-            icnpinbuscarregistro.Size = new Size(820, 131);
+            icnpinbuscarregistro.Size = new Size(1116, 430);
             icnpinbuscarregistro.SizeMode = PictureBoxSizeMode.CenterImage;
             icnpinbuscarregistro.TabIndex = 8;
             icnpinbuscarregistro.TabStop = false;
@@ -208,34 +208,9 @@
             dgvListado.Location = new Point(29, 151);
             dgvListado.Name = "dgvListado";
             dgvListado.RowHeadersWidth = 51;
-            dgvListado.Size = new Size(769, 131);
+            dgvListado.Size = new Size(1065, 430);
             dgvListado.TabIndex = 7;
             dgvListado.CellFormatting += dgvListado_CellFormatting;
-            // 
-            // iconPictureBox7
-            // 
-            iconPictureBox7.BackColor = Color.White;
-            iconPictureBox7.ForeColor = SystemColors.ControlText;
-            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Notdef;
-            iconPictureBox7.IconColor = SystemColors.ControlText;
-            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox7.IconSize = 40;
-            iconPictureBox7.Location = new Point(696, 226);
-            iconPictureBox7.Name = "iconPictureBox7";
-            iconPictureBox7.Size = new Size(46, 40);
-            iconPictureBox7.TabIndex = 5;
-            iconPictureBox7.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.FromArgb(0, 64, 0);
-            label4.ImageAlign = ContentAlignment.MiddleRight;
-            label4.Location = new Point(156, 246);
-            label4.Name = "label4";
-            label4.Size = new Size(116, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Total Registro: 0";
             // 
             // tableLayoutPanel1
             // 
@@ -251,7 +226,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(323, 60);
+            tableLayoutPanel1.Size = new Size(619, 60);
             tableLayoutPanel1.TabIndex = 6;
             // 
             // buttoneditar
@@ -261,7 +236,7 @@
             buttoneditar.IconColor = Color.FromArgb(0, 64, 0);
             buttoneditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttoneditar.ImageAlign = ContentAlignment.MiddleRight;
-            buttoneditar.Location = new Point(112, 3);
+            buttoneditar.Location = new Point(309, 3);
             buttoneditar.Name = "buttoneditar";
             buttoneditar.Size = new Size(101, 54);
             buttoneditar.TabIndex = 2;
@@ -278,7 +253,7 @@
             buttonestados.IconColor = Color.FromArgb(0, 64, 0);
             buttonestados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonestados.ImageAlign = ContentAlignment.MiddleRight;
-            buttonestados.Location = new Point(219, 3);
+            buttonestados.Location = new Point(466, 3);
             buttonestados.Name = "buttonestados";
             buttonestados.Size = new Size(101, 54);
             buttonestados.TabIndex = 1;
@@ -294,7 +269,7 @@
             buttonNuevo.IconColor = Color.FromArgb(0, 64, 0);
             buttonNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonNuevo.ImageAlign = ContentAlignment.MiddleRight;
-            buttonNuevo.Location = new Point(3, 3);
+            buttonNuevo.Location = new Point(101, 3);
             buttonNuevo.Name = "buttonNuevo";
             buttonNuevo.Size = new Size(103, 54);
             buttonNuevo.TabIndex = 0;
@@ -311,7 +286,7 @@
             panelbuscador.Controls.Add(iconPictureBox2);
             panelbuscador.Location = new Point(42, 94);
             panelbuscador.Name = "panelbuscador";
-            panelbuscador.Size = new Size(380, 40);
+            panelbuscador.Size = new Size(676, 40);
             panelbuscador.TabIndex = 5;
             // 
             // txtbuscador
@@ -321,7 +296,7 @@
             txtbuscador.Location = new Point(46, 2);
             txtbuscador.Name = "txtbuscador";
             txtbuscador.PlaceholderText = "Busca Registro";
-            txtbuscador.Size = new Size(329, 27);
+            txtbuscador.Size = new Size(625, 27);
             txtbuscador.TabIndex = 1;
             txtbuscador.TextAlign = HorizontalAlignment.Right;
             txtbuscador.TextChanged += txtbuscador_TextChanged;
@@ -384,12 +359,37 @@
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.FromArgb(0, 64, 0);
+            label4.ImageAlign = ContentAlignment.MiddleRight;
+            label4.Location = new Point(156, 246);
+            label4.Name = "label4";
+            label4.Size = new Size(116, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Total Registro: 0";
+            // 
+            // iconPictureBox7
+            // 
+            iconPictureBox7.BackColor = Color.White;
+            iconPictureBox7.ForeColor = SystemColors.ControlText;
+            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Notdef;
+            iconPictureBox7.IconColor = SystemColors.ControlText;
+            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox7.IconSize = 40;
+            iconPictureBox7.Location = new Point(696, 226);
+            iconPictureBox7.Name = "iconPictureBox7";
+            iconPictureBox7.Size = new Size(46, 40);
+            iconPictureBox7.TabIndex = 5;
+            iconPictureBox7.TabStop = false;
+            // 
             // FrmBaseListado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 0);
-            ClientSize = new Size(976, 458);
+            ClientSize = new Size(1185, 732);
             Controls.Add(panelContenido);
             Name = "FrmBaseListado";
             Text = "FrmBaseListado";
@@ -401,13 +401,13 @@
             Panelpaginas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)icnpinbuscarregistro).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvListado).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panelbuscador.ResumeLayout(false);
             panelbuscador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             ResumeLayout(false);
         }
 
@@ -427,13 +427,13 @@
         private DataGridView dgvListado;
         private FontAwesome.Sharp.IconPictureBox icnpinbuscarregistro;
         private TableLayoutPanel Panelpaginas;
-        private Label label4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
         public Label lbltotalpaginas;
         public Label lblpaginas;
         private FontAwesome.Sharp.IconButton buttondespues;
         private FontAwesome.Sharp.IconButton buttosiguiente;
         private FontAwesome.Sharp.IconButton buttosegundo;
         private FontAwesome.Sharp.IconButton buttonprimero;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private Label label4;
     }
 }

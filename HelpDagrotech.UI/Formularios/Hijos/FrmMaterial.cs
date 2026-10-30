@@ -72,14 +72,14 @@ namespace HelpDagrotech.UI.Formularios
 
         private void configurarDataGrid()
         {
-            if (dgvmaterial.Columns.Count == 0)
+            if (dgvmateril.Columns.Count == 0)
                 return;
 
 
             if (dgvmateril.Columns["Id"] != null)
                 dgvmateril.Columns["Id"].Visible = false;
             if (dgvmateril.Columns["Id_Categoria"] != null)
-                dgvmaterial.Columns["Id_Categoria"].Visible = false;
+                dgvmateril.Columns["Id_Categoria"].Visible = false;
 
             if (dgvmateril.Columns["Nombre_material"] != null)
                 dgvmateril.Columns["Nombre_material"].HeaderText = "Material";
@@ -289,6 +289,11 @@ namespace HelpDagrotech.UI.Formularios
         private async void txtbuscarMaterial_TextChanged_2(object sender, EventArgs e)
         {
             await MostrarMaterialAsincrono();
+        }
+
+        private void FrmMaterial_Load_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

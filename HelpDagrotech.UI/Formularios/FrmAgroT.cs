@@ -1,5 +1,6 @@
 ﻿using GMap.NET.WindowsForms;
 using HelpDagrotech.UI.Formularios.BaseDatos;
+using HelpDagrotech.UI.Formularios.Hijos;
 using HelpDagrotech.UI.Helpers;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ namespace HelpDagrotech.UI.Formularios
 
         private void IconInicio_Click(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmCultivoIni(), panelContenedo, ref formularioActivo, iconInicio);
+            NavegacionHelper.AbrirFormulario(new FrmCultivoI(), panelContenedo, ref formularioActivo, iconInicio);
         }
 
         private void iconMiterreno_Click(object sender, EventArgs e)
@@ -231,30 +232,48 @@ namespace HelpDagrotech.UI.Formularios
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panel3.Width - 1, panel3.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panel3.Region = new Region(path);
+            }
         }
-    
+
 
 
 
         private void iconEmpleado_Click_1(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconMiterreno);
+            NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconEmpleado);
         }
 
         private void iconCultivo_Click_1(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmCultivo(), panelContenedo, ref formularioActivo, iconMiterreno);
+            NavegacionHelper.AbrirFormulario(new FrmCultivo(), panelContenedo, ref formularioActivo, iconCultivo);
         }
 
         private void iconMaterial_Click_1(object sender, EventArgs e)
         {
             NavegacionHelper.AbrirFormulario(new FrmMaterial(), panelContenedo, ref formularioActivo, iconMaterial);
+
+
+
         }
 
         private void iconInicio_Click_1(object sender, EventArgs e)
         {
-            NavegacionHelper.AbrirFormulario(new FrmCultivoIni(), panelContenedo, ref formularioActivo, iconInicio);
+            NavegacionHelper.AbrirFormulario(new FrmCultivoI(), panelContenedo, ref formularioActivo, iconInicio);
         }
 
         private void bttSalir_Click(object sender, EventArgs e)
@@ -282,7 +301,259 @@ namespace HelpDagrotech.UI.Formularios
             }
         }
 
-      
+        private void iconSalidam_Click(object sender, EventArgs e)
+        {
+            NavegacionHelper.AbrirFormulario(new FrmSalidaMat(), panelContenedo, ref formularioActivo, iconSalidam);
+        }
+
+        private void iconDecodific_Click(object sender, EventArgs e)
+        {
+            NavegacionHelper.AbrirFormulario(new FrmDecodificacion(), panelContenedo, ref formularioActivo, iconDecodific);
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panel8.Width - 1, panel8.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panel8.Region = new Region(path);
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panel4.Width - 1, panel4.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panel4.Region = new Region(path);
+            }
+        }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panel13.Width - 1, panel13.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panel13.Region = new Region(path);
+            }
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panel6.Width - 1, panel6.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panel6.Region = new Region(path);
+            }
+        }
+
+        private void iconDecodific_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconEmpleado.Width - 1, iconEmpleado.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconEmpleado.Region = new Region(path);
+            }
+
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconDecodific.Width - 1, iconDecodific.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconDecodific.Region = new Region(path);
+
+            }
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconCultivo.Width - 1, iconCultivo.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconCultivo.Region = new Region(path);
+
+            }
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconInicio.Width - 1, iconInicio.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconInicio.Region = new Region(path);
+
+            }
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconMaterial.Width - 1, iconMaterial.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconMaterial.Region = new Region(path);
+
+            }
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconMiterreno.Width - 1, iconMiterreno.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconMiterreno.Region = new Region(path);
+
+            }
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconSalidam.Width - 1, iconSalidam.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconSalidam.Region = new Region(path);
+
+            }
+
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, iconreprot.Width - 1, iconreprot.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                iconreprot.Region = new Region(path);
+
+            }
+
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, bttSalir.Width - 1, bttSalir.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                bttSalir.Region = new Region(path);
+
+            }
+        }
+
+        private void iconreprot_Click(object sender, EventArgs e)
+        {
+            NavegacionHelper.AbrirFormulario(new FrmReporte(), panelContenedo, ref formularioActivo, iconreprot);
+        }
     }
 }
 

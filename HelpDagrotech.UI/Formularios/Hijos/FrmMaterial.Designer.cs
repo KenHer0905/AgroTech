@@ -623,11 +623,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Algerian", 13.8F);
             label1.ForeColor = Color.White;
             label1.Location = new Point(48, 19);
             label1.Name = "label1";
-            label1.Size = new Size(161, 28);
+            label1.Size = new Size(222, 25);
             label1.TabIndex = 0;
             label1.Text = "Gestion Material";
             // 
@@ -639,6 +639,7 @@
             Controls.Add(panel1);
             Name = "FrmMaterial";
             Text = "FrmMaterial";
+            Load += FrmMaterial_Load_2;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

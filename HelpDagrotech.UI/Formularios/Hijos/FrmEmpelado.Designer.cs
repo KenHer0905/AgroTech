@@ -111,7 +111,7 @@ namespace HelpDagrotech.UI.Formularios
             dgvlistadoEmpleado.Name = "dgvlistadoEmpleado";
             dgvlistadoEmpleado.ReadOnly = true;
             dgvlistadoEmpleado.RowHeadersWidth = 51;
-            dgvlistadoEmpleado.Size = new Size(678, 628);
+            dgvlistadoEmpleado.Size = new Size(678, 765);
             dgvlistadoEmpleado.TabIndex = 1;
             dgvlistadoEmpleado.CellContentClick += dgvlistadoEmpleado_CellContentClick;
             // 
@@ -146,7 +146,7 @@ namespace HelpDagrotech.UI.Formularios
             panel7.BackColor = Color.FromArgb(192, 255, 192);
             panel7.Controls.Add(txtbuscaremplea);
             panel7.Controls.Add(iconPictureBox7);
-            panel7.Location = new Point(772, 12);
+            panel7.Location = new Point(708, 26);
             panel7.Name = "panel7";
             panel7.Size = new Size(435, 40);
             panel7.TabIndex = 8;
@@ -186,7 +186,7 @@ namespace HelpDagrotech.UI.Formularios
             paneEmpleado.Dock = DockStyle.Fill;
             paneEmpleado.Location = new Point(0, 0);
             paneEmpleado.Name = "paneEmpleado";
-            paneEmpleado.Size = new Size(1343, 703);
+            paneEmpleado.Size = new Size(1343, 840);
             paneEmpleado.TabIndex = 0;
             paneEmpleado.Paint += paneEmpleado_Paint;
             // 
@@ -202,9 +202,9 @@ namespace HelpDagrotech.UI.Formularios
             panel1.Controls.Add(groupoempeladoi);
             panel1.Controls.Add(groupEmpleado);
             panel1.Controls.Add(btnEditarEmpleado);
-            panel1.Location = new Point(20, 71);
+            panel1.Location = new Point(0, 71);
             panel1.Name = "panel1";
-            panel1.Size = new Size(662, 797);
+            panel1.Size = new Size(682, 934);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -220,7 +220,7 @@ namespace HelpDagrotech.UI.Formularios
             BtnGuardarEmpleado.IconColor = Color.White;
             BtnGuardarEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnGuardarEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardarEmpleado.Location = new Point(5, 710);
+            BtnGuardarEmpleado.Location = new Point(5, 847);
             BtnGuardarEmpleado.Margin = new Padding(3, 4, 3, 4);
             BtnGuardarEmpleado.Name = "BtnGuardarEmpleado";
             BtnGuardarEmpleado.Size = new Size(198, 81);
@@ -243,7 +243,7 @@ namespace HelpDagrotech.UI.Formularios
             bttnborraremple.IconColor = Color.White;
             bttnborraremple.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bttnborraremple.ImageAlign = ContentAlignment.MiddleLeft;
-            bttnborraremple.Location = new Point(403, 710);
+            bttnborraremple.Location = new Point(403, 847);
             bttnborraremple.Margin = new Padding(3, 4, 3, 4);
             bttnborraremple.Name = "bttnborraremple";
             bttnborraremple.Size = new Size(184, 81);
@@ -260,7 +260,7 @@ namespace HelpDagrotech.UI.Formularios
             panel9.Controls.Add(label2);
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(660, 58);
+            panel9.Size = new Size(680, 58);
             panel9.TabIndex = 16;
             // 
             // label2
@@ -285,10 +285,11 @@ namespace HelpDagrotech.UI.Formularios
             groupoempeladoi.Controls.Add(iconPictureBox8);
             groupoempeladoi.Controls.Add(panel6);
             groupoempeladoi.Controls.Add(panel8);
+            groupoempeladoi.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupoempeladoi.ForeColor = Color.Green;
-            groupoempeladoi.Location = new Point(16, 387);
+            groupoempeladoi.Location = new Point(16, 371);
             groupoempeladoi.Name = "groupoempeladoi";
-            groupoempeladoi.Size = new Size(562, 316);
+            groupoempeladoi.Size = new Size(562, 216);
             groupoempeladoi.TabIndex = 15;
             groupoempeladoi.TabStop = false;
             groupoempeladoi.Text = "INFORMACION DE TRABAJADOR ";
@@ -299,33 +300,36 @@ namespace HelpDagrotech.UI.Formularios
             conEstado.Location = new Point(186, 40);
             conEstado.Margin = new Padding(3, 4, 3, 4);
             conEstado.Name = "conEstado";
-            conEstado.Size = new Size(271, 28);
+            conEstado.Size = new Size(271, 31);
             conEstado.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label5.Location = new Point(62, 39);
             label5.Name = "label5";
-            label5.Size = new Size(57, 20);
+            label5.Size = new Size(65, 23);
             label5.TabIndex = 3;
             label5.Text = "Estado:";
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label8.Location = new Point(33, 92);
             label8.Name = "label8";
-            label8.Size = new Size(86, 20);
+            label8.Size = new Size(101, 23);
             label8.TabIndex = 6;
             label8.Text = "Contraseña:";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(24, 157);
+            label9.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
+            label9.Location = new Point(6, 157);
             label9.Name = "label9";
-            label9.Size = new Size(113, 20);
+            label9.Size = new Size(130, 23);
             label9.TabIndex = 12;
             label9.Text = "Rol del Usuario:";
             // 
@@ -356,7 +360,7 @@ namespace HelpDagrotech.UI.Formularios
             // 
             txtcontrasena.Location = new Point(46, 3);
             txtcontrasena.Name = "txtcontrasena";
-            txtcontrasena.Size = new Size(273, 27);
+            txtcontrasena.Size = new Size(273, 30);
             txtcontrasena.TabIndex = 12;
             // 
             // iconPictureBox5
@@ -390,7 +394,7 @@ namespace HelpDagrotech.UI.Formularios
             conRol.Location = new Point(46, 4);
             conRol.Margin = new Padding(3, 4, 3, 4);
             conRol.Name = "conRol";
-            conRol.Size = new Size(273, 28);
+            conRol.Size = new Size(273, 31);
             conRol.TabIndex = 14;
             // 
             // ICONROL
@@ -418,6 +422,7 @@ namespace HelpDagrotech.UI.Formularios
             groupEmpleado.Controls.Add(label6);
             groupEmpleado.Controls.Add(panel3);
             groupEmpleado.Controls.Add(label7);
+            groupEmpleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupEmpleado.ForeColor = Color.Green;
             groupEmpleado.Location = new Point(16, 81);
             groupEmpleado.Name = "groupEmpleado";
@@ -440,7 +445,7 @@ namespace HelpDagrotech.UI.Formularios
             // 
             txtNombreEmple.Location = new Point(49, 8);
             txtNombreEmple.Name = "txtNombreEmple";
-            txtNombreEmple.Size = new Size(294, 27);
+            txtNombreEmple.Size = new Size(294, 30);
             txtNombreEmple.TabIndex = 1;
             // 
             // iconPictureBox2
@@ -460,9 +465,10 @@ namespace HelpDagrotech.UI.Formularios
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label3.Location = new Point(4, 26);
             label3.Name = "label3";
-            label3.Size = new Size(67, 20);
+            label3.Size = new Size(77, 23);
             label3.TabIndex = 1;
             label3.Text = "Nombre:";
             // 
@@ -479,7 +485,7 @@ namespace HelpDagrotech.UI.Formularios
             // 
             txttelefono.Location = new Point(46, 8);
             txttelefono.Name = "txttelefono";
-            txttelefono.Size = new Size(297, 27);
+            txttelefono.Size = new Size(297, 30);
             txttelefono.TabIndex = 2;
             // 
             // iconPictureBox3
@@ -499,9 +505,10 @@ namespace HelpDagrotech.UI.Formularios
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label4.Location = new Point(10, 82);
             label4.Name = "label4";
-            label4.Size = new Size(70, 20);
+            label4.Size = new Size(79, 23);
             label4.TabIndex = 2;
             label4.Text = "Telefóno:";
             // 
@@ -518,7 +525,7 @@ namespace HelpDagrotech.UI.Formularios
             // 
             txtcedula.Location = new Point(46, 8);
             txtcedula.Name = "txtcedula";
-            txtcedula.Size = new Size(297, 27);
+            txtcedula.Size = new Size(297, 30);
             txtcedula.TabIndex = 11;
             // 
             // iconPictureBox4
@@ -538,9 +545,10 @@ namespace HelpDagrotech.UI.Formularios
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label6.Location = new Point(16, 154);
             label6.Name = "label6";
-            label6.Size = new Size(55, 20);
+            label6.Size = new Size(63, 23);
             label6.TabIndex = 4;
             label6.Text = "Cédula";
             // 
@@ -559,7 +567,7 @@ namespace HelpDagrotech.UI.Formularios
             txtFechanacimiento.Location = new Point(49, 6);
             txtFechanacimiento.Margin = new Padding(3, 4, 3, 4);
             txtFechanacimiento.Name = "txtFechanacimiento";
-            txtFechanacimiento.Size = new Size(294, 27);
+            txtFechanacimiento.Size = new Size(294, 30);
             txtFechanacimiento.TabIndex = 15;
             // 
             // iconPictureBox6
@@ -579,9 +587,10 @@ namespace HelpDagrotech.UI.Formularios
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
             label7.Location = new Point(16, 202);
             label7.Name = "label7";
-            label7.Size = new Size(89, 40);
+            label7.Size = new Size(102, 46);
             label7.TabIndex = 5;
             label7.Text = "Fecha \r\nNacimiento:";
             // 
@@ -597,7 +606,7 @@ namespace HelpDagrotech.UI.Formularios
             btnEditarEmpleado.IconColor = Color.White;
             btnEditarEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditarEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarEmpleado.Location = new Point(209, 710);
+            btnEditarEmpleado.Location = new Point(209, 847);
             btnEditarEmpleado.Margin = new Padding(3, 4, 3, 4);
             btnEditarEmpleado.Name = "btnEditarEmpleado";
             btnEditarEmpleado.Size = new Size(177, 81);
@@ -616,7 +625,7 @@ namespace HelpDagrotech.UI.Formularios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1343, 703);
+            ClientSize = new Size(1343, 840);
             Controls.Add(paneEmpleado);
             Name = "FrmEmpelado";
             StartPosition = FormStartPosition.CenterScreen;

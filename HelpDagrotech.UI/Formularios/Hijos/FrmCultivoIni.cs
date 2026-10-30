@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace HelpDagrotech.UI.Formularios
 {
-    public partial class FrmCultivoIni : Form
+    public partial class FrmCultivoI : Form
     {
-        public FrmCultivoIni()
+        public FrmCultivoI()
         {
             InitializeComponent();
 
@@ -213,6 +213,91 @@ namespace HelpDagrotech.UI.Formularios
             using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
             {
                 int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panelEmpelado12.Width - 1, panelEmpelado12.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panelEmpelado12.Region = new Region(path);
+            }
+
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panelTerreno.Width - 1, panelTerreno.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panelTerreno.Region = new Region(path);
+            }
+
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panelcosecha6.Width - 1, panelcosecha6.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panelcosecha6.Region = new Region(path);
+            }
+
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
+                Rectangle rect = new Rectangle(0, 0, panelganancia9.Width - 1, panelganancia9.Height - 1);
+
+                path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                path.CloseFigure();
+
+                panelganancia9.Region = new Region(path);
+            }
+        }
+
+        private void FrmCultivoIni_Shown(object sender, EventArgs e)
+        {
+            RedondearTarjetasModulos();
+        }
+        private void dvgmovimientore_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelEmpelado12_PaddingChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmCultivoIni_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Dibuja el contorno redondeado del panel de manera limpia
+            using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                int radio = 20;
                 Rectangle rect = new Rectangle(0, 0, panel1.Width - 1, panel1.Height - 1);
 
                 path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
@@ -223,15 +308,6 @@ namespace HelpDagrotech.UI.Formularios
 
                 panel1.Region = new Region(path);
             }
-        }
-
-        private void FrmCultivoIni_Shown(object sender, EventArgs e)
-        {
-            RedondearTarjetasModulos();
-        }
-        private void dvgmovimientore_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
     }
 }

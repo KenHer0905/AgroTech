@@ -174,7 +174,12 @@ namespace HelpDagrotech.UI.Formularios
 
                 panel3.Region = new Region(path);
             }
-            
+
+        }
+
+        private void BtnGuardarTerreno_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

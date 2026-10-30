@@ -42,17 +42,17 @@
             groupBox3 = new GroupBox();
             label5 = new Label();
             label7 = new Label();
-            textBox5 = new TextBox();
-            textBox3 = new TextBox();
+            txtlongi = new TextBox();
+            txtlatitu = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txtubica = new TextBox();
             groupBox2 = new GroupBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtterrenp = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtareat = new TextBox();
             label8 = new Label();
-            textBox6 = new TextBox();
+            txtxet = new TextBox();
             panel4 = new Panel();
             label2 = new Label();
             BtnGuardarTerreno = new FontAwesome.Sharp.IconButton();
@@ -199,10 +199,10 @@
             // 
             groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(textBox5);
-            groupBox3.Controls.Add(textBox3);
+            groupBox3.Controls.Add(txtlongi);
+            groupBox3.Controls.Add(txtlatitu);
             groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(textBox4);
+            groupBox3.Controls.Add(txtubica);
             groupBox3.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox3.Location = new Point(21, 276);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
@@ -235,26 +235,26 @@
             label7.TabIndex = 16;
             label7.Text = "Longitud";
             // 
-            // textBox5
+            // txtlongi
             // 
-            textBox5.Cursor = Cursors.IBeam;
-            textBox5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(608, 67);
-            textBox5.Margin = new Padding(3, 5, 3, 5);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(169, 29);
-            textBox5.TabIndex = 17;
-            textBox5.TextChanged += textBox5_TextChanged;
+            txtlongi.Cursor = Cursors.IBeam;
+            txtlongi.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtlongi.Location = new Point(608, 67);
+            txtlongi.Margin = new Padding(3, 5, 3, 5);
+            txtlongi.Name = "txtlongi";
+            txtlongi.Size = new Size(169, 29);
+            txtlongi.TabIndex = 17;
+            txtlongi.TextChanged += textBox5_TextChanged;
             // 
-            // textBox3
+            // txtlatitu
             // 
-            textBox3.Cursor = Cursors.Hand;
-            textBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(335, 67);
-            textBox3.Margin = new Padding(3, 5, 3, 5);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(169, 29);
-            textBox3.TabIndex = 13;
+            txtlatitu.Cursor = Cursors.Hand;
+            txtlatitu.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtlatitu.Location = new Point(335, 67);
+            txtlatitu.Margin = new Padding(3, 5, 3, 5);
+            txtlatitu.Name = "txtlatitu";
+            txtlatitu.Size = new Size(169, 29);
+            txtlatitu.TabIndex = 13;
             // 
             // label6
             // 
@@ -267,24 +267,24 @@
             label6.TabIndex = 10;
             label6.Text = "Ubicación";
             // 
-            // textBox4
+            // txtubica
             // 
-            textBox4.Cursor = Cursors.IBeam;
-            textBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(27, 67);
-            textBox4.Margin = new Padding(3, 5, 3, 5);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(169, 29);
-            textBox4.TabIndex = 11;
+            txtubica.Cursor = Cursors.IBeam;
+            txtubica.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtubica.Location = new Point(27, 67);
+            txtubica.Margin = new Padding(3, 5, 3, 5);
+            txtubica.Name = "txtubica";
+            txtubica.Size = new Size(169, 29);
+            txtubica.TabIndex = 11;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(txtterrenp);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(txtareat);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(textBox6);
+            groupBox2.Controls.Add(txtxet);
             groupBox2.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(21, 79);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
@@ -306,15 +306,15 @@
             label3.TabIndex = 6;
             label3.Text = "Nombre del terreno";
             // 
-            // textBox1
+            // txtterrenp
             // 
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(27, 76);
-            textBox1.Margin = new Padding(3, 5, 3, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(169, 29);
-            textBox1.TabIndex = 7;
+            txtterrenp.Cursor = Cursors.IBeam;
+            txtterrenp.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtterrenp.Location = new Point(27, 76);
+            txtterrenp.Margin = new Padding(3, 5, 3, 5);
+            txtterrenp.Name = "txtterrenp";
+            txtterrenp.Size = new Size(169, 29);
+            txtterrenp.TabIndex = 7;
             // 
             // label4
             // 
@@ -326,15 +326,15 @@
             label4.TabIndex = 8;
             label4.Text = "Area del terreno";
             // 
-            // textBox2
+            // txtareat
             // 
-            textBox2.Cursor = Cursors.Hand;
-            textBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(343, 76);
-            textBox2.Margin = new Padding(3, 5, 3, 5);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(169, 29);
-            textBox2.TabIndex = 9;
+            txtareat.Cursor = Cursors.Hand;
+            txtareat.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtareat.Location = new Point(343, 76);
+            txtareat.Margin = new Padding(3, 5, 3, 5);
+            txtareat.Name = "txtareat";
+            txtareat.Size = new Size(169, 29);
+            txtareat.TabIndex = 9;
             // 
             // label8
             // 
@@ -347,15 +347,15 @@
             label8.TabIndex = 14;
             label8.Text = "Estado";
             // 
-            // textBox6
+            // txtxet
             // 
-            textBox6.Cursor = Cursors.IBeam;
-            textBox6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(608, 76);
-            textBox6.Margin = new Padding(3, 5, 3, 5);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(169, 29);
-            textBox6.TabIndex = 15;
+            txtxet.Cursor = Cursors.IBeam;
+            txtxet.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtxet.Location = new Point(608, 76);
+            txtxet.Margin = new Padding(3, 5, 3, 5);
+            txtxet.Name = "txtxet";
+            txtxet.Size = new Size(169, 29);
+            txtxet.TabIndex = 15;
             // 
             // panel4
             // 
@@ -401,6 +401,7 @@
             BtnGuardarTerreno.Text = "Guardar terreno";
             BtnGuardarTerreno.TextAlign = ContentAlignment.MiddleRight;
             BtnGuardarTerreno.UseVisualStyleBackColor = false;
+            BtnGuardarTerreno.Click += BtnGuardarTerreno_Click;
             // 
             // groupBox1
             // 
@@ -506,17 +507,17 @@
         private Label label2;
         private Panel panel4;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtterrenp;
+        private TextBox txtareat;
         private Label label4;
         private DataGridView dataGridView1;
-        private TextBox textBox3;
+        private TextBox txtlatitu;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txtubica;
         private Label label6;
-        private TextBox textBox5;
+        private TextBox txtlongi;
         private Label label7;
-        private TextBox textBox6;
+        private TextBox txtxet;
         private Label label8;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
