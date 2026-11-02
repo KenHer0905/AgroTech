@@ -21,5 +21,10 @@ namespace HelpDAgroTech.Bll.Common
         {
             return await _dal.InsertarSiembraAsync(idTerreno, idCultivo, duracion, fecha);
         }
+
+        public async Task<bool> ActualizarSiembraAsync(SiembraEntity siembra)
+        {
+            return await _dal.ActualizarSiembraAsync(siembra);
+        }
     }
 }

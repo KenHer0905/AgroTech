@@ -30,17 +30,20 @@
         {
             components = new System.ComponentModel.Container();
             paneldeCultivo = new Panel();
+            panel9 = new Panel();
+            txtbuscarSiembra = new TextBox();
+            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             groupBox2 = new GroupBox();
             gMapAgroT = new GMap.NET.WindowsForms.GMapControl();
             label3 = new Label();
-            dataGridView1 = new DataGridView();
+            dvgSiembralis = new DataGridView();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
             txtSimebra = new DateTimePicker();
             CboxSemilla = new ComboBox();
             Cboxterreno = new ComboBox();
             iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            bttEditar = new FontAwesome.Sharp.IconButton();
             buttregistrarcosecha = new FontAwesome.Sharp.IconButton();
             iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             textBox1 = new TextBox();
@@ -55,8 +58,10 @@
             lblcose = new Label();
             errorProvider1 = new ErrorProvider(components);
             paneldeCultivo.SuspendLayout();
+            panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dvgSiembralis).BeginInit();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
@@ -69,9 +74,10 @@
             // paneldeCultivo
             // 
             paneldeCultivo.BackColor = Color.FromArgb(0, 64, 0);
+            paneldeCultivo.Controls.Add(panel9);
             paneldeCultivo.Controls.Add(groupBox2);
             paneldeCultivo.Controls.Add(label3);
-            paneldeCultivo.Controls.Add(dataGridView1);
+            paneldeCultivo.Controls.Add(dvgSiembralis);
             paneldeCultivo.Controls.Add(panel1);
             paneldeCultivo.Dock = DockStyle.Fill;
             paneldeCultivo.Location = new Point(0, 0);
@@ -79,6 +85,41 @@
             paneldeCultivo.Size = new Size(1402, 662);
             paneldeCultivo.TabIndex = 0;
             paneldeCultivo.Paint += paneldeCultivo_Paint;
+            // 
+            // panel9
+            // 
+            panel9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel9.BackColor = Color.FromArgb(192, 255, 192);
+            panel9.Controls.Add(txtbuscarSiembra);
+            panel9.Controls.Add(iconPictureBox7);
+            panel9.Location = new Point(99, 552);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(457, 40);
+            panel9.TabIndex = 14;
+            // 
+            // txtbuscarSiembra
+            // 
+            txtbuscarSiembra.BackColor = Color.FromArgb(192, 255, 192);
+            txtbuscarSiembra.Location = new Point(49, 8);
+            txtbuscarSiembra.Name = "txtbuscarSiembra";
+            txtbuscarSiembra.PlaceholderText = "Buscar Salida de material";
+            txtbuscarSiembra.Size = new Size(369, 27);
+            txtbuscarSiembra.TabIndex = 1;
+            txtbuscarSiembra.TextChanged += txtbuscarSiembra_TextChanged;
+            // 
+            // iconPictureBox7
+            // 
+            iconPictureBox7.BackColor = Color.FromArgb(192, 255, 192);
+            iconPictureBox7.ForeColor = SystemColors.ControlDarkDark;
+            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Search;
+            iconPictureBox7.IconColor = SystemColors.ControlDarkDark;
+            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox7.IconSize = 43;
+            iconPictureBox7.Location = new Point(0, 0);
+            iconPictureBox7.Name = "iconPictureBox7";
+            iconPictureBox7.Size = new Size(43, 48);
+            iconPictureBox7.TabIndex = 0;
+            iconPictureBox7.TabStop = false;
             // 
             // groupBox2
             // 
@@ -131,16 +172,18 @@
             label3.TabIndex = 12;
             label3.Text = "GESTION CULTIVO";
             // 
-            // dataGridView1
+            // dvgSiembralis
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Gray;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 541);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1399, 659);
-            dataGridView1.TabIndex = 12;
+            dvgSiembralis.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dvgSiembralis.BackgroundColor = Color.Gray;
+            dvgSiembralis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgSiembralis.Location = new Point(0, 598);
+            dvgSiembralis.Name = "dvgSiembralis";
+            dvgSiembralis.RowHeadersWidth = 51;
+            dvgSiembralis.Size = new Size(1399, 602);
+            dvgSiembralis.TabIndex = 12;
+            dvgSiembralis.CellClick += dataGridView1_CellContentClick;
+            dvgSiembralis.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel1
             // 
@@ -161,7 +204,7 @@
             groupBox1.Controls.Add(CboxSemilla);
             groupBox1.Controls.Add(Cboxterreno);
             groupBox1.Controls.Add(iconButton2);
-            groupBox1.Controls.Add(iconButton3);
+            groupBox1.Controls.Add(bttEditar);
             groupBox1.Controls.Add(buttregistrarcosecha);
             groupBox1.Controls.Add(iconPictureBox6);
             groupBox1.Controls.Add(textBox1);
@@ -197,6 +240,7 @@
             CboxSemilla.Name = "CboxSemilla";
             CboxSemilla.Size = new Size(251, 30);
             CboxSemilla.TabIndex = 17;
+            CboxSemilla.SelectedIndexChanged += CboxSemilla_SelectedIndexChanged;
             // 
             // Cboxterreno
             // 
@@ -222,23 +266,25 @@
             iconButton2.Text = "Reportar Cosecha";
             iconButton2.TextAlign = ContentAlignment.MiddleRight;
             iconButton2.UseVisualStyleBackColor = false;
+            iconButton2.Click += iconButton2_Click;
             // 
-            // iconButton3
+            // bttEditar
             // 
-            iconButton3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            iconButton3.BackColor = Color.Green;
-            iconButton3.ForeColor = Color.White;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PenClip;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(401, 69);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(154, 58);
-            iconButton3.TabIndex = 15;
-            iconButton3.Text = "EDITAR";
-            iconButton3.TextAlign = ContentAlignment.MiddleRight;
-            iconButton3.UseVisualStyleBackColor = false;
+            bttEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            bttEditar.BackColor = Color.Green;
+            bttEditar.ForeColor = Color.White;
+            bttEditar.IconChar = FontAwesome.Sharp.IconChar.PenClip;
+            bttEditar.IconColor = Color.White;
+            bttEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            bttEditar.ImageAlign = ContentAlignment.MiddleLeft;
+            bttEditar.Location = new Point(401, 69);
+            bttEditar.Name = "bttEditar";
+            bttEditar.Size = new Size(154, 58);
+            bttEditar.TabIndex = 15;
+            bttEditar.Text = "EDITAR";
+            bttEditar.TextAlign = ContentAlignment.MiddleRight;
+            bttEditar.UseVisualStyleBackColor = false;
+            bttEditar.Click += iconButton3_Click;
             // 
             // buttregistrarcosecha
             // 
@@ -419,10 +465,14 @@
             Name = "FrmCultivo";
             Text = "SIEMBRA Y COSECHA";
             Load += FrmCultivo_Load;
+            Click += FrmCultivo_Click;
             paneldeCultivo.ResumeLayout(false);
             paneldeCultivo.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dvgSiembralis).EndInit();
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -444,7 +494,7 @@
         private Label lblcose;
         private Label label2;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dvgSiembralis;
         private FontAwesome.Sharp.IconButton bttGuardar;
         private Label label3;
         private GroupBox groupBox1;
@@ -454,12 +504,15 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private FontAwesome.Sharp.IconButton buttregistrarcosecha;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton bttEditar;
         private GroupBox groupBox2;
         private GMap.NET.WindowsForms.GMapControl gMapAgroT;
         private ComboBox CboxSemilla;
         private ComboBox Cboxterreno;
         private DateTimePicker txtSimebra;
         private ErrorProvider errorProvider1;
+        private Panel panel9;
+        private TextBox txtbuscarSiembra;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
     }
 }

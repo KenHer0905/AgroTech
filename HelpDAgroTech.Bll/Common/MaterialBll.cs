@@ -22,5 +22,10 @@ namespace HelpDAgroTech.Bll.Common
         {
             return await _materialDal.InsertarMaterialAsync(nombre, idCategoria, unidad, stock, stockMinimo,precio);
         }
+
+        public async Task ActualizarMaterial(MaterialEntity material)
+        {
+            await _materialDal.actualizarMaterial(material);
+        }
     }
 }

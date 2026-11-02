@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -20,6 +21,9 @@ namespace HelpDagrotech.UI.Formularios
     {
         private readonly MaterialBll _materialBll = new MaterialBll();
         private string rutaImagenSeleccionada;
+        private int? _idMateSeleccionado = null;
+
+        public bool EsEdicion => _idMateSeleccionado.HasValue;
 
         public FrmMaterial()
         {
@@ -41,7 +45,7 @@ namespace HelpDagrotech.UI.Formularios
             txtminimost.Clear();
             txtxprecio.Clear();
             txtCategoriamate.SelectedIndex = -1;
-            // txtunidadmedida.SelectedIndex = -1;
+            txtunidadmedida.SelectedIndex = -1;
             inpixmas.Image = null;
             rutaImagenSeleccionada = string.Empty;
         }
@@ -76,8 +80,10 @@ namespace HelpDagrotech.UI.Formularios
                 return;
 
 
-            if (dgvmateril.Columns["Id"] != null)
-                dgvmateril.Columns["Id"].Visible = false;
+            //if (dgvmateril.Columns["Id"] != null)
+               // dgvmateril.Columns["Id"].Visible = false;
+            if (dgvmateril.Columns["Id_Material"] != null)
+                dgvmateril.Columns["Id_Material"].Visible = false;
             if (dgvmateril.Columns["Id_Categoria"] != null)
                 dgvmateril.Columns["Id_Categoria"].Visible = false;
 
@@ -91,30 +97,14 @@ namespace HelpDagrotech.UI.Formularios
                 dgvmateril.Columns["Stock"].HeaderText = "Stock";
             if (dgvmateril.Columns["Stock_minimo"] != null)
                 dgvmateril.Columns["Stock_minimo"].HeaderText = "Stock minimo";
-            // if (dgvlistadoEmpleado.Columns["Contrasena"] != null)
-            //    dgvlistadoEmpleado.Columns["Contrasena"].HeaderText = "Contraseña";
             if (dgvmateril.Columns["Precio"] != null)
                 dgvmateril.Columns["Precio"].HeaderText = "Precio";
 
             if (dgvmateril.Columns["Nombre_material"] != null)
-                dgvmateril.Columns["Nombre_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+               dgvmateril.Columns["Nombre_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
-        /*private async Task CargarRolesAsync()
-         {
-             try
-             {
-                 var categoria = await _categoriaMaterialDal.MostrarCategoriasAsync();
 
-                 txtCategoriamate.DataSource = categoria;
-                 txtCategoriamate.DisplayMember = "Nombre_categoria";
-                 txtCategoriamate.ValueMember = "Id_Categoria";
-                 txtCategoriamate.SelectedIndex = -1;
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show($"Error al cargar las categorias: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-         }*/
+
 
         private void CargarCategoriasYUnidades()
         {
@@ -134,19 +124,19 @@ namespace HelpDagrotech.UI.Formularios
                 txtCategoriamate.SelectedIndex = -1;
 
 
-                /* txtunidadmedida.Items.Clear();
-                 txtunidadmedida.Items.Add("Kilogramos (kg)");
+                 txtunidadmedida.Items.Clear();
+                 txtunidadmedida.Items.Add("Libras (l)");
                  txtunidadmedida.Items.Add("Litros (L)");
-                 txtunidadmedida.Items.Add("Sacos");
-                 txtunidadmedida.Items.Add("Unidades");*/
+                 txtunidadmedida.Items.Add("Quintal");
+                 txtunidadmedida.Items.Add("Unidad");
             }
 
 
-            /* txtunidadmedida.Items.Clear();
-             txtunidadmedida.Items.Add("Kilogramos (kg)");
+             txtunidadmedida.Items.Clear();
+             txtunidadmedida.Items.Add("Libras (l)");
              txtunidadmedida.Items.Add("Litros (L)");
-             txtunidadmedida.Items.Add("Sacos");
-             txtunidadmedida.Items.Add("Unidades");*/
+             txtunidadmedida.Items.Add("Quintal");
+             txtunidadmedida.Items.Add("Unidad");
         }
 
 
@@ -230,12 +220,6 @@ namespace HelpDagrotech.UI.Formularios
             await MostrarMaterialAsincrono();
         }
 
-        private async void FrmMaterial_Load_1(object sender, EventArgs e)
-        {
-            CargarCategoriasYUnidades();
-            await MostrarMaterialAsincrono();
-        }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -244,7 +228,6 @@ namespace HelpDagrotech.UI.Formularios
 
         private async void IconGuardarm_Click_1(object sender, EventArgs e)
         {
-            // Validaciones básicas
             if (string.IsNullOrWhiteSpace(txtmaterial.Text) ||
                 string.IsNullOrWhiteSpace(txtminimost.Text) ||
                 string.IsNullOrWhiteSpace(txtxprecio.Text))
@@ -290,9 +273,97 @@ namespace HelpDagrotech.UI.Formularios
         {
             await MostrarMaterialAsincrono();
         }
-
-        private void FrmMaterial_Load_2(object sender, EventArgs e)
+        private async void FrmMaterial_Load_2(object sender, EventArgs e)
         {
+            CargarCategoriasYUnidades();
+            await MostrarMaterialAsincrono();
+        }
+
+        private void dgvmateril_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow fila = dgvmateril.Rows[e.RowIndex];
+
+            if (fila.Cells["Id_Material"].Value != null)
+            {
+                _idMateSeleccionado = Convert.ToInt32(fila.Cells["Id_Material"].Value);
+            }
+
+            txtmaterial.Text = fila.Cells["Nombre_material"].Value?.ToString();
+            txtunidadmedida.SelectedValue = fila.Cells["Unidad_material"].Value?.ToString();
+            txtstock.Text = fila.Cells["Stock"].Value?.ToString();
+            txtminimost.Text = fila.Cells["Stock_minimo"].Value?.ToString();
+            txtxprecio.Text = fila.Cells["Precio"].Value?.ToString();
+
+            if (fila.Cells["Id_Categoria"].Value != null && fila.Cells["Id_Categoria"].Value != DBNull.Value)
+            {
+                int idCategoriaRow = Convert.ToInt32(fila.Cells["Id_Categoria"].Value);
+                txtCategoriamate.SelectedValue = idCategoriaRow;
+            }
+            else
+            {
+                txtCategoriamate.SelectedIndex = -1;
+            }
+
+            txtCategoriamate.Enabled = true;
+            txtminimost.Enabled = true;
+            txtunidadmedida.Enabled = true;
+            IconGuardarm.Enabled = false;
+        }
+        
+
+        private async void iconeditar_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (_idMateSeleccionado == null || _idMateSeleccionado <= 0)
+                {
+                    MessageBox.Show("Por favor, seleccione un material de la tabla para actualizar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtmaterial.Text) ||
+                    string.IsNullOrWhiteSpace(txtstock.Text) ||
+                    string.IsNullOrWhiteSpace(txtminimost.Text) ||
+                    string.IsNullOrWhiteSpace(txtxprecio.Text))
+                {
+                    MessageBox.Show("Por favor complete todos los campos obligatorios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int idCategoria = txtCategoriamate.SelectedValue != null ? Convert.ToInt32(txtCategoriamate.SelectedValue) : 1;
+
+                MaterialEntity materialModificado = new MaterialEntity
+                (
+                    txtmaterial.Text.Trim(),
+                    idCategoria,
+                    txtunidadmedida.Text.Trim(),
+                    Convert.ToInt32(txtstock.Text),
+                    Convert.ToInt32(txtminimost.Text),
+                    Convert.ToDecimal(txtxprecio.Text)
+                );
+
+                materialModificado.AsignarId(_idMateSeleccionado.Value);
+
+                await _materialBll.ActualizarMaterial(materialModificado);
+
+                MessageBox.Show("¡Material actualizado correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario();
+                _idMateSeleccionado = null;
+                IconGuardarm.Enabled = true;
+
+                await MostrarMaterialAsincrono();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
 
         }
     }

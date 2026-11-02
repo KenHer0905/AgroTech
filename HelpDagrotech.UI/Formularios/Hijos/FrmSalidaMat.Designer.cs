@@ -38,10 +38,8 @@
             panel8 = new Panel();
             label12 = new Label();
             panel4 = new Panel();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             bttguardarsalida = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             numericUpDown2 = new NumericUpDown();
             numericUpDown1 = new NumericUpDown();
             label6 = new Label();
@@ -51,6 +49,7 @@
             panel5 = new Panel();
             label11 = new Label();
             panel1 = new Panel();
+            CboxTipomO = new ComboBox();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -60,7 +59,6 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            CboxTiposalida = new ComboBox();
             Cboxterrenosalida = new ComboBox();
             Cboxempleadosalida = new ComboBox();
             panel3 = new Panel();
@@ -120,6 +118,7 @@
             txtbuscarSalidaMat.PlaceholderText = "Buscar Salida de material";
             txtbuscarSalidaMat.Size = new Size(369, 27);
             txtbuscarSalidaMat.TabIndex = 1;
+            txtbuscarSalidaMat.TextChanged += txtbuscarSalidaMat_TextChanged;
             // 
             // iconPictureBox7
             // 
@@ -190,7 +189,6 @@
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel4.BackColor = Color.Honeydew;
-            panel4.Controls.Add(iconButton3);
             panel4.Controls.Add(flowLayoutPanel1);
             panel4.Controls.Add(numericUpDown2);
             panel4.Controls.Add(numericUpDown1);
@@ -204,30 +202,12 @@
             panel4.Size = new Size(1182, 147);
             panel4.TabIndex = 19;
             // 
-            // iconButton3
-            // 
-            iconButton3.BackColor = Color.Red;
-            iconButton3.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = Color.White;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(1156, 90);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(150, 54);
-            iconButton3.TabIndex = 2;
-            iconButton3.Text = "CERRAR \r\nVENTANA";
-            iconButton3.TextAlign = ContentAlignment.MiddleRight;
-            iconButton3.UseVisualStyleBackColor = false;
-            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(bttguardarsalida);
-            flowLayoutPanel1.Controls.Add(iconButton2);
             flowLayoutPanel1.Location = new Point(849, 87);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(464, 57);
+            flowLayoutPanel1.Size = new Size(153, 57);
             flowLayoutPanel1.TabIndex = 21;
             // 
             // bttguardarsalida
@@ -246,23 +226,7 @@
             bttguardarsalida.Text = "GUARDAR";
             bttguardarsalida.TextAlign = ContentAlignment.MiddleRight;
             bttguardarsalida.UseVisualStyleBackColor = false;
-            // 
-            // iconButton2
-            // 
-            iconButton2.BackColor = Color.FromArgb(0, 192, 0);
-            iconButton2.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconButton2.ForeColor = Color.White;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(151, 3);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(150, 54);
-            iconButton2.TabIndex = 1;
-            iconButton2.Text = "NUEVO MOVIMIENTO";
-            iconButton2.TextAlign = ContentAlignment.MiddleRight;
-            iconButton2.UseVisualStyleBackColor = false;
+            bttguardarsalida.Click += bttguardarsalida_Click;
             // 
             // numericUpDown2
             // 
@@ -344,6 +308,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.Honeydew;
+            panel1.Controls.Add(CboxTipomO);
             panel1.Controls.Add(iconPictureBox3);
             panel1.Controls.Add(iconPictureBox2);
             panel1.Controls.Add(iconPictureBox1);
@@ -353,7 +318,6 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(CboxTiposalida);
             panel1.Controls.Add(Cboxterrenosalida);
             panel1.Controls.Add(Cboxempleadosalida);
             panel1.Controls.Add(panel3);
@@ -361,6 +325,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1182, 187);
             panel1.TabIndex = 1;
+            // 
+            // CboxTipomO
+            // 
+            CboxTipomO.FormattingEnabled = true;
+            CboxTipomO.Location = new Point(688, 107);
+            CboxTipomO.Margin = new Padding(3, 4, 3, 4);
+            CboxTipomO.Name = "CboxTipomO";
+            CboxTipomO.Size = new Size(235, 28);
+            CboxTipomO.TabIndex = 19;
             // 
             // iconPictureBox3
             // 
@@ -474,14 +447,6 @@
             label3.TabIndex = 4;
             label3.Text = "Empleado";
             // 
-            // CboxTiposalida
-            // 
-            CboxTiposalida.FormattingEnabled = true;
-            CboxTiposalida.Location = new Point(688, 104);
-            CboxTiposalida.Name = "CboxTiposalida";
-            CboxTiposalida.Size = new Size(221, 28);
-            CboxTiposalida.TabIndex = 3;
-            // 
             // Cboxterrenosalida
             // 
             Cboxterrenosalida.FormattingEnabled = true;
@@ -489,6 +454,7 @@
             Cboxterrenosalida.Name = "Cboxterrenosalida";
             Cboxterrenosalida.Size = new Size(220, 28);
             Cboxterrenosalida.TabIndex = 2;
+            Cboxterrenosalida.SelectedIndexChanged += Cboxterrenosalida_SelectedIndexChanged;
             // 
             // Cboxempleadosalida
             // 
@@ -549,6 +515,7 @@
             Controls.Add(panelsalidamat);
             Name = "FrmSalidaMat";
             Text = "FrmSalidaMat";
+            Load += FrmSalidaMat_Load;
             Paint += FrmSalidaMat_Paint;
             panelsalidamat.ResumeLayout(false);
             panel9.ResumeLayout(false);
@@ -589,9 +556,7 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private ComboBox CboxTiposalida;
         private ComboBox Cboxterrenosalida;
-        private ComboBox Cboxempleadosalida;
         private Panel panel4;
         private Label label6;
         private Label label9;
@@ -611,13 +576,13 @@
         private DataGridView dvgsalidamaterial;
         private Panel panel7;
         private Label label12;
-        private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton bttguardarsalida;
         private Panel panel8;
-        private FontAwesome.Sharp.IconButton iconButton3;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel9;
         private TextBox txtbuscarSalidaMat;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private ComboBox Cboxempleadosalida;
+        private ComboBox CboxTipomO;
     }
 }

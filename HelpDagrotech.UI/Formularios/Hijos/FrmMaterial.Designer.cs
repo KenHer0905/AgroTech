@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            label1 = new Label();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
             dgvmateril = new DataGridView();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -38,11 +39,11 @@
             groupBox3 = new GroupBox();
             inpixmas = new FontAwesome.Sharp.IconPictureBox();
             groupBox2 = new GroupBox();
+            txtunidadmedida = new ComboBox();
             label10 = new Label();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             label4 = new Label();
             label6 = new Label();
-            txtunidadmedida = new TextBox();
             label11 = new Label();
             iconPictureBox10 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
@@ -68,9 +69,11 @@
             txtbuscarMaterial = new TextBox();
             label7 = new Label();
             label5 = new Label();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            label1 = new Label();
-            panel1.SuspendLayout();
+            panel3 = new Panel();
+            iconPictureBox11 = new FontAwesome.Sharp.IconPictureBox();
+            label13 = new Label();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvmateril).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -88,21 +91,35 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox11).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // label1
             // 
-            panel1.BackColor = Color.FromArgb(0, 64, 0);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(iconPictureBox2);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1549, 720);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            label1.AutoSize = true;
+            label1.Font = new Font("Algerian", 13.8F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(48, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(222, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Gestion Material";
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.FromArgb(0, 64, 0);
+            iconPictureBox2.Cursor = Cursors.Hand;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            iconPictureBox2.IconColor = Color.White;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 40;
+            iconPictureBox2.Location = new Point(11, 12);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(40, 40);
+            iconPictureBox2.TabIndex = 19;
+            iconPictureBox2.TabStop = false;
             // 
             // panel2
             // 
@@ -116,9 +133,9 @@
             panel2.Controls.Add(panel9);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(-6, 58);
+            panel2.Location = new Point(-6, 81);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1555, 662);
+            panel2.Size = new Size(1377, 639);
             panel2.TabIndex = 20;
             // 
             // dgvmateril
@@ -129,13 +146,14 @@
             dgvmateril.RowHeadersWidth = 51;
             dgvmateril.Size = new Size(1537, 188);
             dgvmateril.TabIndex = 29;
+            dgvmateril.CellContentClick += dgvmateril_CellContentClick_1;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(IconGuardarm);
             flowLayoutPanel1.Controls.Add(iconeditar);
             flowLayoutPanel1.Controls.Add(iconcancelma);
-            flowLayoutPanel1.Location = new Point(1085, 326);
+            flowLayoutPanel1.Location = new Point(1085, 325);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(363, 101);
@@ -176,6 +194,7 @@
             iconeditar.Text = "Editar";
             iconeditar.TextAlign = ContentAlignment.MiddleRight;
             iconeditar.UseVisualStyleBackColor = false;
+            iconeditar.Click += iconeditar_Click_1;
             // 
             // iconcancelma
             // 
@@ -220,11 +239,11 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtunidadmedida);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(iconPictureBox7);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(txtunidadmedida);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(iconPictureBox10);
             groupBox2.Controls.Add(iconPictureBox9);
@@ -240,12 +259,23 @@
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
             // 
+            // txtunidadmedida
+            // 
+            txtunidadmedida.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtunidadmedida.Cursor = Cursors.Hand;
+            txtunidadmedida.FormattingEnabled = true;
+            txtunidadmedida.Items.AddRange(new object[] { "Fertilizante", "Urea", "Pesticidas", "Fertilizante", "Urea", "Pesticidas" });
+            txtunidadmedida.Location = new Point(97, 333);
+            txtunidadmedida.Name = "txtunidadmedida";
+            txtunidadmedida.Size = new Size(291, 28);
+            txtunidadmedida.TabIndex = 29;
+            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(0, 64, 0);
-            label10.Location = new Point(97, 58);
+            label10.Location = new Point(97, 59);
             label10.Name = "label10";
             label10.Size = new Size(116, 23);
             label10.TabIndex = 28;
@@ -282,27 +312,18 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(0, 64, 0);
-            label6.Location = new Point(97, 286);
+            label6.Location = new Point(97, 285);
             label6.Name = "label6";
             label6.Size = new Size(152, 23);
             label6.TabIndex = 25;
             label6.Text = "Unidad de Medida";
-            // 
-            // txtunidadmedida
-            // 
-            txtunidadmedida.Cursor = Cursors.IBeam;
-            txtunidadmedida.Location = new Point(97, 312);
-            txtunidadmedida.Multiline = true;
-            txtunidadmedida.Name = "txtunidadmedida";
-            txtunidadmedida.Size = new Size(234, 49);
-            txtunidadmedida.TabIndex = 26;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Olive;
-            label11.Location = new Point(74, 10);
+            label11.Location = new Point(74, 11);
             label11.Name = "label11";
             label11.Size = new Size(163, 23);
             label11.TabIndex = 23;
@@ -447,7 +468,7 @@
             iconPictureBox6.IconColor = Color.Green;
             iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox6.IconSize = 46;
-            iconPictureBox6.Location = new Point(28, 415);
+            iconPictureBox6.Location = new Point(27, 415);
             iconPictureBox6.Margin = new Padding(3, 4, 3, 4);
             iconPictureBox6.Name = "iconPictureBox6";
             iconPictureBox6.Size = new Size(46, 49);
@@ -478,7 +499,7 @@
             iconPictureBox4.IconColor = Color.Green;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 46;
-            iconPictureBox4.Location = new Point(31, 218);
+            iconPictureBox4.Location = new Point(31, 219);
             iconPictureBox4.Margin = new Padding(3, 4, 3, 4);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(46, 53);
@@ -493,7 +514,7 @@
             iconPictureBox3.IconColor = Color.Green;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox3.IconSize = 46;
-            iconPictureBox3.Location = new Point(31, 110);
+            iconPictureBox3.Location = new Point(31, 109);
             iconPictureBox3.Margin = new Padding(3, 4, 3, 4);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(46, 53);
@@ -503,7 +524,7 @@
             // txtstock
             // 
             txtstock.Cursor = Cursors.IBeam;
-            txtstock.Location = new Point(84, 415);
+            txtstock.Location = new Point(85, 415);
             txtstock.Multiline = true;
             txtstock.Name = "txtstock";
             txtstock.Size = new Size(290, 49);
@@ -512,7 +533,7 @@
             // txtmaterial
             // 
             txtmaterial.Cursor = Cursors.IBeam;
-            txtmaterial.Location = new Point(84, 114);
+            txtmaterial.Location = new Point(85, 115);
             txtmaterial.Multiline = true;
             txtmaterial.Name = "txtmaterial";
             txtmaterial.Size = new Size(302, 49);
@@ -546,7 +567,7 @@
             // txtdescrip
             // 
             txtdescrip.Cursor = Cursors.IBeam;
-            txtdescrip.Location = new Point(83, 222);
+            txtdescrip.Location = new Point(83, 221);
             txtdescrip.Multiline = true;
             txtdescrip.Name = "txtdescrip";
             txtdescrip.Size = new Size(303, 49);
@@ -606,42 +627,65 @@
             label5.TabIndex = 7;
             label5.Text = "Categoria";
             // 
-            // iconPictureBox2
+            // panel3
             // 
-            iconPictureBox2.BackColor = Color.FromArgb(0, 64, 0);
-            iconPictureBox2.Cursor = Cursors.Hand;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
-            iconPictureBox2.IconColor = Color.White;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 40;
-            iconPictureBox2.Location = new Point(11, 12);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(40, 40);
-            iconPictureBox2.TabIndex = 19;
-            iconPictureBox2.TabStop = false;
+            panel3.Controls.Add(iconPictureBox11);
+            panel3.Controls.Add(label13);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1370, 75);
+            panel3.TabIndex = 21;
             // 
-            // label1
+            // iconPictureBox11
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Algerian", 13.8F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(48, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(222, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Gestion Material";
+            iconPictureBox11.BackColor = Color.FromArgb(0, 64, 0);
+            iconPictureBox11.Cursor = Cursors.Hand;
+            iconPictureBox11.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            iconPictureBox11.IconColor = Color.White;
+            iconPictureBox11.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox11.IconSize = 40;
+            iconPictureBox11.Location = new Point(11, 20);
+            iconPictureBox11.Name = "iconPictureBox11";
+            iconPictureBox11.Size = new Size(40, 40);
+            iconPictureBox11.TabIndex = 21;
+            iconPictureBox11.TabStop = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Algerian", 13.8F);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(48, 27);
+            label13.Name = "label13";
+            label13.Size = new Size(222, 25);
+            label13.TabIndex = 20;
+            label13.Text = "Gestion Material";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 64, 0);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(iconPictureBox2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1370, 720);
+            panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // FrmMaterial
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1549, 720);
+            ClientSize = new Size(1370, 720);
             Controls.Add(panel1);
             Name = "FrmMaterial";
             Text = "FrmMaterial";
             Load += FrmMaterial_Load_2;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvmateril).EndInit();
@@ -663,33 +707,34 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox11).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private ComboBox txtCategoriamate;
-        private Label label1;
-        private FontAwesome.Sharp.IconPictureBox inpixmas;
-        private Label label7;
-        private Label label5;
-        private Label label2;
-        private FontAwesome.Sharp.IconButton iconcancelma;
-        private FontAwesome.Sharp.IconButton IconGuardarm;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private GroupBox groupBox3;
-        private FontAwesome.Sharp.IconButton iconeditar;
-        private FlowLayoutPanel flowLayoutPanel1;
         private DataGridView dgvmaterial;
-        private Panel panel9;
-        private TextBox txtbuscarMaterial;
+        private Label label1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private Panel panel2;
+        private DataGridView dgvmateril;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private FontAwesome.Sharp.IconButton IconGuardarm;
+        private FontAwesome.Sharp.IconButton iconeditar;
+        private FontAwesome.Sharp.IconButton iconcancelma;
+        private GroupBox groupBox3;
+        private FontAwesome.Sharp.IconPictureBox inpixmas;
         private GroupBox groupBox2;
+        private ComboBox txtunidadmedida;
+        private Label label10;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private Label label4;
+        private Label label6;
         private Label label11;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox10;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
@@ -697,26 +742,27 @@
         private TextBox txtxprecio;
         private TextBox txtminimost;
         private GroupBox groupBox1;
-
+        private Label label12;
+        private Label label9;
+        private Label label8;
+        private Label label3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private TextBox txtstock;
         private TextBox txtmaterial;
-        private TextBox txtdescrip;
-
+        private ComboBox txtCategoriamate;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private TextBox txtunidadmedida;
-        private Label label10;
-        private Label label4;
-        private Label label6;
-        private Label label12;
-        private Label label9;
-        private Label label8;
-        private Label label3;
-        private DataGridView dgvmateril;
-
-
+        private TextBox txtdescrip;
+        private Label label2;
+        private Panel panel9;
+        private TextBox txtbuscarMaterial;
+        private Label label7;
+        private Label label5;
+        private Panel panel3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox11;
+        private Label label13;
+        private Panel panel1;
     }
 }

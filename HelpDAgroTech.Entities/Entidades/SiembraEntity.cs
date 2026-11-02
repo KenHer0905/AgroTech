@@ -11,13 +11,19 @@ namespace HelpDAgroTech.Entities.Entidades
       
             public int Id_Siembra { get; set; }
             public int Id_Terreno { get; set; }
+            public string NombreTerreno { get; set; }
             public int Id_Cultivo { get; set; }
+            public string NombreCultivo { get; set; }
             public string Duracion { get; set; } = string.Empty;
             public DateTime Fecha { get; set; }
 
-            // Propiedades opcionales por si haces JOIN en tu procedimiento de listar para mostrar nombres en el grid
-            public string Nombre_T { get; set; } = string.Empty;
-            public string Nombre { get; set; } = string.Empty;
-        
+
+        public SiembraEntity() { }
+
+        public void AsignarId(int id)
+        {
+            Id_Siembra = id;
+        }
+
     }
 }

@@ -145,7 +145,7 @@
             iconDecodific.Padding = new Padding(10, 0, 0, 0);
             iconDecodific.Size = new Size(197, 51);
             iconDecodific.TabIndex = 9;
-            iconDecodific.Text = "DECODIFICACION ";
+            iconDecodific.Text = "DOSIFICACION\r\n MATERIAL";
             iconDecodific.TextAlign = ContentAlignment.MiddleLeft;
             iconDecodific.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconDecodific.UseVisualStyleBackColor = true;
@@ -278,7 +278,7 @@
             iconCultivo.Padding = new Padding(10, 0, 0, 0);
             iconCultivo.Size = new Size(197, 51);
             iconCultivo.TabIndex = 3;
-            iconCultivo.Text = "SIEMBRA Y \r\nCOSECHA\r\n";
+            iconCultivo.Text = "SIEMBRA\r\nCOSECHA\r\n";
             iconCultivo.TextAlign = ContentAlignment.MiddleLeft;
             iconCultivo.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconCultivo.UseVisualStyleBackColor = true;

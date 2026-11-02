@@ -21,7 +21,6 @@ namespace HelpDagrotech.UI.Formularios
         private readonly EmpleadoBll _empleadoBLL;
         private readonly RolBll _rolBLL;
         private int? _idEmpleadoSeleccionado = null;
-        // Eliminamos el 'private object cboRoles;' porque causaba conflictos con el control visual
 
         public bool EsEdicion => _idEmpleadoSeleccionado.HasValue;
 
@@ -52,7 +51,6 @@ namespace HelpDagrotech.UI.Formularios
             bttnborraremple.FlatStyle = FlatStyle.Flat;
             bttnborraremple.FlatAppearance.BorderSize = 0;
 
-            // 2. Aplicar bordes redondeados a los botones (Radio: 12)
             RedonderControlesHelper.RedondearControl(BtnGuardarEmpleado, 12);
             RedonderControlesHelper.RedondearControl(btnEditarEmpleado, 12);
             RedonderControlesHelper.RedondearControl(bttnborraremple, 12);
@@ -357,8 +355,18 @@ namespace HelpDagrotech.UI.Formularios
 
         private void chart1_Click(object sender, EventArgs e)
         {
-       
-    }
+
+        }
+
+        private void conRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcontrasena_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

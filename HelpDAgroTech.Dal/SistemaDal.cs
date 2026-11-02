@@ -29,5 +29,7 @@ namespace HelpDAgroTech.Dal
                 throw new Exception(ex.Message);
             }
         }*/
+
+
     }
 }

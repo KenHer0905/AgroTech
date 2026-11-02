@@ -1,4 +1,8 @@
 ﻿using GMap.NET.WindowsForms;
+using HelpDagrotech.UI.Helpers;
+using HelpDAgroTech.Bll;
+using HelpDAgroTech.Bll.Common;
+using HelpDAgroTech.Entities.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,16 +11,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace HelpDagrotech.UI.Formularios
 {
     public partial class FrmTerreno : Form
     {
+        private readonly TerrenoBll _terrenoBLL = new TerrenoBll();
+        private int? _idTerrenoSeleccionado = null;
+        public bool EsEdicion => _idTerrenoSeleccionado.HasValue;
         public FrmTerreno()
         {
             InitializeComponent();
         }
+
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
@@ -125,7 +134,22 @@ namespace HelpDagrotech.UI.Formularios
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
 
+            DataGridViewRow fila = DatagridTerreno.Rows[e.RowIndex];
+
+            if (fila.Cells["Id_Terreno"].Value != null)
+            {
+                _idTerrenoSeleccionado = Convert.ToInt32(fila.Cells["Id_Terreno"].Value);
+            }
+
+            txtterrenp.Text = fila.Cells["Nombre_T"].Value?.ToString();
+            txtareat.Text = fila.Cells["Area"].Value?.ToString();
+            txtubica.Text = fila.Cells["Ubicacion"].Value?.ToString();
+            txtlatitu.Text = fila.Cells["Latitud"].Value?.ToString();
+            txtlongi.Text = fila.Cells["Longitud"].Value?.ToString();
+
+            BtnGuardarTerreno.Enabled = false;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -177,8 +201,198 @@ namespace HelpDagrotech.UI.Formularios
 
         }
 
-        private void BtnGuardarTerreno_Click(object sender, EventArgs e)
+        private void configurarDataGrid()
         {
+            if (DatagridTerreno.Columns.Count == 0)
+                return;
+
+            if (DatagridTerreno.Columns["Id_Terreno"] != null)
+                DatagridTerreno.Columns["Id_Terreno"].Visible = false;
+            if (DatagridTerreno.Columns["Latitud"] != null)
+                DatagridTerreno.Columns["Latitud"].Visible = false;
+            if (DatagridTerreno.Columns["Longitud"] != null)
+                DatagridTerreno.Columns["Longitud"].Visible = false;
+
+            if (DatagridTerreno.Columns["Nombre_T"] != null)
+                DatagridTerreno.Columns["Nombre_T"].HeaderText = "Nombre del Terreno";
+            if (DatagridTerreno.Columns["Area"] != null)
+                DatagridTerreno.Columns["Area"].HeaderText = "Area";
+            if (DatagridTerreno.Columns["EstadoT"] != null)
+                DatagridTerreno.Columns["EstadoT"].HeaderText = "Estado";
+            if (DatagridTerreno.Columns["Ubicacion"] != null)
+                DatagridTerreno.Columns["Ubicacion"].HeaderText = "Ubicación";
+
+            if (DatagridTerreno.Columns["Ubicacion"] != null)
+                DatagridTerreno.Columns["Ubicacion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private async Task CargarListadoAsincrono()
+        {
+            try
+            {
+                List<TerrenoEntity> lista = await
+                    _terrenoBLL.MostrarTerrenosAsincrono(txtbuscarTerreno.Text.Trim());
+                DatagridTerreno.DataSource = null;
+                DatagridTerreno.DataSource = lista;
+
+                configurarDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cragra los datos: {ex.Message}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void BtnGuardarTerreno_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCampos())
+                return;
+
+            try
+            {
+                if (!EsEdicion)
+                {
+                    decimal areaConvertida = Convert.ToDecimal(txtareat.Text.Trim());
+                    bool estadoConvertido = true;
+
+                    decimal? latitudConvertida = string.IsNullOrWhiteSpace(txtlatitu.Text) ? (decimal?)null : Convert.ToDecimal(txtlatitu.Text.Trim());
+                    decimal? longitudConvertida = string.IsNullOrWhiteSpace(txtlongi.Text) ? (decimal?)null : Convert.ToDecimal(txtlongi.Text.Trim());
+                    TerrenoEntity nuevo = new TerrenoEntity
+                        (
+                         txtterrenp.Text.Trim(),
+                areaConvertida,
+              estadoConvertido,
+                txtubica.Text.Trim(),
+                latitudConvertida,
+                longitudConvertida
+                        );
+                    btnEditarterreno.Enabled = false;
+                    await _terrenoBLL.agregart(nuevo);
+
+                    MessageBox.Show("Terreno agregado con exito!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LImpiarFormulario();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            await CargarListadoAsincrono();
+        }
+
+        private void CargarEstados()
+        {
+            var estados = new List<KeyValuePair<bool, string>>()
+            {
+                new KeyValuePair<bool, string>(true, "Activo"),
+                new KeyValuePair<bool, string>(false, "Inactivo")
+            };
+
+            conEstado.DataSource = estados;
+            conEstado.DisplayMember = "Value";
+            conEstado.ValueMember = "Key";
+            conEstado.SelectedIndex = 0;
+        }
+
+        private async void FrmTerreno_Load(object sender, EventArgs e)
+        {
+            await CargarListadoAsincrono();
+            CargarEstados();
+        }
+
+        private async void txtbuscarTerreno_TextChanged(object sender, EventArgs e)
+        {
+            await CargarListadoAsincrono();
+        }
+
+        private void LImpiarFormulario()
+        {
+            txtterrenp.Clear();
+            txtareat.Clear();
+            if (conEstado.Items.Count > 0) conEstado.SelectedIndex = 0;
+            txtubica.Clear();
+            txtlatitu.Clear();
+            txtlongi.Clear();
+
+            BtnGuardarTerreno.Enabled = true;
+            btnEditarterreno.Enabled = true;
+            txtterrenp.Focus();
+
+        }
+        private bool ValidarCampos()
+        {
+            Iconerror.Clear();
+            bool valido = true;
+
+            if (!ValidarHelper.Requerido(txtterrenp, Iconerror, "Debe ingresar el Nombre del Empleado."))
+                valido = false;
+            if (!ValidarHelper.Requerido(txtareat, Iconerror, "Debe ingresar el número de teléfono."))
+                valido = false;
+
+            if (conEstado.SelectedValue == null)
+            {
+                Iconerror.SetError(conEstado, "Debe seleccionar el estado.");
+                valido = false;
+            }
+            if (!ValidarHelper.Requerido(txtubica, Iconerror, "Debe ingresar la contraseña."))
+                valido = false;
+            /* (!ValidarHelper.Requerido(txtlatitu, Iconerror, "Debe ingresar la contraseña."))
+                 valido = false;
+             if (!ValidarHelper.Requerido(txtlongi, Iconerror, "Debe ingresar la contraseña."))
+                 valido = false;*/
+
+            return valido;
+        }
+
+        private async void btnEditarterreno_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_idTerrenoSeleccionado == null || _idTerrenoSeleccionado <= 0)
+                {
+                    MessageBox.Show("Por favor, seleccione un terreno de la tabla para actualizar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtterrenp.Text))
+              
+                {
+                    MessageBox.Show("Por favor complete todos los campos obligatorios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!decimal.TryParse(txtareat.Text.Trim(), out decimal areaConvertida))
+                {
+                    MessageBox.Show("El área debe ser un número válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                decimal? latitudConvertida = string.IsNullOrWhiteSpace(txtlatitu.Text) ? (decimal?)null : Convert.ToDecimal(txtlatitu.Text);
+                decimal? longitudConvertida = string.IsNullOrWhiteSpace(txtlongi.Text) ? (decimal?)null : Convert.ToDecimal(txtlongi.Text);
+
+                TerrenoEntity terrenoModificado = new TerrenoEntity();
+                terrenoModificado.asignarId(_idTerrenoSeleccionado.Value);
+                terrenoModificado.cambiarnombre(txtterrenp.Text.Trim());
+                terrenoModificado.cambiararea(areaConvertida);
+                terrenoModificado.Latitud = latitudConvertida;
+                terrenoModificado.Longitud = longitudConvertida;
+
+                await _terrenoBLL.Actualizar(terrenoModificado); ;
+
+                MessageBox.Show("Terreno actualizado correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LImpiarFormulario();
+                _idTerrenoSeleccionado = null;
+                BtnGuardarTerreno.Enabled = true;
+
+                await CargarListadoAsincrono();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

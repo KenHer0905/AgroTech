@@ -19,7 +19,7 @@ namespace HelpDAgroTech.Dal.Common
             {
                 using (SqlConnection cn = Conexion.ObtenerConexion())
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_listar_siembra", cn)) // Asegúrate de tener este SP o crearlo
+                    using (SqlCommand cmd = new SqlCommand("sp_listar_siembra", cn)) 
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@buscar", (object)buscar ?? DBNull.Value);
@@ -32,7 +32,12 @@ namespace HelpDAgroTech.Dal.Common
                                 SiembraEntity item = new SiembraEntity();
                                 item.Id_Siembra = Convert.ToInt32(dr["Id_Siembra"]);
                                 item.Id_Terreno = Convert.ToInt32(dr["Id_Terreno"]);
+
+                                item.NombreTerreno = dr["NombreTerreno"].ToString();
+
                                 item.Id_Cultivo = Convert.ToInt32(dr["Id_Cultivo"]);
+                                item.NombreCultivo = dr["Nombre"].ToString();
+
                                 item.Duracion = dr["Duracion"].ToString();
                                 item.Fecha = Convert.ToDateTime(dr["Fecha"]);
 
@@ -55,13 +60,39 @@ namespace HelpDAgroTech.Dal.Common
             {
                 using (SqlConnection cn = Conexion.ObtenerConexion())
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_agregarsiembra", cn)) // O el nombre de tu SP para insertar siembra
+                    using (SqlCommand cmd = new SqlCommand("sp_agregarsiembra", cn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Id_Terreno", idTerreno);
                         cmd.Parameters.AddWithValue("@Id_Cultivo", idCultivo);
                         cmd.Parameters.AddWithValue("@Duracion", duracion);
                         cmd.Parameters.AddWithValue("@Fecha", fecha);
+
+                        await cn.OpenAsync();
+                        await cmd.ExecuteNonQueryAsync();
+                        return true;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error SQL: " + ex.Message);
+            }
+        }
+        public async Task<bool> ActualizarSiembraAsync(SiembraEntity siembra)
+        {
+            try
+            {
+                using (SqlConnection cn = Conexion.ObtenerConexion())
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_actualizarsiembra", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Id_Siembra", siembra.Id_Siembra);
+                        cmd.Parameters.AddWithValue("@Id_Terreno", siembra.Id_Terreno);
+                        cmd.Parameters.AddWithValue("@Id_Cultivo", siembra.Id_Cultivo);
+                        cmd.Parameters.AddWithValue("@Duracion", siembra.Duracion);
+                        cmd.Parameters.AddWithValue("@Fecha", siembra.Fecha);
 
                         await cn.OpenAsync();
                         await cmd.ExecuteNonQueryAsync();

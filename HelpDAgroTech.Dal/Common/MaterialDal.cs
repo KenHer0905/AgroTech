@@ -12,6 +12,27 @@ namespace HelpDAgroTech.Dal.Common
 {
     public class MaterialDal
     {
+        public async Task actualizarMaterial(MaterialEntity material)
+        {
+            using (SqlConnection cn = Conexion.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_ActualizarMaterial", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id_Material", material.Id_Material);
+                    cmd.Parameters.AddWithValue("@Nombre_material", material.Nombre_material);
+                    cmd.Parameters.AddWithValue("@Id_Categoria", material.Id_Categoria);
+                    cmd.Parameters.AddWithValue("@Unidad_material", material.Unidad_material);
+                    cmd.Parameters.AddWithValue("@Stock", material.Stock);
+                    cmd.Parameters.AddWithValue("@Stock_minimo", material.Stock_minimo);
+                    cmd.Parameters.AddWithValue("@Precio", material.Precio);
+                    
+                    await cn.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
         public async Task<List<MaterialEntity>> MostrarMaterialAsincrono(string buscra = null)
         {
             var lista = new List<MaterialEntity>();
