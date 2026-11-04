@@ -20,7 +20,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
     {
         private readonly CultivoDal _dal = new CultivoDal();
         private readonly DecodificacionBll _bll = new DecodificacionBll();
-        private readonly MaterialBll _materialBll = new MaterialBll(); // Por si necesitas cargar materiales
+        private readonly MaterialDal _materialBll = new MaterialDal();
         public FrmDecodificacion()
         {
             InitializeComponent();
@@ -103,7 +103,26 @@ namespace HelpDagrotech.UI.Formularios.Hijos
         {
             await CargarCombosMaterialesAsync();
             await CargarGridAsync();
+            await CargarComboCultivoesAsync();
         }
+        private async Task CargarComboCultivoesAsync()
+        {
+            try
+            {
+                CultivoDal _dal = new CultivoDal();
+                var lista = await _dal.MostrarCultivosAsincrono();
+
+                Cboxcultivo.DataSource = lista;
+                Cboxcultivo.DisplayMember = "Nombre";
+                Cboxcultivo.ValueMember = "Id_Cultivo";
+                Cboxcultivo.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los materiales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private async Task CargarCombosMaterialesAsync()
         {
@@ -123,23 +142,8 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             }
         }
 
-        private async Task CargarCultivosAsync()
-        {
-            try
-            {
-                CultivoBll cultivoBll = new CultivoBll();
-                var cultivos = await cultivoBll.MostrarCultivosAsincrono();
+    
 
-                Cboxcultivo.DataSource = cultivos;
-                Cboxcultivo.DisplayMember = "Nombre";    // Coincide con la columna de SQL
-                Cboxcultivo.ValueMember = "Id_Cultivo";  // Clave primaria
-                Cboxcultivo.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar los cultivos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private async Task CargarGridAsync(string buscar = null)
         {
@@ -163,6 +167,16 @@ namespace HelpDagrotech.UI.Formularios.Hijos
         }
 
         private void dvgdeco_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Cboxcultivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cboxmaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

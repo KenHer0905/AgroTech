@@ -367,6 +367,27 @@ namespace HelpDagrotech.UI.Formularios
         {
 
         }
+
+        private void dgvlistadoEmpleado_Paint(object sender, PaintEventArgs e)
+        {
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                // Dibuja el contorno redondeado del panel de manera limpia
+                using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+                {
+                    int radio = 20;
+                    System.Drawing.Rectangle rect = new System.Drawing.Rectangle(0, 0, dgvlistadoEmpleado.Width - 1, dgvlistadoEmpleado.Height - 1);
+                    path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                    path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                    path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                    path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                    path.CloseFigure();
+
+                    dgvlistadoEmpleado.Region = new Region(path);
+                }
+            }
+        }
     }
 }
 

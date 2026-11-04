@@ -357,7 +357,7 @@ namespace HelpDagrotech.UI.Formularios
                 }
 
                 if (string.IsNullOrWhiteSpace(txtterrenp.Text))
-              
+
                 {
                     MessageBox.Show("Por favor complete todos los campos obligatorios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -378,6 +378,7 @@ namespace HelpDagrotech.UI.Formularios
                 terrenoModificado.cambiararea(areaConvertida);
                 terrenoModificado.Latitud = latitudConvertida;
                 terrenoModificado.Longitud = longitudConvertida;
+                if (conEstado.Items.Count > 0) conEstado.SelectedIndex = 0;
 
                 await _terrenoBLL.Actualizar(terrenoModificado); ;
 
@@ -393,6 +394,11 @@ namespace HelpDagrotech.UI.Formularios
             {
                 MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -38,7 +38,7 @@
             statusStrip1 = new StatusStrip();
             panelContenedo = new Panel();
             panel3 = new Panel();
-            panel6 = new Panel();
+            panelganancias3 = new Panel();
             label17 = new Label();
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             label11 = new Label();
@@ -60,11 +60,11 @@
             panel5 = new Panel();
             gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             label4 = new Label();
-            panel4 = new Panel();
+            panelempleados = new Panel();
             label15 = new Label();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label3 = new Label();
-            panel8 = new Panel();
+            panterreno = new Panel();
             label14 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label2 = new Label();
@@ -84,7 +84,7 @@
             statusStrip1.SuspendLayout();
             panelContenedo.SuspendLayout();
             panel3.SuspendLayout();
-            panel6.SuspendLayout();
+            panelganancias3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
@@ -96,9 +96,9 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dvgmovreciat).BeginInit();
             panel5.SuspendLayout();
-            panel4.SuspendLayout();
+            panelempleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            panel8.SuspendLayout();
+            panterreno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel10.SuspendLayout();
             panel9.SuspendLayout();
@@ -423,7 +423,7 @@
             // 
             panel3.AutoSize = true;
             panel3.BackColor = Color.FromArgb(224, 224, 224);
-            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panelganancias3);
             panel3.Controls.Add(panel13);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label7);
@@ -432,8 +432,8 @@
             panel3.Controls.Add(panel11);
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(panel8);
+            panel3.Controls.Add(panelempleados);
+            panel3.Controls.Add(panterreno);
             panel3.Controls.Add(panel10);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
@@ -442,35 +442,38 @@
             panel3.TabIndex = 1;
             panel3.Paint += panel3_Paint;
             // 
-            // panel6
+            // panelganancias3
             // 
-            panel6.BackColor = Color.FromArgb(255, 255, 128);
-            panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Controls.Add(label17);
-            panel6.Controls.Add(iconPictureBox5);
-            panel6.Controls.Add(label11);
-            panel6.Font = new Font("Algerian", 10.2F);
-            panel6.Location = new Point(1135, 77);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(270, 87);
-            panel6.TabIndex = 10;
-            panel6.Paint += panel6_Paint;
+            panelganancias3.BackColor = Color.DarkKhaki;
+            panelganancias3.BorderStyle = BorderStyle.Fixed3D;
+            panelganancias3.Controls.Add(label17);
+            panelganancias3.Controls.Add(iconPictureBox5);
+            panelganancias3.Controls.Add(label11);
+            panelganancias3.Font = new Font("Algerian", 10.2F);
+            panelganancias3.Location = new Point(1135, 77);
+            panelganancias3.Name = "panelganancias3";
+            panelganancias3.Size = new Size(270, 106);
+            panelganancias3.TabIndex = 10;
+            panelganancias3.Paint += panel6_Paint;
             // 
             // label17
             // 
             label17.AutoSize = true;
+            label17.BackColor = Color.DarkKhaki;
+            label17.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.FromArgb(0, 64, 0);
             label17.Location = new Point(58, 44);
             label17.Name = "label17";
-            label17.Size = new Size(74, 19);
+            label17.Size = new Size(140, 40);
             label17.TabIndex = 6;
             label17.Text = "$000.00";
             // 
             // iconPictureBox5
             // 
-            iconPictureBox5.BackColor = Color.FromArgb(255, 255, 128);
-            iconPictureBox5.ForeColor = Color.Green;
+            iconPictureBox5.BackColor = Color.DarkKhaki;
+            iconPictureBox5.ForeColor = Color.FromArgb(0, 64, 0);
             iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
-            iconPictureBox5.IconColor = Color.Green;
+            iconPictureBox5.IconColor = Color.FromArgb(0, 64, 0);
             iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox5.IconSize = 40;
             iconPictureBox5.Location = new Point(10, 13);
@@ -482,11 +485,12 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Algerian", 10.2F);
-            label11.ForeColor = Color.Green;
+            label11.BackColor = Color.DarkKhaki;
+            label11.Font = new Font("Algerian", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.FromArgb(0, 64, 0);
             label11.Location = new Point(57, 13);
             label11.Name = "label11";
-            label11.Size = new Size(104, 19);
+            label11.Size = new Size(122, 22);
             label11.TabIndex = 4;
             label11.Text = "Ganancias";
             // 
@@ -508,18 +512,19 @@
             // label16
             // 
             label16.AutoSize = true;
+            label16.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label16.ForeColor = Color.White;
             label16.Location = new Point(97, 44);
             label16.Name = "label16";
-            label16.Size = new Size(47, 19);
+            label16.Size = new Size(49, 24);
             label16.TabIndex = 7;
             label16.Text = "0/10";
             // 
             // iconPictureBox6
             // 
             iconPictureBox6.BackColor = Color.DarkSeaGreen;
-            iconPictureBox6.ForeColor = Color.Green;
             iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            iconPictureBox6.IconColor = Color.Green;
+            iconPictureBox6.IconColor = Color.White;
             iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox6.IconSize = 40;
             iconPictureBox6.Location = new Point(18, 13);
@@ -553,7 +558,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Algerian", 10.2F);
-            label13.ForeColor = Color.Green;
+            label13.ForeColor = Color.White;
             label13.Location = new Point(75, 13);
             label13.Name = "label13";
             label13.Size = new Size(134, 19);
@@ -593,6 +598,7 @@
             // 
             // DvgInsureciat
             // 
+            DvgInsureciat.BackgroundColor = Color.DarkSeaGreen;
             DvgInsureciat.BorderStyle = BorderStyle.None;
             DvgInsureciat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DvgInsureciat.Location = new Point(-2, -3);
@@ -623,6 +629,7 @@
             // 
             // DvgAletreciat
             // 
+            DvgAletreciat.BackgroundColor = Color.RosyBrown;
             DvgAletreciat.BorderStyle = BorderStyle.None;
             DvgAletreciat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DvgAletreciat.Dock = DockStyle.Fill;
@@ -642,13 +649,17 @@
             // 
             // Dvgmovreciat
             // 
+            Dvgmovreciat.BackgroundColor = Color.DarkSeaGreen;
             Dvgmovreciat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Dvgmovreciat.Dock = DockStyle.Fill;
+            Dvgmovreciat.GridColor = Color.Black;
             Dvgmovreciat.Location = new Point(0, 0);
             Dvgmovreciat.Name = "Dvgmovreciat";
             Dvgmovreciat.RowHeadersWidth = 51;
             Dvgmovreciat.Size = new Size(466, 201);
             Dvgmovreciat.TabIndex = 2;
+            Dvgmovreciat.BorderStyleChanged += Dvgmovreciat_BorderStyleChanged;
+            Dvgmovreciat.CellContentClick += Dvgmovreciat_CellContentClick;
             // 
             // panel5
             // 
@@ -700,36 +711,37 @@
             label4.Size = new Size(0, 19);
             label4.TabIndex = 3;
             // 
-            // panel4
+            // panelempleados
             // 
-            panel4.BackColor = Color.SeaGreen;
-            panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Controls.Add(label15);
-            panel4.Controls.Add(iconPictureBox2);
-            panel4.Controls.Add(label3);
-            panel4.Font = new Font("Algerian", 10.2F);
-            panel4.Location = new Point(353, 77);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(270, 87);
-            panel4.TabIndex = 2;
-            panel4.Paint += panel4_Paint;
+            panelempleados.BackColor = Color.RosyBrown;
+            panelempleados.BorderStyle = BorderStyle.Fixed3D;
+            panelempleados.Controls.Add(label15);
+            panelempleados.Controls.Add(iconPictureBox2);
+            panelempleados.Controls.Add(label3);
+            panelempleados.Font = new Font("Algerian", 10.2F);
+            panelempleados.Location = new Point(353, 77);
+            panelempleados.Name = "panelempleados";
+            panelempleados.Size = new Size(270, 87);
+            panelempleados.TabIndex = 2;
+            panelempleados.Paint += panel4_Paint;
             // 
             // label15
             // 
             label15.AutoSize = true;
+            label15.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label15.ForeColor = Color.White;
             label15.Location = new Point(99, 44);
             label15.Name = "label15";
-            label15.Size = new Size(47, 19);
+            label15.Size = new Size(49, 24);
             label15.TabIndex = 4;
             label15.Text = "8/15";
             label15.Click += label15_Click;
             // 
             // iconPictureBox2
             // 
-            iconPictureBox2.BackColor = Color.SeaGreen;
-            iconPictureBox2.ForeColor = Color.FromArgb(192, 255, 192);
+            iconPictureBox2.BackColor = Color.FromArgb(128, 64, 64);
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            iconPictureBox2.IconColor = Color.FromArgb(192, 255, 192);
+            iconPictureBox2.IconColor = Color.White;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 40;
             iconPictureBox2.Location = new Point(3, 13);
@@ -742,33 +754,34 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Algerian", 10.2F);
-            label3.ForeColor = Color.FromArgb(192, 255, 192);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(50, 13);
             label3.Name = "label3";
             label3.Size = new Size(169, 19);
             label3.TabIndex = 2;
             label3.Text = "Empleado Activos";
             // 
-            // panel8
+            // panterreno
             // 
-            panel8.BackColor = Color.DarkSeaGreen;
-            panel8.BorderStyle = BorderStyle.Fixed3D;
-            panel8.Controls.Add(label14);
-            panel8.Controls.Add(iconPictureBox1);
-            panel8.Controls.Add(label2);
-            panel8.Location = new Point(11, 77);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(270, 87);
-            panel8.TabIndex = 1;
-            panel8.Paint += panel8_Paint;
+            panterreno.BackColor = Color.DarkSeaGreen;
+            panterreno.BorderStyle = BorderStyle.Fixed3D;
+            panterreno.Controls.Add(label14);
+            panterreno.Controls.Add(iconPictureBox1);
+            panterreno.Controls.Add(label2);
+            panterreno.Location = new Point(11, 77);
+            panterreno.Name = "panterreno";
+            panterreno.Size = new Size(270, 87);
+            panterreno.TabIndex = 1;
+            panterreno.Paint += panel8_Paint;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Algerian", 10.2F);
+            label14.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.White;
             label14.Location = new Point(94, 44);
             label14.Name = "label14";
-            label14.Size = new Size(57, 19);
+            label14.Size = new Size(60, 24);
             label14.TabIndex = 3;
             label14.Text = "20/50";
             label14.Click += label14_Click;
@@ -776,9 +789,8 @@
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.DarkSeaGreen;
-            iconPictureBox1.ForeColor = Color.Green;
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MapLocationDot;
-            iconPictureBox1.IconColor = Color.Green;
+            iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 40;
             iconPictureBox1.Location = new Point(15, 9);
@@ -791,7 +803,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Green;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(62, 9);
             label2.Name = "label2";
             label2.Size = new Size(166, 19);
@@ -928,8 +940,8 @@
             panelContenedo.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelganancias3.ResumeLayout(false);
+            panelganancias3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             panel13.ResumeLayout(false);
             panel13.PerformLayout();
@@ -944,11 +956,11 @@
             ((System.ComponentModel.ISupportInitialize)Dvgmovreciat).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelempleados.ResumeLayout(false);
+            panelempleados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
+            panterreno.ResumeLayout(false);
+            panterreno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
@@ -991,9 +1003,9 @@
         private Panel panel5;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private Label label4;
-        private Panel panel4;
+        private Panel panelempleados;
         private Label label3;
-        private Panel panel8;
+        private Panel panterreno;
         private Label label2;
         private Panel panel10;
         private Label label1;
@@ -1010,7 +1022,7 @@
         private DataGridView DvgInsureciat;
         private DataGridView DvgAletreciat;
         private DataGridView Dvgmovreciat;
-        private Panel panel6;
+        private Panel panelganancias3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private Label label11;
         private Panel panel13;

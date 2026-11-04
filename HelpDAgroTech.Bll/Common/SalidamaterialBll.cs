@@ -37,6 +37,17 @@ namespace HelpDAgroTech.Bll.Common
                     throw new Exception("Error en la capa de negocio al registrar el movimiento: " + ex.Message);
                 }
             }
-        
+        public async Task<List<SalidaMaterialEntity>> MostrarSalida()
+        {
+            try
+            {
+                return await _salidaDal.MostrarSalida(); // Asegúrate de que el método en tu DAL tenga un nombre similar
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la capa de negocio al obtener los movimientos: " + ex.Message);
+            }
+        }
+
     }
 }

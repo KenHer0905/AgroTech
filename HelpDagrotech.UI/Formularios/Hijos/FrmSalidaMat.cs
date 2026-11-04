@@ -68,16 +68,19 @@ namespace HelpDagrotech.UI.Formularios.Hijos
         {
             try
             {
-                List<EmpleadoEntity> lista = await
-                    _empleadoBLL.MostrarAsincrono(txtbuscarSalidaMat.Text.Trim());
-                dvgsalidamaterial.DataSource = null;
-                dvgsalidamaterial.DataSource = lista;
+               
+                SalidamaterialBll movimientoBll = new SalidamaterialBll();
 
-                configurarDataGrid();
+               
+                var listaMovimientos = await movimientoBll.MostrarSalida(); 
+
+                
+                dvgsalidamaterial.DataSource = listaMovimientos; 
+                dvgsalidamaterial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cragra los datos: {ex.Message}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error al cargar el listado de movimientos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -135,6 +138,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             {
                 MessageBox.Show($"Error al cargar los tipos de movimiento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
         }
 
         private void configurarDataGrid()
@@ -179,8 +183,8 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             }
 
            
-            if (dvgsalidamaterial.Columns["Nombre_empleado"] != null)
-                dvgsalidamaterial.Columns["Nombre_empleado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if (dvgsalidamaterial.Columns["Id_Movimiento"] != null)
+                dvgsalidamaterial.Columns["Id_Movimiento"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dvgsalidamaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -251,6 +255,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             await CargarMaterial();
             CargarTipoMovimiento();
             await CargarListadoMovimientosAsincrono();
+            configurarDataGrid();
         }
         private void Cboxterrenosalida_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -273,10 +278,19 @@ namespace HelpDagrotech.UI.Formularios.Hijos
 
                 int idEmpleado = Convert.ToInt32(Cboxempleadosalida.SelectedValue);
                 int? idTerreno = Cboxterrenosalida.SelectedValue != null ? Convert.ToInt32(Cboxterrenosalida.SelectedValue) : (int?)null;
-                string tipoMovimiento = CboxTipomO.SelectedValue.ToString();
-                DateTime fechaMovimiento = txtFechaSalida.Value;
+                var tipoMovimiento = CboxTipomO.SelectedValue.ToString();
+                // Validar de forma segura la fecha del DateTimePicker
+                DateTime Fecha_Movimiento;
+                if (txtFechaSalida.Value < new DateTime(1753, 1, 1))
+                {
+                    Fecha_Movimiento = DateTime.Now;
+                }
+                else
+                {
+                    Fecha_Movimiento = txtFechaSalida.Value;
+                }
                 SalidaMaterialEntity nuevoMovimiento = new SalidaMaterialEntity(
-                    fechaMovimiento,
+                    Fecha_Movimiento,
                     idEmpleado,
                     idTerreno,
                     tipoMovimiento
@@ -296,12 +310,12 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             }
 
             
-            await CargarListadoMovimientosAsincrono();
         }
 
         private  async void txtbuscarSalidaMat_TextChanged(object sender, EventArgs e)
         {
             await CargarListadoMovimientosAsincrono();
+            
         }
     }
 }
