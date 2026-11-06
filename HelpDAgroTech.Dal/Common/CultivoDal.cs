@@ -42,7 +42,6 @@ namespace HelpDAgroTech.Dal.Common
             }
             catch (SqlException ex)
             {
-                // Traduce el error usando tu clase estándar de manejo de excepciones SQL
                 throw SqlError.TraducirError(ex);
             }
         }

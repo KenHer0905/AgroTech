@@ -25,7 +25,6 @@ namespace HelpDAgroTech.Entities.Entidades
 
         public SalidaMaterialEntity()
         {
-            // Permite reconstruir la info de la clase cuando se obtiene de la BD
             Fecha_Movimiento = DateTime.Now;
         }
 
@@ -40,10 +39,10 @@ namespace HelpDAgroTech.Entities.Entidades
 
         public SalidaMaterialEntity(DateTime fechaMovimiento, int idEmpleado, int? idTerreno, string? tipoMovimiento)
         {
-            this.fechaMovimiento = fechaMovimiento;
-            this.idEmpleado = idEmpleado;
-            this.idTerreno = idTerreno;
-            this.tipoMovimiento = tipoMovimiento;
+            AsignarFechaMovimiento(fechaMovimiento);
+            AsignarIdEmpleado(idEmpleado);
+            AsignarIdTerreno(idTerreno);
+            AsignarTipoMovimiento(tipoMovimiento);
         }
 
         #region Métodos 

@@ -22,6 +22,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
         private TerrenoBll _terrenobll = new TerrenoBll();
         private MaterialBll _materialbll = new MaterialBll();
         private SalidamaterialBll _salidabll = new SalidamaterialBll();
+        private DataTable _dtMaterialesTerreno;
         public FrmSalidaMat()
         {
             InitializeComponent();
@@ -68,8 +69,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
         {
             try
             {
-                List<EmpleadoEntity> lista = await
-                    _empleadoBLL.MostrarAsincrono(txtbuscarSalidaMat.Text.Trim());
+                var lista = await _salidabll.MostrarAsincrono(txtbuscarSalidaMat.Text.Trim());
                 dvgsalidamaterial.DataSource = null;
                 dvgsalidamaterial.DataSource = lista;
 
@@ -77,7 +77,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cragra los datos: {ex.Message}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Error al cargar los datos: {ex.Message}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -139,11 +139,11 @@ namespace HelpDagrotech.UI.Formularios.Hijos
 
         private void configurarDataGrid()
         {
-           
+
             if (dvgsalidamaterial.Columns.Count == 0)
                 return;
 
-         
+
             if (dvgsalidamaterial.Columns["Id_Movimiento"] != null)
                 dvgsalidamaterial.Columns["Id_Movimiento"].Visible = false;
 
@@ -153,7 +153,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             if (dvgsalidamaterial.Columns["Id_Terreno"] != null)
                 dvgsalidamaterial.Columns["Id_Terreno"].Visible = false;
 
-        
+
             if (dvgsalidamaterial.Columns["Fecha_Movimiento"] != null)
             {
                 dvgsalidamaterial.Columns["Fecha_Movimiento"].HeaderText = "Fecha y Hora";
@@ -163,7 +163,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             if (dvgsalidamaterial.Columns["Nombre_empleado"] != null)
             {
                 dvgsalidamaterial.Columns["Nombre_empleado"].HeaderText = "Empleado";
-                dvgsalidamaterial.Columns["Nombre_empleado"].Width = 180;
+                ///dvgsalidamaterial.Columns["Nombre_empleado"].Width = 180;
             }
 
             if (dvgsalidamaterial.Columns["Nombre_T"] != null)
@@ -178,7 +178,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                 dvgsalidamaterial.Columns["Tipo_Movimiento"].Width = 130;
             }
 
-           
+
             if (dvgsalidamaterial.Columns["Nombre_empleado"] != null)
                 dvgsalidamaterial.Columns["Nombre_empleado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
@@ -200,7 +200,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                 Cboxempleadosalida.SelectedValue = Convert.ToInt32(fila.Cells["Id_empleado"].Value);
             }
 
-            
+
             if (fila.Cells["Id_Terreno"].Value != null && fila.Cells["Id_Terreno"].Value != DBNull.Value)
             {
                 Cboxterrenosalida.SelectedValue = Convert.ToInt32(fila.Cells["Id_Terreno"].Value);
@@ -210,16 +210,16 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                 Cboxterrenosalida.SelectedIndex = -1;
             }
 
-            
+
             CboxTipomO.Text = fila.Cells["Tipo_Movimiento"].Value?.ToString();
 
-          
+
             txtFechaSalida.Enabled = false;
             Cboxempleadosalida.Enabled = false;
             Cboxterrenosalida.Enabled = false;
             CboxTipomO.Enabled = false;
 
-           
+
             bttguardarsalida.Enabled = false;
 
         }
@@ -251,16 +251,70 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             await CargarMaterial();
             CargarTipoMovimiento();
             await CargarListadoMovimientosAsincrono();
-        }
-        private void Cboxterrenosalida_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            configurarDataGrid();
+            
 
+            numericUpDown2.Enabled = false;
+            numericUpDown1.Enabled = false;
+        }
+        private async void Cboxterrenosalida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Cboxterrenosalida.SelectedValue != null && int.TryParse(Cboxterrenosalida.SelectedValue.ToString(), out int idTerreno))
+            {
+                try
+                {
+                    // Guardamos todos los materiales calculados para este terreno en la variable global
+                    _dtMaterialesTerreno = await _salidabll.ObtenerVistaPreviaMaterialesAsync(idTerreno);
+
+                    if (_dtMaterialesTerreno.Rows.Count > 0)
+                    {
+                        // Enlazamos el ComboBox de materiales con los datos obtenidos
+                        comboBox1.DataSource = _dtMaterialesTerreno;
+                        comboBox1.DisplayMember = "Nombre_material";
+                        comboBox1.ValueMember = "Id_material";
+
+                        // Actualizamos los campos de cantidad y precio con el primer material por defecto
+                        ActualizarCamposMaterialSeleccionado();
+                    }
+                    else
+                    {
+                        _dtMaterialesTerreno = null;
+                        comboBox1.DataSource = null;
+                        comboBox1.SelectedIndex = -1;
+                        MessageBox.Show("El terreno seleccionado no cuenta con un cultivo o siembra activa para calcular insumos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los datos del terreno: {ex.Message}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void ActualizarCamposMaterialSeleccionado()
+        {
+            if (_dtMaterialesTerreno != null && comboBox1.SelectedValue != null)
+            {
+                if (int.TryParse(comboBox1.SelectedValue.ToString(), out int idMaterialSeleccionado))
+                {
+                    DataRow[] filas = _dtMaterialesTerreno.Select($"Id_material = {idMaterialSeleccionado}");
+
+                    if (filas.Length > 0)
+                    {
+                        DataRow row = filas[0];
+
+                        decimal cantidadCalculada = Convert.ToDecimal(row["CantidadCalculada"]);
+                        decimal precio = Convert.ToDecimal(row["Precio"]);
+                        numericUpDown2.Value = cantidadCalculada;
+                        numericUpDown1.Value = precio;
+                    }
+                }
+            }
         }
 
         private async void bttguardarsalida_Click(object sender, EventArgs e)
         {
-
-            if (Cboxempleadosalida.SelectedValue == null || CboxTipomO.SelectedValue == null)
+            if (Cboxempleadosalida.SelectedValue == null || Cboxterrenosalida.SelectedValue == null || CboxTipomO.SelectedValue == null)
             {
                 MessageBox.Show("Por favor complete los campos obligatorios.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -268,13 +322,14 @@ namespace HelpDagrotech.UI.Formularios.Hijos
 
             try
             {
-                SalidamaterialBll salidaBll = new SalidamaterialBll();
-
-
                 int idEmpleado = Convert.ToInt32(Cboxempleadosalida.SelectedValue);
-                int? idTerreno = Cboxterrenosalida.SelectedValue != null ? Convert.ToInt32(Cboxterrenosalida.SelectedValue) : (int?)null;
+                int idTerreno = Convert.ToInt32(Cboxterrenosalida.SelectedValue);
                 string tipoMovimiento = CboxTipomO.SelectedValue.ToString();
-                DateTime fechaMovimiento = txtFechaSalida.Value;
+
+                DateTime fechaMovimiento = (txtFechaSalida.Value != null && txtFechaSalida.Value > new DateTime(1753, 1, 1))
+                                          ? txtFechaSalida.Value
+                                          : DateTime.Now;
+
                 SalidaMaterialEntity nuevoMovimiento = new SalidaMaterialEntity(
                     fechaMovimiento,
                     idEmpleado,
@@ -282,26 +337,26 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                     tipoMovimiento
                 );
 
-
                 await _salidabll.RegistrarMovimientoAsync(nuevoMovimiento);
 
-                MessageBox.Show("Movimiento registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("¡Salida de materiales calculada y registrada con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
               
-                ///LimpiarFormulario();
+                await CargarListadoMovimientosAsincrono();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
-            
+        private async void txtbuscarSalidaMat_TextChanged(object sender, EventArgs e)
+        {
             await CargarListadoMovimientosAsincrono();
         }
 
-        private  async void txtbuscarSalidaMat_TextChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await CargarListadoMovimientosAsincrono();
+            ActualizarCamposMaterialSeleccionado();
         }
     }
 }

@@ -24,7 +24,6 @@ namespace HelpDAgroTech.Bll.Common
         }
         public async Task<List<TerrenoEntity>> MostrarTerrenosAsincrono(string buscar = null)
         {
-            // Llamamos al método de la DAL
             return await _terrenoDal.MostrarTerrenosAsincrono(buscar);
         }
     }

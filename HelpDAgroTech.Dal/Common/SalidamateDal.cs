@@ -12,6 +12,36 @@ namespace HelpDAgroTech.Dal.Common
 {
     public class SalidamateDal
     {
+        public async Task<DataTable> ObtenerVistaPreviaMaterialesAsync(int idTerreno)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection cn = Conexion.ObtenerConexion())
+            {
+                string query = @"
+                SELECT                 
+                    m.Id_material,
+                    m.Nombre_material,
+                    (m.Precio * (mc.Cantidad_Area * t.Area)) as Precio,
+                    (mc.Cantidad_Area * t.Area) as CantidadCalculada
+                FROM Terreno t
+                INNER JOIN Siembra s ON t.Id_Terreno = s.Id_Terreno
+                INNER JOIN Material_Cult mc ON s.Id_Cultivo = mc.Id_Cultivo
+                INNER JOIN Material m ON mc.Id_Material = m.Id_material
+                WHERE t.Id_Terreno = @Id_Terreno";
+
+                using (SqlCommand cmd = new SqlCommand(query, cn))
+                {
+                    cmd.Parameters.AddWithValue("@Id_Terreno", idTerreno);
+                    await cn.OpenAsync();
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+                return dt;
+            }
+        }
+
         public async Task<List<SalidaMaterialEntity>> MostrarSalida(string buscra = null)
         {
             var lista = new List<SalidaMaterialEntity>();
@@ -45,26 +75,21 @@ namespace HelpDAgroTech.Dal.Common
 
         }
 
-        public async Task<bool> InsertarMovimientoAsync(SalidaMaterialEntity movimiento)
+        public async Task InsertarMovimientoAsync(SalidaMaterialEntity movimiento)
         {
             using (SqlConnection cn = Conexion.ObtenerConexion())
             {
-
-                using (SqlCommand cmd = new SqlCommand("sp_agregar_movimiento", cn))
+                await cn.OpenAsync();
+                using (SqlCommand cmd = new SqlCommand("sp_registrar_salida_movimiento_completo", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@Fecha_Movimiento", movimiento.Fecha_Movimiento);
                     cmd.Parameters.AddWithValue("@Id_empleado", movimiento.Id_empleado);
-
-
-                    cmd.Parameters.AddWithValue("@Id_Terreno", movimiento.Id_Terreno.HasValue ? (object)movimiento.Id_Terreno.Value : DBNull.Value);
-
+                    cmd.Parameters.AddWithValue("@Id_Terreno", movimiento.Id_Terreno); // <--- ¡Asegúrate de que esta línea esté presente!
                     cmd.Parameters.AddWithValue("@Tipo_Movimiento", movimiento.Tipo_Movimiento);
 
-                    await cn.OpenAsync();
                     await cmd.ExecuteNonQueryAsync();
-                    return true;
                 }
             }
 

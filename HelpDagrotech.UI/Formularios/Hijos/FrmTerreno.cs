@@ -212,14 +212,16 @@ namespace HelpDagrotech.UI.Formularios
                 DatagridTerreno.Columns["Latitud"].Visible = false;
             if (DatagridTerreno.Columns["Longitud"] != null)
                 DatagridTerreno.Columns["Longitud"].Visible = false;
+            if (DatagridTerreno.Columns["Estado"] != null)
+                DatagridTerreno.Columns["Estado"].Visible=false;
 
             if (DatagridTerreno.Columns["Nombre_T"] != null)
                 DatagridTerreno.Columns["Nombre_T"].HeaderText = "Nombre del Terreno";
             if (DatagridTerreno.Columns["Area"] != null)
                 DatagridTerreno.Columns["Area"].HeaderText = "Area";
-            if (DatagridTerreno.Columns["EstadoT"] != null)
+            if (DatagridTerreno.Columns["Estado"] != null)
                 DatagridTerreno.Columns["EstadoT"].HeaderText = "Estado";
-            if (DatagridTerreno.Columns["Ubicacion"] != null)
+            if (DatagridTerreno.Columns["UbicacionT"] != null)
                 DatagridTerreno.Columns["Ubicacion"].HeaderText = "Ubicación";
 
             if (DatagridTerreno.Columns["Ubicacion"] != null)
@@ -239,7 +241,7 @@ namespace HelpDagrotech.UI.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cragra los datos: {ex.Message}", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Detalle técnico: " + (ex.InnerException?.Message ?? ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -357,7 +359,7 @@ namespace HelpDagrotech.UI.Formularios
                 }
 
                 if (string.IsNullOrWhiteSpace(txtterrenp.Text))
-              
+
                 {
                     MessageBox.Show("Por favor complete todos los campos obligatorios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -393,6 +395,11 @@ namespace HelpDagrotech.UI.Formularios
             {
                 MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

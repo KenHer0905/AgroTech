@@ -1,4 +1,5 @@
-﻿using HelpDAgroTech.Dal.Common;
+﻿using HelpDAgroTech.Dal;
+using HelpDAgroTech.Dal.Common;
 using HelpDAgroTech.Entities.Entidades;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,11 @@ namespace HelpDAgroTech.Bll.Common
             return await _bll.InsertarMaterialCultAsync(idMaterial, idCultivo, cantidadArea, etapaAplicacion);
         }
 
-       
+        public async Task Actualizar(DecodificacionEntity xd)
+        {
+            await _bll.ActualizarDecodi(xd);
+        }
+
         public async Task<List<DecodificacionEntity>> MostrarMaterialCultAsincrono(string buscar = null)
         {
             return await _bll.MostrarMaterialCultAsincrono(buscar);

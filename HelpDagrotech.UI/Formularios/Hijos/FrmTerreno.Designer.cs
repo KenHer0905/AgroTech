@@ -32,6 +32,7 @@
             panel1 = new Panel();
             txtbuscarTerreno = new TextBox();
             DatagridTerreno = new DataGridView();
+            groupBox1 = new GroupBox();
             panel3 = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             btnEditarterreno = new FontAwesome.Sharp.IconButton();
@@ -52,18 +53,17 @@
             panel4 = new Panel();
             label2 = new Label();
             BtnGuardarTerreno = new FontAwesome.Sharp.IconButton();
-            groupBox1 = new GroupBox();
             gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             panel2 = new Panel();
             label1 = new Label();
             Iconerror = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DatagridTerreno).BeginInit();
+            groupBox1.SuspendLayout();
             panel3.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             panel4.SuspendLayout();
-            groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Iconerror).BeginInit();
             SuspendLayout();
@@ -73,24 +73,22 @@
             panel1.BackColor = Color.FromArgb(224, 224, 224);
             panel1.Controls.Add(txtbuscarTerreno);
             panel1.Controls.Add(DatagridTerreno);
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1598, 931);
+            panel1.Size = new Size(1370, 633);
             panel1.TabIndex = 0;
             // 
             // txtbuscarTerreno
             // 
             txtbuscarTerreno.Cursor = Cursors.IBeam;
             txtbuscarTerreno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbuscarTerreno.Location = new Point(19, 735);
-            txtbuscarTerreno.Margin = new Padding(3, 5, 3, 5);
+            txtbuscarTerreno.Location = new Point(-26, 526);
+            txtbuscarTerreno.Margin = new Padding(3, 4, 3, 4);
             txtbuscarTerreno.Name = "txtbuscarTerreno";
-            txtbuscarTerreno.Size = new Size(344, 29);
+            txtbuscarTerreno.Size = new Size(302, 25);
             txtbuscarTerreno.TabIndex = 8;
             txtbuscarTerreno.TextChanged += txtbuscarTerreno_TextChanged;
             // 
@@ -98,17 +96,33 @@
             // 
             DatagridTerreno.AllowUserToAddRows = false;
             DatagridTerreno.AllowUserToDeleteRows = false;
-            DatagridTerreno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DatagridTerreno.BackgroundColor = Color.Honeydew;
             DatagridTerreno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DatagridTerreno.Location = new Point(16, 772);
+            DatagridTerreno.Dock = DockStyle.Bottom;
+            DatagridTerreno.Location = new Point(0, 557);
+            DatagridTerreno.Margin = new Padding(3, 2, 3, 2);
             DatagridTerreno.Name = "DatagridTerreno";
             DatagridTerreno.ReadOnly = true;
             DatagridTerreno.RowHeadersWidth = 51;
-            DatagridTerreno.Size = new Size(1554, 101);
+            DatagridTerreno.Size = new Size(1370, 76);
             DatagridTerreno.TabIndex = 3;
             DatagridTerreno.CellClick += dataGridView1_CellContentClick;
             DatagridTerreno.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(panel3);
+            groupBox1.Controls.Add(gMapControl1);
+            groupBox1.Font = new Font("Algerian", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(12, 69);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(1293, 449);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Mapa del terreno";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // panel3
             // 
@@ -119,10 +133,10 @@
             panel3.Controls.Add(groupBox2);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(BtnGuardarTerreno);
-            panel3.Location = new Point(783, 155);
-            panel3.Margin = new Padding(3, 5, 3, 5);
+            panel3.Location = new Point(510, 33);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(841, 537);
+            panel3.Size = new Size(749, 408);
             panel3.TabIndex = 2;
             panel3.Paint += panel3_Paint;
             // 
@@ -137,10 +151,10 @@
             iconButton2.IconColor = Color.White;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(495, 485);
-            iconButton2.Margin = new Padding(3, 5, 3, 5);
+            iconButton2.Location = new Point(433, 364);
+            iconButton2.Margin = new Padding(3, 4, 3, 4);
             iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(256, 52);
+            iconButton2.Size = new Size(224, 39);
             iconButton2.TabIndex = 21;
             iconButton2.Text = "Borrar terreno";
             iconButton2.TextAlign = ContentAlignment.MiddleRight;
@@ -157,10 +171,10 @@
             btnEditarterreno.IconColor = Color.White;
             btnEditarterreno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditarterreno.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarterreno.Location = new Point(264, 485);
-            btnEditarterreno.Margin = new Padding(3, 5, 3, 5);
+            btnEditarterreno.Location = new Point(231, 364);
+            btnEditarterreno.Margin = new Padding(3, 4, 3, 4);
             btnEditarterreno.Name = "btnEditarterreno";
-            btnEditarterreno.Size = new Size(219, 52);
+            btnEditarterreno.Size = new Size(192, 39);
             btnEditarterreno.TabIndex = 20;
             btnEditarterreno.Text = "Editar terreno";
             btnEditarterreno.TextAlign = ContentAlignment.MiddleRight;
@@ -176,11 +190,9 @@
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(txtubica);
             groupBox3.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(21, 276);
-            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Location = new Point(18, 207);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(807, 179);
+            groupBox3.Size = new Size(706, 134);
             groupBox3.TabIndex = 19;
             groupBox3.TabStop = false;
             groupBox3.Text = "UBICACION";
@@ -190,9 +202,9 @@
             label5.AutoSize = true;
             label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(343, 31);
+            label5.Location = new Point(300, 23);
             label5.Name = "label5";
-            label5.Size = new Size(68, 23);
+            label5.Size = new Size(52, 17);
             label5.TabIndex = 12;
             label5.Text = "Latitud";
             // 
@@ -201,9 +213,9 @@
             label7.AutoSize = true;
             label7.Cursor = Cursors.IBeam;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(608, 31);
+            label7.Location = new Point(532, 23);
             label7.Name = "label7";
-            label7.Size = new Size(83, 23);
+            label7.Size = new Size(64, 17);
             label7.TabIndex = 16;
             label7.Text = "Longitud";
             // 
@@ -211,10 +223,10 @@
             // 
             txtlongi.Cursor = Cursors.IBeam;
             txtlongi.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtlongi.Location = new Point(608, 67);
-            txtlongi.Margin = new Padding(3, 5, 3, 5);
+            txtlongi.Location = new Point(532, 50);
+            txtlongi.Margin = new Padding(3, 4, 3, 4);
             txtlongi.Name = "txtlongi";
-            txtlongi.Size = new Size(169, 29);
+            txtlongi.Size = new Size(148, 25);
             txtlongi.TabIndex = 17;
             txtlongi.TextChanged += textBox5_TextChanged;
             // 
@@ -222,10 +234,10 @@
             // 
             txtlatitu.Cursor = Cursors.Hand;
             txtlatitu.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtlatitu.Location = new Point(335, 67);
-            txtlatitu.Margin = new Padding(3, 5, 3, 5);
+            txtlatitu.Location = new Point(293, 50);
+            txtlatitu.Margin = new Padding(3, 4, 3, 4);
             txtlatitu.Name = "txtlatitu";
-            txtlatitu.Size = new Size(169, 29);
+            txtlatitu.Size = new Size(148, 25);
             txtlatitu.TabIndex = 13;
             // 
             // label6
@@ -233,9 +245,9 @@
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(27, 31);
+            label6.Location = new Point(24, 23);
             label6.Name = "label6";
-            label6.Size = new Size(88, 23);
+            label6.Size = new Size(68, 17);
             label6.TabIndex = 10;
             label6.Text = "Ubicación";
             // 
@@ -243,10 +255,10 @@
             // 
             txtubica.Cursor = Cursors.IBeam;
             txtubica.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtubica.Location = new Point(27, 67);
-            txtubica.Margin = new Padding(3, 5, 3, 5);
+            txtubica.Location = new Point(24, 50);
+            txtubica.Margin = new Padding(3, 4, 3, 4);
             txtubica.Name = "txtubica";
-            txtubica.Size = new Size(169, 29);
+            txtubica.Size = new Size(148, 25);
             txtubica.TabIndex = 11;
             // 
             // groupBox2
@@ -258,11 +270,9 @@
             groupBox2.Controls.Add(txtareat);
             groupBox2.Controls.Add(label8);
             groupBox2.Font = new Font("Algerian", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(21, 79);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(18, 59);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(807, 172);
+            groupBox2.Size = new Size(706, 129);
             groupBox2.TabIndex = 18;
             groupBox2.TabStop = false;
             groupBox2.Text = "INFORMACION DEL TERRENO";
@@ -270,9 +280,10 @@
             // conEstado
             // 
             conEstado.FormattingEnabled = true;
-            conEstado.Location = new Point(608, 78);
+            conEstado.Location = new Point(532, 58);
+            conEstado.Margin = new Padding(3, 2, 3, 2);
             conEstado.Name = "conEstado";
-            conEstado.Size = new Size(169, 27);
+            conEstado.Size = new Size(148, 23);
             conEstado.TabIndex = 9;
             // 
             // label3
@@ -280,9 +291,9 @@
             label3.AutoSize = true;
             label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(27, 40);
+            label3.Location = new Point(24, 30);
             label3.Name = "label3";
-            label3.Size = new Size(170, 23);
+            label3.Size = new Size(130, 17);
             label3.TabIndex = 6;
             label3.Text = "Nombre del terreno";
             // 
@@ -290,19 +301,19 @@
             // 
             txtterrenp.Cursor = Cursors.IBeam;
             txtterrenp.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtterrenp.Location = new Point(27, 76);
-            txtterrenp.Margin = new Padding(3, 5, 3, 5);
+            txtterrenp.Location = new Point(24, 57);
+            txtterrenp.Margin = new Padding(3, 4, 3, 4);
             txtterrenp.Name = "txtterrenp";
-            txtterrenp.Size = new Size(169, 29);
+            txtterrenp.Size = new Size(148, 25);
             txtterrenp.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(343, 40);
+            label4.Location = new Point(300, 30);
             label4.Name = "label4";
-            label4.Size = new Size(141, 23);
+            label4.Size = new Size(108, 17);
             label4.TabIndex = 8;
             label4.Text = "Area del terreno";
             // 
@@ -310,10 +321,10 @@
             // 
             txtareat.Cursor = Cursors.Hand;
             txtareat.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtareat.Location = new Point(343, 76);
-            txtareat.Margin = new Padding(3, 5, 3, 5);
+            txtareat.Location = new Point(300, 57);
+            txtareat.Margin = new Padding(3, 4, 3, 4);
             txtareat.Name = "txtareat";
-            txtareat.Size = new Size(169, 29);
+            txtareat.Size = new Size(148, 25);
             txtareat.TabIndex = 9;
             // 
             // label8
@@ -321,9 +332,9 @@
             label8.AutoSize = true;
             label8.Cursor = Cursors.IBeam;
             label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(608, 40);
+            label8.Location = new Point(532, 30);
             label8.Name = "label8";
-            label8.Size = new Size(63, 23);
+            label8.Size = new Size(49, 17);
             label8.TabIndex = 14;
             label8.Text = "Estado";
             // 
@@ -333,9 +344,9 @@
             panel4.BackColor = Color.FromArgb(0, 64, 0);
             panel4.Controls.Add(label2);
             panel4.Location = new Point(0, 0);
-            panel4.Margin = new Padding(3, 5, 3, 5);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(841, 69);
+            panel4.Size = new Size(749, 52);
             panel4.TabIndex = 5;
             // 
             // label2
@@ -344,9 +355,9 @@
             label2.BackColor = Color.FromArgb(0, 64, 0);
             label2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(313, 16);
+            label2.Location = new Point(274, 12);
             label2.Name = "label2";
-            label2.Size = new Size(211, 28);
+            label2.Size = new Size(168, 21);
             label2.TabIndex = 2;
             label2.Text = "Detalles del Terreno";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -363,41 +374,26 @@
             BtnGuardarTerreno.IconColor = Color.White;
             BtnGuardarTerreno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnGuardarTerreno.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardarTerreno.Location = new Point(0, 485);
-            BtnGuardarTerreno.Margin = new Padding(3, 5, 3, 5);
+            BtnGuardarTerreno.Location = new Point(0, 364);
+            BtnGuardarTerreno.Margin = new Padding(3, 4, 3, 4);
             BtnGuardarTerreno.Name = "BtnGuardarTerreno";
-            BtnGuardarTerreno.Size = new Size(258, 52);
+            BtnGuardarTerreno.Size = new Size(226, 39);
             BtnGuardarTerreno.TabIndex = 4;
             BtnGuardarTerreno.Text = "Guardar terreno";
             BtnGuardarTerreno.TextAlign = ContentAlignment.MiddleRight;
             BtnGuardarTerreno.UseVisualStyleBackColor = false;
             BtnGuardarTerreno.Click += BtnGuardarTerreno_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(gMapControl1);
-            groupBox1.Font = new Font("Algerian", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(16, 113);
-            groupBox1.Margin = new Padding(3, 5, 3, 5);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 5, 3, 5);
-            groupBox1.Size = new Size(743, 579);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Mapa del terreno";
-            groupBox1.Enter += groupBox1_Enter;
-            // 
             // gMapControl1
             // 
             gMapControl1.Bearing = 0F;
             gMapControl1.CanDragMap = true;
-            gMapControl1.Dock = DockStyle.Fill;
             gMapControl1.EmptyTileColor = Color.Navy;
             gMapControl1.GrayScaleMode = false;
             gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             gMapControl1.LevelsKeepInMemory = 5;
-            gMapControl1.Location = new Point(3, 36);
-            gMapControl1.Margin = new Padding(3, 16, 3, 16);
+            gMapControl1.Location = new Point(3, 29);
+            gMapControl1.Margin = new Padding(3, 12, 3, 12);
             gMapControl1.MarkersEnabled = true;
             gMapControl1.MaxZoom = 2;
             gMapControl1.MinZoom = 2;
@@ -411,7 +407,7 @@
             gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
             gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Size = new Size(737, 538);
+            gMapControl1.Size = new Size(486, 401);
             gMapControl1.TabIndex = 0;
             gMapControl1.Zoom = 0D;
             gMapControl1.Load += gMapControl1_Load;
@@ -423,18 +419,18 @@
             panel2.Dock = DockStyle.Top;
             panel2.ForeColor = Color.White;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 5, 3, 5);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1598, 81);
+            panel2.Size = new Size(1370, 61);
             panel2.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Algerian", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(43, 12);
+            label1.Location = new Point(38, 9);
             label1.Name = "label1";
-            label1.Size = new Size(261, 25);
+            label1.Size = new Size(217, 21);
             label1.TabIndex = 1;
             label1.Text = "GESTION DE TERRENOS ";
             // 
@@ -444,11 +440,10 @@
             // 
             // FrmTerreno
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1598, 931);
+            ClientSize = new Size(1370, 633);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmTerreno";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmTerreno";
@@ -458,6 +453,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DatagridTerreno).EndInit();
+            groupBox1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -465,7 +461,6 @@
             groupBox2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            groupBox1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Iconerror).EndInit();

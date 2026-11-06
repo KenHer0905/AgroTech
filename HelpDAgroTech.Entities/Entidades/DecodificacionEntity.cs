@@ -17,5 +17,16 @@ namespace HelpDAgroTech.Entities.Entidades
         // si acaso hacemos JOIN
         public string Nombre_Material { get; set; } = string.Empty;
         public string Nombre_Cultivo { get; set; } = string.Empty;
+
+        public DecodificacionEntity() { }
+
+        public DecodificacionEntity(int idmate, int idcul, decimal CantArea, string Etapa)
+        {
+          Id_Material = idmate;  
+        }
+
+        public void asignarId(int  id)
+        { Id_Material_Cult = id; }
+         
     }
 }

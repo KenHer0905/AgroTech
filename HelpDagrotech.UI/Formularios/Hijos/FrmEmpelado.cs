@@ -184,8 +184,7 @@ namespace HelpDagrotech.UI.Formularios
             try
             {
                 if (!EsEdicion)
-                {
-                    // Creamos el nuevo empleado usando el constructor de la entidad
+                {            
                     EmpleadoEntity nuevo = new EmpleadoEntity(
                         txtNombreEmple.Text,
                         txttelefono.Text,
@@ -234,10 +233,6 @@ namespace HelpDagrotech.UI.Formularios
 
         }
 
-
-
-
-
         private async void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
 
@@ -281,8 +276,6 @@ namespace HelpDagrotech.UI.Formularios
                 MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void dgvlistadoEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

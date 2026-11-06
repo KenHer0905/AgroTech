@@ -12,20 +12,40 @@ namespace HelpDAgroTech.Dal.Common
 {
     public class DecodificacionDal
     {
+        public async Task ActualizarDecodi(DecodificacionEntity decodificacion)
+        {
+            using (SqlConnection cn = Conexion.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_editar_material_cult", cn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id_Material_Cult", decodificacion.Id_Material_Cult);
+                    cmd.Parameters.AddWithValue("@Id_Material", decodificacion.Id_Material);
+                    cmd.Parameters.AddWithValue("@Id_Cultivo", decodificacion.Id_Cultivo);
+                    cmd.Parameters.AddWithValue("@Cantidad_Area", decodificacion.Cantidad_Area);
+                    cmd.Parameters.AddWithValue("@Etapa_Aplicacion", decodificacion.Etapa_Aplicacion);
+
+                    await cn.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+
+                }
+            }
+
+        }
         public async Task<bool> InsertarMaterialCultAsync(int idMaterial, int idCultivo, decimal cantidadArea, string etapaAplicacion)
         {
             try
             {
                 using (SqlConnection cn = Conexion.ObtenerConexion())
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_AgregarMaterialCult", cn))
+                    using (SqlCommand cmd = new SqlCommand("sp_agregar_material_cult", cn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@idMaterial", idMaterial);
-                        cmd.Parameters.AddWithValue("@idCultivo", idCultivo);
-                        cmd.Parameters.AddWithValue("@cantidadArea", cantidadArea);
-                        cmd.Parameters.AddWithValue("@etapaAplicacion", string.IsNullOrEmpty(etapaAplicacion) ? (object)DBNull.Value : etapaAplicacion);
+                        cmd.Parameters.AddWithValue("@Id_Material", idMaterial);
+                        cmd.Parameters.AddWithValue("@Id_Cultivo", idCultivo);
+                        cmd.Parameters.AddWithValue("@Cantidad_Area", cantidadArea);
+                        cmd.Parameters.AddWithValue("@Etapa_Aplicacion", string.IsNullOrEmpty(etapaAplicacion) ? (object)DBNull.Value : etapaAplicacion);
 
                         await cn.OpenAsync();
                         await cmd.ExecuteNonQueryAsync();
@@ -39,7 +59,6 @@ namespace HelpDAgroTech.Dal.Common
             }
         }
 
-        // Método opcional para listar las dosificaciones en el DataGridView de abajo
         public async Task<List<DecodificacionEntity>> MostrarMaterialCultAsincrono(string buscar = null)
         {
             var lista = new List<DecodificacionEntity>();
@@ -64,11 +83,8 @@ namespace HelpDAgroTech.Dal.Common
                                 item.Id_Cultivo = Convert.ToInt32(dr["Id_Cultivo"]);
                                 item.Cantidad_Area = Convert.ToDecimal(dr["Cantidad_Area"]);
                                 item.Etapa_Aplicacion = dr["Etapa_Aplicacion"].ToString();
-
-                                // Si tu procedimiento hace JOIN y devuelve los nombres, puedes mapearlos aquí:
-                                // item.Nombre_Material = dr["Nombre_material"].ToString();
-                                // item.Nombre_Cultivo = dr["Nombre_cultivo"].ToString();
-
+                                item.Nombre_Material = dr["Nombrematerial"].ToString();
+                                item.Nombre_Cultivo = dr["NombreCultivo"].ToString(); 
                                 lista.Add(item);
                             }
                         }

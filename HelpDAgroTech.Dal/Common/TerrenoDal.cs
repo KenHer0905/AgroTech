@@ -17,7 +17,7 @@ namespace HelpDAgroTech.Dal.Common
         {
             using (SqlConnection cn = Conexion.ObtenerConexion())
             {
-                using (SqlCommand cmd = new SqlCommand("sp_editarInfoTerren", cn))
+                using (SqlCommand cmd = new SqlCommand("sp_editarInfoTerreno", cn))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Id_Terreno", terreno.Id_Terreno);
@@ -62,7 +62,7 @@ namespace HelpDAgroTech.Dal.Common
                 using (SqlConnection cn = Conexion.ObtenerConexion())
                 {
                     string query = @"
-                        SELECT Id_Terreno, Nombre_T, Area, Estado, Ubicacion, Latitud, Longitud
+                        SELECT Id_Terreno, Nombre_T, Area, Estado, Ubicacion, Latitud, Longuitud
                         FROM Terreno
                         WHERE @buscar IS NULL 
                            OR Nombre_T LIKE '%' + @buscar + '%' 
@@ -85,7 +85,7 @@ namespace HelpDAgroTech.Dal.Common
                                 item.Estado = Convert.ToBoolean(dr["Estado"]);
                                 item.Ubicacion = dr["Ubicacion"].ToString();
                                 item.Latitud = dr["Latitud"] == DBNull.Value ? (decimal?)null : Convert.ToDecimal(dr["Latitud"]);
-                                item.Longitud = dr["Longitud"] == DBNull.Value ? (decimal?)null : Convert.ToDecimal(dr["Longitud"]);
+                                item.Longitud = dr["Longuitud"] == DBNull.Value ? (decimal?)null : Convert.ToDecimal(dr["Longitud"]);
 
                                 lista.Add(item);
                             }
