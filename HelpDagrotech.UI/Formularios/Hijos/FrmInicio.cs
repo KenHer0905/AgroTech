@@ -603,6 +603,19 @@ namespace HelpDagrotech.UI.Formularios
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Instanciar el formulario de cosecha
+                Cosecha frmCosecha = new Cosecha();
+
+                // ShowDialog() abre el formulario de manera modal (bloquea la ventana actual hasta que cierres la de cosecha)
+                // Si prefieres que queden ambas abiertas e independientes, usa frmCosecha.Show();
+                frmCosecha.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir el módulo de cosecha: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gMapAgroT_Load_1(object sender, EventArgs e)
