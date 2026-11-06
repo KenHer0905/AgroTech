@@ -2,6 +2,7 @@
 using HelpDagrotech.UI.Formularios.BaseDatos;
 using HelpDagrotech.UI.Formularios.Hijos;
 using HelpDagrotech.UI.Helpers;
+using HelpDAgroTech.Bll.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace HelpDagrotech.UI.Formularios
         //para conocer cual es el formulario que esta ativo 
         private Form? formularioActivo;
         private bool _cerrarsesion = false;
+        private AgrotechBll _dalba = new AgrotechBll { };
+
 
 
         public FrmAgroT()
@@ -79,8 +82,21 @@ namespace HelpDagrotech.UI.Formularios
             NavegacionHelper.AbrirFormulario(new FrmEmpelado(), panelContenedo, ref formularioActivo, iconEmpleado);
         }
 
-        private void FrmAgroT_Load(object sender, EventArgs e)
+        private async void FrmAgroT_Load(object sender, EventArgs e)
         {
+            try
+            {
+                var stats = await _dalba.ObtenerEstadisticasGeneralesAsync();
+
+                label14.Text = $"{stats.TerrenosActivos}/20";
+                label15.Text = $"{stats.EmpleadosActivos}/15";
+                label16.Text = $"{stats.CosechasListas}/10";
+                label17.Text = $"${stats.GananciasTotales:N2}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error detallado: " + ex.ToString(), "Depuración", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             this.BeginInvoke((Action)(() =>
             {
@@ -319,7 +335,7 @@ namespace HelpDagrotech.UI.Formularios
             using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
             {
                 int radio = 20;
-                Rectangle rect = new Rectangle(0, 0, panel8.Width - 1, panel8.Height - 1);
+                Rectangle rect = new Rectangle(0, 0, panterreno.Width - 1, panterreno.Height - 1);
 
                 path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
                 path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
@@ -327,7 +343,7 @@ namespace HelpDagrotech.UI.Formularios
                 path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
                 path.CloseFigure();
 
-                panel8.Region = new Region(path);
+                panterreno.Region = new Region(path);
             }
         }
 
@@ -339,7 +355,7 @@ namespace HelpDagrotech.UI.Formularios
             using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
             {
                 int radio = 20;
-                Rectangle rect = new Rectangle(0, 0, panel4.Width - 1, panel4.Height - 1);
+                Rectangle rect = new Rectangle(0, 0, panelempleados.Width - 1, panelempleados.Height - 1);
 
                 path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
                 path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
@@ -347,7 +363,7 @@ namespace HelpDagrotech.UI.Formularios
                 path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
                 path.CloseFigure();
 
-                panel4.Region = new Region(path);
+                panelempleados.Region = new Region(path);
             }
         }
 
@@ -379,7 +395,7 @@ namespace HelpDagrotech.UI.Formularios
             using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
             {
                 int radio = 20;
-                Rectangle rect = new Rectangle(0, 0, panel6.Width - 1, panel6.Height - 1);
+                Rectangle rect = new Rectangle(0, 0, panelganancias3.Width - 1, panelganancias3.Height - 1);
 
                 path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
                 path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
@@ -387,7 +403,7 @@ namespace HelpDagrotech.UI.Formularios
                 path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
                 path.CloseFigure();
 
-                panel6.Region = new Region(path);
+                panelganancias3.Region = new Region(path);
             }
         }
 
@@ -548,11 +564,31 @@ namespace HelpDagrotech.UI.Formularios
                 bttSalir.Region = new Region(path);
 
             }
+
+           
         }
+
+
+
 
         private void iconreprot_Click(object sender, EventArgs e)
         {
             NavegacionHelper.AbrirFormulario(new FrmReporte(), panelContenedo, ref formularioActivo, iconreprot);
+        }
+
+        private async void FrmInicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dvgmovreciat_BorderStyleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dvgmovreciat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

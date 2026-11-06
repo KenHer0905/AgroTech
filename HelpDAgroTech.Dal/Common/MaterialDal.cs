@@ -14,6 +14,7 @@ namespace HelpDAgroTech.Dal.Common
     {
         public async Task actualizarMaterial(MaterialEntity material)
         {
+         
             using (SqlConnection cn = Conexion.ObtenerConexion())
             {
                 using (SqlCommand cmd = new SqlCommand("sp_ActualizarMaterial", cn))
@@ -21,15 +22,16 @@ namespace HelpDAgroTech.Dal.Common
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Id_Material", material.Id_Material);
                     cmd.Parameters.AddWithValue("@Nombre_material", material.Nombre_material);
-                    cmd.Parameters.AddWithValue("@Id_Categoria", material.Id_Categoria);
-                    cmd.Parameters.AddWithValue("@Unidad_material", material.Unidad_material);
-                    cmd.Parameters.AddWithValue("@Stock", material.Stock);
-                    cmd.Parameters.AddWithValue("@Stock_minimo", material.Stock_minimo);
-                    cmd.Parameters.AddWithValue("@Precio", material.Precio);
-                    
+                    cmd.Parameters.AddWithValue("@Id_Categoria", material.Id_Categoria);       // <--- Debe ir estrictamente en la 3ª posición
+                    cmd.Parameters.AddWithValue("@Unidad_material", material.Unidad_material); // <--- 4ª posición
+                    cmd.Parameters.AddWithValue("@Stock", material.Stock);                     // <--- 5ª posición
+                    cmd.Parameters.AddWithValue("@Stock_minimo", material.Stock_minimo);       // <--- 6ª posición
+                    cmd.Parameters.AddWithValue("@Precio", material.Precio);                   // <--- 7ª posición
+
                     await cn.OpenAsync();
                     await cmd.ExecuteNonQueryAsync();
                 }
+
             }
         }
 

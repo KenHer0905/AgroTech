@@ -20,6 +20,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
     {
         private readonly CultivoDal _dal = new CultivoDal();
         private readonly DecodificacionBll _bll = new DecodificacionBll();
+
         private readonly MaterialBll _materialBll = new MaterialBll();
 
         private int? _id = null;
@@ -108,10 +109,32 @@ namespace HelpDagrotech.UI.Formularios.Hijos
         {
             await CargarCombosMaterialesAsync();
             await CargarGridAsync();
+
             await CargarCombosMaterialesAsync();
             await CargarCultivosAsync();
             configurarDataGrid();
+
+            await CargarComboCultivoesAsync();
+
         }
+        private async Task CargarComboCultivoesAsync()
+        {
+            try
+            {
+                CultivoDal _dal = new CultivoDal();
+                var lista = await _dal.MostrarCultivosAsincrono();
+
+                Cboxcultivo.DataSource = lista;
+                Cboxcultivo.DisplayMember = "Nombre";
+                Cboxcultivo.ValueMember = "Id_Cultivo";
+                Cboxcultivo.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los materiales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private async Task CargarCombosMaterialesAsync()
         {
@@ -130,6 +153,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                 MessageBox.Show("Error al cargar los materiales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void configurarDataGrid()
         {
@@ -175,6 +199,7 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                 MessageBox.Show($"Error al cargar los cultivos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private async Task CargarGridAsync(string buscar = null)
         {
@@ -250,6 +275,16 @@ namespace HelpDagrotech.UI.Formularios.Hijos
             {
                 MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Cboxcultivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cboxmaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

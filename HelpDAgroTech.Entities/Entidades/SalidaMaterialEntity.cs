@@ -39,10 +39,17 @@ namespace HelpDAgroTech.Entities.Entidades
 
         public SalidaMaterialEntity(DateTime fechaMovimiento, int idEmpleado, int? idTerreno, string? tipoMovimiento)
         {
+
             AsignarFechaMovimiento(fechaMovimiento);
             AsignarIdEmpleado(idEmpleado);
             AsignarIdTerreno(idTerreno);
             AsignarTipoMovimiento(tipoMovimiento);
+
+            Fecha_Movimiento = fechaMovimiento; // <- Asignar a la propiedad pública, no al campo privado
+            Id_empleado = idEmpleado;
+            Id_Terreno = idTerreno;
+            Tipo_Movimiento = tipoMovimiento;
+
         }
 
         #region Métodos 

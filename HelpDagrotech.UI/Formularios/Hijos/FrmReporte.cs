@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDagrotech.UI.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,14 @@ using System.Windows.Forms;
 namespace HelpDagrotech.UI.Formularios.Hijos
 {
     public partial class FrmReporte : Form
+
     {
+
+
+        protected int PaginaActual = 1;
+        protected int TamPagina = 10;
+        protected int TotalPaginas = 0;
+        protected int TotalRegistro = 0;
         public FrmReporte()
         {
             InitializeComponent();
@@ -46,6 +54,32 @@ namespace HelpDagrotech.UI.Formularios.Hijos
                 panel.Region = new Region(path);
 
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmReporte_Shown(object sender, EventArgs e)
+        {
+
+            RedonderControlesHelper.RedondearControl(panel3, 20);
+            RedonderControlesHelper.RedondearControl(Panelpaginas, 20);
+
+
+            
+            RedonderControlesHelper.RedondearControl(iconButton5, 12);
+          
+
+            RedonderControlesHelper.RedondearControl(dgvListado, 15);
+            RedonderControlesHelper.RedondearControl(iconPictureBox2, 15);
+            RedonderControlesHelper.RedondearControl(panelbuscador, 15);
+        }
+
+        private void txtxbuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

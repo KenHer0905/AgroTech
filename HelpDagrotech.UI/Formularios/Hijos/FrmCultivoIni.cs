@@ -1,6 +1,7 @@
 ﻿using GMap.NET;
 using GMap.NET.WindowsForms;
 using HelpDagrotech.UI.Helpers;
+using HelpDAgroTech.Bll.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace HelpDagrotech.UI.Formularios
 {
     public partial class FrmCultivoI : Form
     {
+        private AgrotechBll _dalba = new AgrotechBll { };
+
         public FrmCultivoI()
         {
             InitializeComponent();
@@ -48,8 +51,22 @@ namespace HelpDagrotech.UI.Formularios
             RedonderControlesHelper.RedondearControl(panelganancia9, 15);
             RedonderControlesHelper.RedondearControl(panelcosecha6, 15);
         }
-        private void FrmCultivoIni_Load(object sender, EventArgs e)
+        private async void FrmCultivoIni_Load(object sender, EventArgs e)
         {
+
+            try
+            {
+                var stats = await _dalba.ObtenerEstadisticasGeneralesAsync();
+
+                label14.Text = $"{stats.TerrenosActivos}/20";
+                label16.Text = $"{stats.EmpleadosActivos}/15";
+                label15.Text = $"{stats.CosechasListas}/10";
+                label18.Text = $"${stats.GananciasTotales:N2}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error detallado: " + ex.ToString(), "Depuración", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             this.BeginInvoke((Action)(() =>
             {
                 // 1. Configurar el mapa y el User-Agent
@@ -308,6 +325,11 @@ namespace HelpDagrotech.UI.Formularios
 
                 panel1.Region = new Region(path);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -35,7 +35,6 @@
             panel6 = new Panel();
             dvgsalidamaterial = new DataGridView();
             panel7 = new Panel();
-            panel8 = new Panel();
             label12 = new Label();
             panel4 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -102,7 +101,6 @@
             // 
             // panel9
             // 
-            panel9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel9.BackColor = Color.FromArgb(192, 255, 192);
             panel9.Controls.Add(txtbuscarSalidaMat);
             panel9.Controls.Add(iconPictureBox7);
@@ -147,6 +145,8 @@
             panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
             panel6.Size = new Size(1273, 76);
+
+            panel6.Size = new Size(1696, 102);
             panel6.TabIndex = 20;
             panel6.Paint += panel6_Paint;
             // 
@@ -159,15 +159,16 @@
             dvgsalidamaterial.Name = "dvgsalidamaterial";
             dvgsalidamaterial.RowHeadersWidth = 51;
             dvgsalidamaterial.Size = new Size(1270, 42);
+
+            dvgsalidamaterial.Size = new Size(1693, 56);
             dvgsalidamaterial.TabIndex = 1;
             dvgsalidamaterial.CellContentClick += dvgsalidamaterial_CellContentClick;
             // 
             // panel7
             // 
-            panel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel7.BackColor = Color.Olive;
-            panel7.Controls.Add(panel8);
             panel7.Controls.Add(label12);
+
             panel7.Location = new Point(0, 11);
             panel7.Margin = new Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
@@ -175,13 +176,15 @@
             panel7.TabIndex = 0;
             // 
             // panel8
+            //
             // 
-            panel8.Location = new Point(976, 0);
-            panel8.Margin = new Padding(3, 2, 3, 2);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(200, 170);
-            panel8.TabIndex = 21;
+
+            panel7.Location = new Point(3, 5);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1693, 60);
+            panel7.TabIndex = 0;
             // 
+
             // label12
             // 
             label12.AutoSize = true;
@@ -603,7 +606,6 @@
         private Panel panel7;
         private Label label12;
         private FontAwesome.Sharp.IconButton bttguardarsalida;
-        private Panel panel8;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel9;
         private TextBox txtbuscarSalidaMat;

@@ -9,6 +9,13 @@ namespace HelpDAgroTech.Entities.Entidades
 {
     public class MaterialEntity
     {
+        private string v1;
+        private int idCategoria;
+        private string v2;
+        private int v3;
+        private int v4;
+        private decimal v5;
+
         public int Id_Material { get; set; }
         public string Nombre_material { get; set; } = string.Empty;
         public int Id_Categoria { get; set; }
@@ -25,14 +32,25 @@ namespace HelpDAgroTech.Entities.Entidades
 
         }
 
-        public MaterialEntity(string nombreMate, int IdCategoria, string unidadma, int stock, int stockMinimo, decimal precio)
+        public MaterialEntity(string nombreMate, string nombreCate, int IdCategoria, string unidadma, int stock, int stockMinimo, decimal precio)
         {
             CambiarNombreMate(nombreMate);
             CambiarUnadadMate(unidadma);
             CambiarStock(stock);
             CambiarStockMinimo(stockMinimo);
             Cambiarprecio(precio);
+            CambiarNombreCategoria(nombreCate);
 
+        }
+
+        public MaterialEntity(string v1, int idCategoria, string v2, int v3, int v4, decimal v5)
+        {
+            this.v1 = v1;
+            this.idCategoria = idCategoria;
+            this.v2 = v2;
+            this.v3 = v3;
+            this.v4 = v4;
+            this.v5 = v5;
         }
 
         public void AsignarId(int id)
@@ -92,7 +110,12 @@ namespace HelpDAgroTech.Entities.Entidades
         }
 
 
-        public void CambiarNombreCategoria(string nombreCate) => Nombre_categoria = nombreCate;
+        public void CambiarNombreCategoria(string nombreCate)
+        {
+            if (string.IsNullOrWhiteSpace(nombreCate))
+                throw new Exception("Seleccione un nombre Ctaegoria");
+            Nombre_categoria = nombreCate;
+        }
 
     }
 }

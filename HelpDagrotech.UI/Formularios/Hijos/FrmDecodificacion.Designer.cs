@@ -99,8 +99,13 @@
             txtbuscarSalidaMat.Location = new Point(43, 6);
             txtbuscarSalidaMat.Margin = new Padding(3, 2, 3, 2);
             txtbuscarSalidaMat.Name = "txtbuscarSalidaMat";
+
             txtbuscarSalidaMat.PlaceholderText = "Buscar Salida de material";
             txtbuscarSalidaMat.Size = new Size(323, 23);
+
+            txtbuscarSalidaMat.PlaceholderText = "Buscar registro";
+            txtbuscarSalidaMat.Size = new Size(369, 27);
+
             txtbuscarSalidaMat.TabIndex = 1;
             txtbuscarSalidaMat.TextChanged += txtbuscarSalidaMat_TextChanged;
             // 
@@ -315,9 +320,13 @@
             label4.ForeColor = Color.FromArgb(0, 64, 0);
             label4.Location = new Point(319, 156);
             label4.Name = "label4";
+
             label4.Size = new Size(107, 19);
+
+            label4.Size = new Size(121, 23);
+
             label4.TabIndex = 9;
-            label4.Text = "Cantgidad/Area";
+            label4.Text = "Cantidad/Area";
             // 
             // label3
             // 
@@ -338,6 +347,7 @@
             Cboxcultivo.Name = "Cboxcultivo";
             Cboxcultivo.Size = new Size(288, 23);
             Cboxcultivo.TabIndex = 6;
+            Cboxcultivo.SelectedIndexChanged += Cboxcultivo_SelectedIndexChanged;
             // 
             // Cboxmaterial
             // 
@@ -347,6 +357,9 @@
             Cboxmaterial.Name = "Cboxmaterial";
             Cboxmaterial.Size = new Size(288, 23);
             Cboxmaterial.TabIndex = 4;
+
+            Cboxmaterial.SelectedIndexChanged += Cboxmaterial_SelectedIndexChanged;
+
             // 
             // panel4
             // 

@@ -380,6 +380,7 @@ namespace HelpDagrotech.UI.Formularios
                 terrenoModificado.cambiararea(areaConvertida);
                 terrenoModificado.Latitud = latitudConvertida;
                 terrenoModificado.Longitud = longitudConvertida;
+                if (conEstado.Items.Count > 0) conEstado.SelectedIndex = 0;
 
                 await _terrenoBLL.Actualizar(terrenoModificado); ;
 

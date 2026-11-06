@@ -20,6 +20,7 @@ namespace HelpDagrotech.UI.Formularios
     public partial class FrmMaterial : Form
     {
         private readonly MaterialBll _materialBll = new MaterialBll();
+        private readonly object? listaCategorias;
         private string rutaImagenSeleccionada;
         private int? _idMateSeleccionado = null;
 
@@ -81,7 +82,7 @@ namespace HelpDagrotech.UI.Formularios
 
 
             //if (dgvmateril.Columns["Id"] != null)
-               // dgvmateril.Columns["Id"].Visible = false;
+            // dgvmateril.Columns["Id"].Visible = false;
             if (dgvmateril.Columns["Id_Material"] != null)
                 dgvmateril.Columns["Id_Material"].Visible = false;
             if (dgvmateril.Columns["Id_Categoria"] != null)
@@ -101,7 +102,7 @@ namespace HelpDagrotech.UI.Formularios
                 dgvmateril.Columns["Precio"].HeaderText = "Precio";
 
             if (dgvmateril.Columns["Nombre_material"] != null)
-               dgvmateril.Columns["Nombre_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvmateril.Columns["Nombre_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
 
@@ -109,35 +110,35 @@ namespace HelpDagrotech.UI.Formularios
         private void CargarCategoriasYUnidades()
         {
 
+            try
             {
-                Dictionary<int, string> categorias = new Dictionary<int, string>()
-            {
-                { 1, "Fertilizantes" },
-                { 2, "Semillas" },
-                { 3, "Agroquímicos" },
-                { 4, "Herramientas" }
-            };
+                // 1. Crear la lista de categorías de forma compatible para el ComboBox
+              var categorias = new Dictionary<int, string>
+                {
+                    { 1, "Fertilizantes" },
+                    { 2, "Semillas" },
+                    { 3, "Agroquímicos" },
+                    { 4, "Herramientas" }
+                }.ToList(); // .ToList() permite que Windows Forms lea perfectamente las propiedades Key y Value
 
-                txtCategoriamate.DataSource = new BindingSource(categorias, null);
+                txtCategoriamate.DataSource = categorias;
                 txtCategoriamate.DisplayMember = "Value";
                 txtCategoriamate.ValueMember = "Key";
                 txtCategoriamate.SelectedIndex = -1;
 
-
-                 txtunidadmedida.Items.Clear();
-                 txtunidadmedida.Items.Add("Libras (l)");
-                 txtunidadmedida.Items.Add("Litros (L)");
-                 txtunidadmedida.Items.Add("Quintal");
-                 txtunidadmedida.Items.Add("Unidad");
+                // 2. Cargar las unidades de medida (una sola vez)
+                txtunidadmedida.Items.Clear();
+                txtunidadmedida.Items.Add("Libras (l)");
+                txtunidadmedida.Items.Add("Litros (L)");
+                txtunidadmedida.Items.Add("Quintal");
+                txtunidadmedida.Items.Add("Unidad");
             }
-
-
-             txtunidadmedida.Items.Clear();
-             txtunidadmedida.Items.Add("Libras (l)");
-             txtunidadmedida.Items.Add("Litros (L)");
-             txtunidadmedida.Items.Add("Quintal");
-             txtunidadmedida.Items.Add("Unidad");
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar categorías y unidades: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        
 
 
 
@@ -312,10 +313,11 @@ namespace HelpDagrotech.UI.Formularios
             txtunidadmedida.Enabled = true;
             IconGuardarm.Enabled = false;
         }
-        
+
 
         private async void iconeditar_Click_1(object sender, EventArgs e)
         {
+
 
             try
             {
@@ -328,13 +330,14 @@ namespace HelpDagrotech.UI.Formularios
                 if (string.IsNullOrWhiteSpace(txtmaterial.Text) ||
                     string.IsNullOrWhiteSpace(txtstock.Text) ||
                     string.IsNullOrWhiteSpace(txtminimost.Text) ||
+                    string.IsNullOrWhiteSpace(txtCategoriamate.Text) ||
                     string.IsNullOrWhiteSpace(txtxprecio.Text))
                 {
                     MessageBox.Show("Por favor complete todos los campos obligatorios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                int idCategoria = txtCategoriamate.SelectedValue != null ? Convert.ToInt32(txtCategoriamate.SelectedValue) : 1;
+                int idCategoria = txtCategoriamate.SelectedValue != null ? Convert.ToInt32(txtCategoriamate.SelectedValue) : 0;
 
                 MaterialEntity materialModificado = new MaterialEntity
                 (
@@ -345,6 +348,9 @@ namespace HelpDagrotech.UI.Formularios
                     Convert.ToInt32(txtminimost.Text),
                     Convert.ToDecimal(txtxprecio.Text)
                 );
+
+
+
 
                 materialModificado.AsignarId(_idMateSeleccionado.Value);
 
@@ -365,6 +371,28 @@ namespace HelpDagrotech.UI.Formularios
 
 
 
+        }
+
+        private void dgvmateril_Paint(object sender, PaintEventArgs e)
+        {
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                // Dibuja el contorno redondeado del panel de manera limpia
+                using (System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath())
+                {
+                    int radio = 20;
+                    Rectangle rect = new Rectangle(0, 0, dgvmateril.Width - 1, dgvmateril.Height - 1);
+
+                    path.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                    path.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                    path.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                    path.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                    path.CloseFigure();
+
+                    dgvmateril.Region = new Region(path);
+                }
+            }
         }
     }
 }

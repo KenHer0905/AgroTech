@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            panel5 = new Panel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtbuscarTerreno = new TextBox();
             DatagridTerreno = new DataGridView();
             groupBox1 = new GroupBox();
@@ -58,6 +60,8 @@
             label1 = new Label();
             Iconerror = new ErrorProvider(components);
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DatagridTerreno).BeginInit();
             groupBox1.SuspendLayout();
             panel3.SuspendLayout();
@@ -71,7 +75,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(224, 224, 224);
-            panel1.Controls.Add(txtbuscarTerreno);
+            panel1.Controls.Add(panel5);
             panel1.Controls.Add(DatagridTerreno);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(panel2);
@@ -80,15 +84,49 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1370, 633);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(192, 255, 192);
+            panel5.Controls.Add(iconPictureBox1);
+            panel5.Controls.Add(txtbuscarTerreno);
+            panel5.Location = new Point(22, 713);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(471, 45);
+            panel5.TabIndex = 9;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.FromArgb(192, 255, 192);
+            iconPictureBox1.ForeColor = Color.FromArgb(0, 64, 0);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            iconPictureBox1.IconColor = Color.FromArgb(0, 64, 0);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 40;
+            iconPictureBox1.Location = new Point(3, 3);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(40, 40);
+            iconPictureBox1.TabIndex = 9;
+            iconPictureBox1.TabStop = false;
             // 
             // txtbuscarTerreno
             // 
+            txtbuscarTerreno.BackColor = Color.FromArgb(192, 255, 192);
             txtbuscarTerreno.Cursor = Cursors.IBeam;
             txtbuscarTerreno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+
             txtbuscarTerreno.Location = new Point(-26, 526);
             txtbuscarTerreno.Margin = new Padding(3, 4, 3, 4);
             txtbuscarTerreno.Name = "txtbuscarTerreno";
             txtbuscarTerreno.Size = new Size(302, 25);
+
+            txtbuscarTerreno.Location = new Point(49, 11);
+            txtbuscarTerreno.Margin = new Padding(3, 5, 3, 5);
+            txtbuscarTerreno.Name = "txtbuscarTerreno";
+            txtbuscarTerreno.PlaceholderText = "Buscar Terreno";
+            txtbuscarTerreno.Size = new Size(419, 29);
+
             txtbuscarTerreno.TabIndex = 8;
             txtbuscarTerreno.TextChanged += txtbuscarTerreno_TextChanged;
             // 
@@ -96,6 +134,7 @@
             // 
             DatagridTerreno.AllowUserToAddRows = false;
             DatagridTerreno.AllowUserToDeleteRows = false;
+
             DatagridTerreno.BackgroundColor = Color.Honeydew;
             DatagridTerreno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DatagridTerreno.Dock = DockStyle.Bottom;
@@ -105,6 +144,15 @@
             DatagridTerreno.ReadOnly = true;
             DatagridTerreno.RowHeadersWidth = 51;
             DatagridTerreno.Size = new Size(1370, 76);
+
+            DatagridTerreno.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DatagridTerreno.BackgroundColor = Color.Honeydew;
+            DatagridTerreno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DatagridTerreno.Location = new Point(16, 780);
+            DatagridTerreno.Name = "DatagridTerreno";
+            DatagridTerreno.ReadOnly = true;
+            DatagridTerreno.RowHeadersWidth = 51;
+            DatagridTerreno.Size = new Size(1554, 281);
             DatagridTerreno.TabIndex = 3;
             DatagridTerreno.CellClick += dataGridView1_CellContentClick;
             DatagridTerreno.CellContentClick += dataGridView1_CellContentClick;
@@ -142,7 +190,7 @@
             // 
             // iconButton2
             // 
-            iconButton2.BackColor = Color.Green;
+            iconButton2.BackColor = Color.FromArgb(128, 64, 0);
             iconButton2.Cursor = Cursors.Hand;
             iconButton2.FlatStyle = FlatStyle.Flat;
             iconButton2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -353,11 +401,13 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(0, 64, 0);
-            label2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Algerian", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(274, 12);
             label2.Name = "label2";
+
             label2.Size = new Size(168, 21);
+            label2.Size = new Size(257, 22);
             label2.TabIndex = 2;
             label2.Text = "Detalles del Terreno";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -365,7 +415,7 @@
             // 
             // BtnGuardarTerreno
             // 
-            BtnGuardarTerreno.BackColor = Color.Green;
+            BtnGuardarTerreno.BackColor = Color.Olive;
             BtnGuardarTerreno.Cursor = Cursors.Hand;
             BtnGuardarTerreno.FlatStyle = FlatStyle.Flat;
             BtnGuardarTerreno.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -451,7 +501,9 @@
             Load += FrmTerreno_Load;
             Paint += FrmTerreno_Paint;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DatagridTerreno).EndInit();
             groupBox1.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -497,5 +549,7 @@
         private TextBox txtbuscarTerreno;
         private ComboBox conEstado;
         private ErrorProvider Iconerror;
+        private Panel panel5;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

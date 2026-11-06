@@ -114,6 +114,7 @@ namespace HelpDagrotech.UI.Formularios
             dgvlistadoEmpleado.Size = new Size(678, 904);
             dgvlistadoEmpleado.TabIndex = 1;
             dgvlistadoEmpleado.CellContentClick += dgvlistadoEmpleado_CellContentClick;
+            dgvlistadoEmpleado.Paint += dgvlistadoEmpleado_Paint;
             // 
             // label1
             // 
